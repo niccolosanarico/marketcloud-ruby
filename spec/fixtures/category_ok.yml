@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/categories/104429
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '246'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b7-OxOoFtZkscP6HvmG/kXSDQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"id":104429,"name":"Per impastare","description":null,"image_url":null,"url":null,"parent_id":104428,"path":"/Macchinari/Per
+        impastare","application_id":11736}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:11 GMT
+recorded_with: VCR 3.0.3

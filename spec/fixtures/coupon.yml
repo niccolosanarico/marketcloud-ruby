@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"UhTKEMl7AfB2le3r3jO3zj6agfjpq57tybYgjhcc6ys=","timestamp":1482917352}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-LGF+tY80XrAddI0HxGgSXw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:12 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"QE+m8abJSj+u7nnUHy3+ZCwn8UVIU28j3KtKzIvd+Sw="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:12 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/coupons/105360
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:QE+m8abJSj+u7nnUHy3+ZCwn8UVIU28j3KtKzIvd+Sw=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '337'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"11b-ffADnF77dUcHsY4ufgOsKA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:11 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"_id":"5855ce2b63e00226c0351f19","code":"MINUTERIA5","name":"Sconto
+        sulla minuteria","type":"total","target_type":"CATEGORY_COUPON","discount_type":"PERCENTAGE_REDUCTION","discount_value":5,"application_id":11736,"active":false,"id":105360,"target_id":105362}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:13 GMT
+recorded_with: VCR 3.0.3

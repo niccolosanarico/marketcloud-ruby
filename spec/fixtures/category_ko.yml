@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/categories/-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '91'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5b-p/lJ9glVrjVnuNAy1iAcgw"
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:11 GMT
+    body:
+      encoding: UTF-8
+      string: '{"status":false,"errors":[{"code":400,"type":"BadRequest","message":"id
+        must be integer"}]}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:11 GMT
+recorded_with: VCR 3.0.3

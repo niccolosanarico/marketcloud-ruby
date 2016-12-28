@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"Y9k8hJnhhmVFaWt+o5vG7GATD2O/B7FlMBtcGRkEltE=","timestamp":1482917333}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '194'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-vnkxjbiRXflQOoY0dgp69A"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:28:53 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"Hq2REWLdJIrvP4LTerUdZIATQ9Lqe4Mhq6RcKsn14w0="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:28:54 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/users/authenticate
+    body:
+      encoding: UTF-8
+      string: '{"email":"prova@prova.it","password":"provapw"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:Hq2REWLdJIrvP4LTerUdZIATQ9Lqe4Mhq6RcKsn14w0=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '241'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7d-iS6kCgJbsy6DCUQnjJ895A"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:28:57 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"token":"goPZGteEg3RlQ1LRbOSFDB3/NSJ3IWN1hvVP2xSmt+A=","user":{"id":105690,"email":"prova@prova.it"}}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"QtrWVFxmVEyoKV2je+GHy+g4R9B003OdlXqZPoFB68M=","timestamp":1482917337}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '192'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-lXLWZSBvR/lkjD1z4r2sBQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:28:55 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"RBfeddvhYI7epaVmxdv8pwEUQo9WV0bawZm+dL4mVG4="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/addresses
+    body:
+      encoding: UTF-8
+      string: '{"full_name":"Pinco Pallo","user_id":105690,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
+        Vittor Pisani 13","postal_code":"20127"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:RBfeddvhYI7epaVmxdv8pwEUQo9WV0bawZm+dL4mVG4=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '296'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"da-Vs6RaWn6QA1BYtCGIlO3rA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:28:56 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","user_id":105690,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
+        Vittor Pisani 13","postal_code":"20127","application_id":11736,"id":106972}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+recorded_with: VCR 3.0.3

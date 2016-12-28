@@ -17,20 +17,16 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-#require_relative '../lib/marketcloud'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rubygems'
 require 'webmock/rspec'
-require 'factory_girl'
 require 'vcr'
 
 Dir[File.join(File.dirname(__FILE__), "..", "lib" , "**/*.rb")].each do |f|
   require f
 end
-
-require_relative 'support/factory_girl'
 
 VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures"
@@ -67,6 +63,15 @@ RSpec.configure do |config|
   # inherited by the metadata hash of host groups and examples, rather than
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  #NS Configuration "before each" with test env to DRY out code
+  # TO TEST: Add an account keys to the environment
+  config.before(:each) do
+    Marketcloud.configure do |conf|
+      conf.public_key = ENV["MARKETCLOUD_PUBLIC_KEY"]
+      conf.private_key = ENV["MARKETCLOUD_PRIVATE_KEY"]
+    end
+  end
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.

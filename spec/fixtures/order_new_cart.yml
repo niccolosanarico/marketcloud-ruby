@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"tLnMePCH8J0pZT071ssAkq8nLIhOIo3ax/zzn7xg77I=","timestamp":1482917354}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '197'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-1mpAccyLK6PN+F04bSGirw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:14 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"lvqZzjlLVgPyFDWvwv3Lpb47XJoy57YxrqVJURVBqu4="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:15 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/carts
+    body:
+      encoding: UTF-8
+      string: '{"user_id":105690,"items":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:lvqZzjlLVgPyFDWvwv3Lpb47XJoy57YxrqVJURVBqu4=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '243'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9c-xqn55WHW+A26EtS75g/JsQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:15 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"created_at":1482917356233,"application_id":11736,"items":[],"status":"open","user_id":105690,"id":106974,"items_total":0,"total":0}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:15 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"ZIfDCBWqL50txuk5sRGpqTNmbk6MNR94EOKCw2eaMrE=","timestamp":1482917355}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '194'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-ryiefYThotk6NKZFWtbiYw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:14 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"FVmgtFtuJ670dcQgJtHRSlDKWimELAQPc+zp+j0OC8U="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:16 GMT
+- request:
+    method: patch
+    uri: http://api.marketcloud.it/v0/carts/106974
+    body:
+      encoding: UTF-8
+      string: '{"op":"update","items":[{"product_id":11744,"quantity":2}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:FVmgtFtuJ670dcQgJtHRSlDKWimELAQPc+zp+j0OC8U=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '610'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2e7-ijPftIEeM7EmNdgfADtwlA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:15 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"items":[{"price":925.11,"name":"Impastatrice
+        a testa fissa","description":"<p>&#34;Impastatrice a testa fissa - costruzione
+        in acciaio inox verniciato bianco -vasca, coper-chio, spirale e spacca pasta
+        in acciaio AISI304&#34;</p>","images":["https://shop.coalca.it/spree/products/216/product/SK_10.jpg"],"variants":[],"is_master":true,"has_variants":false,"published":true,"sku":"0000778405199","stock_type":"infinite","variantsDefinition":{},"id":11744,"product_id":11744,"variant_id":0,"stock_level":null,"stock_status":null,"type":"simple_product","media":[],"display_price":"925.11
+        EUR","category_id":104429,"requires_shipping":true,"quantity":2}],"id":106974,"user_id":105690,"items_total":1850.22,"total":1850.22}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:16 GMT
+recorded_with: VCR 3.0.3

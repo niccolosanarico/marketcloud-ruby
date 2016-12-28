@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"h7ErgDRo+n2+IDolxpfLWA9dPoQ2yhaTkJ7J0AItMm4=","timestamp":1482917363}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '193'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-4kXSXKrd4v6cUvihJQWrgQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:23 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"0Q67ogvZ+9hef8QvJpDXRbMR9FhD8TO5dLQ/lal9fgI="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:23 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/users/14516
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:0Q67ogvZ+9hef8QvJpDXRbMR9FhD8TO5dLQ/lal9fgI=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5c-PUEzJBLKVdmoud8/nl6lpw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:29:22 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"email":"nico@dpixel.it","name":"niccolo","image_url":"","id":14516}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:29:24 GMT
+recorded_with: VCR 3.0.3

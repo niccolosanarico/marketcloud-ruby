@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"RFh3buRPqON+6qhA8xJa9vHcCv1mNmXzM7hEW+ZoEL4=","timestamp":1482917483}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-zMBwNOOL8iCTbEf0667MbQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:31:22 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"O3gNbUYYAI3yxeIoAeR/GdYSfHV1/UfcrOc5qVj+xwU="}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:31:23 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/users/authenticate
+    body:
+      encoding: UTF-8
+      string: '{"email":"prova@prova.it","password":"provapw"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:O3gNbUYYAI3yxeIoAeR/GdYSfHV1/UfcrOc5qVj+xwU=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '244'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7d-Hq8SrC9jkVuFdMOWQiKuUw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 28 Dec 2016 09:31:23 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"token":"JxcCOZa5WN/+mTbpL6OMkhCNkCvYlfqM6HQpyvRz9MQ=","user":{"id":105690,"email":"prova@prova.it"}}}'
+    http_version: 
+  recorded_at: Wed, 28 Dec 2016 09:31:24 GMT
+recorded_with: VCR 3.0.3
