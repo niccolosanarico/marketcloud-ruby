@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"nPneqbgZd9jPfJUNzjlRJ1TuggrJamJHudI4n7TpBEI=","timestamp":1483030044}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '195'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-Jj/8How/iBIZOxsZwcr24w"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Thu, 29 Dec 2016 16:47:22 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"6ntoLIjhrWKY7HrjfKR1iUbKGAGgEpVomr90RmZGjMo="}'
+    http_version: 
+  recorded_at: Thu, 29 Dec 2016 16:47:24 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/carts/106825
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - a0d35ddd-a510-41be-b476-c1457753afcc:6ntoLIjhrWKY7HrjfKR1iUbKGAGgEpVomr90RmZGjMo=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '464'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1e7-GtDiY4Drfh6yGrdXDfr66Q"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Thu, 29 Dec 2016 16:47:22 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"created_at":1482840426014,"application_id":11736,"items":[{"price":59.99,"name":"Padella","description":"<p>Un
+        padella bellissima<br/></p>","images":[],"media":[],"published":false,"type":"simple_product","slug":"padella","category_id":105362,"sku":"34532412312412","id":105688,"product_id":105688,"variant_id":0,"display_price":"59.99
+        EUR","requires_shipping":true,"quantity":6}],"status":"open","user_id":105690,"id":106825,"items_total":359.94,"total":359.94}}'
+    http_version: 
+  recorded_at: Thu, 29 Dec 2016 16:47:24 GMT
+recorded_with: VCR 3.0.3
