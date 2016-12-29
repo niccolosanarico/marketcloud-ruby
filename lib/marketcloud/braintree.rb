@@ -9,7 +9,7 @@ module Marketcloud
 		def initialize(attributes, response)
 
 			if !attributes.nil?
-				@token = attributes['token']
+				@token = attributes['clientToken']
 			end
 
 			@response = response
