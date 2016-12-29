@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"WBlOrF/qI0iYOADKDG0In/uvLsyK5FPb3B2or6tknp8=","timestamp":1482917362}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"8FnqNfUbdWxRFrc8ULV+Q8W1/Gg1WFoCMXoX4UHvQdg=","timestamp":1483050818}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '198'
+      - '193'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-d63yk+AeYiJwsYe3zhJejw"
+      - W/"46-32OofS5CMfajZxhhwBTmyA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:21 GMT
+      - Thu, 29 Dec 2016 22:33:37 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"lwZ1J/8sb7tDvXKZdJM1GY3XZqfYq5TdidMCzshDQIY="}'
+      string: '{"status":true,"token":"jp5at8pxXIzny1LVW28gHw8R+R4OIxKuFieat1f+oyQ="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:22 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:38 GMT
 - request:
     method: get
     uri: http://api.marketcloud.it/v0/shippings
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:lwZ1J/8sb7tDvXKZdJM1GY3XZqfYq5TdidMCzshDQIY=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:jp5at8pxXIzny1LVW28gHw8R+R4OIxKuFieat1f+oyQ=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '304'
+      - '287'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e4-XBacM06QJErg7xSXrkxymA"
+      - W/"d4-XH/6tkZd/V8fHgZpMG3RSw"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,10 +78,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:21 GMT
+      - Thu, 29 Dec 2016 22:33:37 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"name":"SDA","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"max_weight":50,"id":106867}],"_links":{"curr":"http://api.marketcloud.it/v0/shippings?"},"count":1,"page":1,"pages":1}'
+      string: '{"status":true,"data":[{"name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"id":107233}],"_links":{"curr":"http://api.marketcloud.it/v0/shippings?"},"count":1,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:23 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:39 GMT
 recorded_with: VCR 3.0.3

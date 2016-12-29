@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"Y9k8hJnhhmVFaWt+o5vG7GATD2O/B7FlMBtcGRkEltE=","timestamp":1482917333}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"2d1teolWbHWUw0Jc17zZpnZUAUi2U8Gcaiq63MHcYrg=","timestamp":1483051008}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '194'
+      - '197'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-vnkxjbiRXflQOoY0dgp69A"
+      - W/"46-jPK7T1c+/wJM1qDLOe9AKw"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,25 +35,25 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:53 GMT
+      - Thu, 29 Dec 2016 22:36:47 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"Hq2REWLdJIrvP4LTerUdZIATQ9Lqe4Mhq6RcKsn14w0="}'
+      string: '{"status":true,"token":"qxZunpsh73uOPwk7QSZ40gYwISY+SfWDK/mbKAXq2vw="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:54 GMT
+  recorded_at: Thu, 29 Dec 2016 22:36:49 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/users/authenticate
     body:
       encoding: UTF-8
-      string: '{"email":"prova@prova.it","password":"provapw"}'
+      string: '{"email":"prova2@prova.it","password":"provapw"}'
     headers:
       User-Agent:
       - Faraday v0.10.0
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:Hq2REWLdJIrvP4LTerUdZIATQ9Lqe4Mhq6RcKsn14w0=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:qxZunpsh73uOPwk7QSZ40gYwISY+SfWDK/mbKAXq2vw=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -68,7 +68,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7d-iS6kCgJbsy6DCUQnjJ895A"
+      - W/"7e-4zQ0BLdhxNICjdCFDN//tg"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,18 +78,18 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:57 GMT
+      - Thu, 29 Dec 2016 22:36:47 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"token":"goPZGteEg3RlQ1LRbOSFDB3/NSJ3IWN1hvVP2xSmt+A=","user":{"id":105690,"email":"prova@prova.it"}}}'
+      string: '{"status":true,"data":{"token":"twyaMrXPk43Se0P3ObBfdgB10Mm1EtH9JNAP7k+BAik=","user":{"id":107237,"email":"prova2@prova.it"}}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+  recorded_at: Thu, 29 Dec 2016 22:36:49 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"QtrWVFxmVEyoKV2je+GHy+g4R9B003OdlXqZPoFB68M=","timestamp":1482917337}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"e4h2zF63a6etYmKGyPoX8dh0cEkXdmDKV4FrwYdJNhM=","timestamp":1483051009}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -105,11 +105,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '192'
+      - '193'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-lXLWZSBvR/lkjD1z4r2sBQ"
+      - W/"46-H9FtZ7C4/tEhWtqSr598Iw"
       Vary:
       - Accept-Encoding
       Server:
@@ -119,18 +119,18 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:55 GMT
+      - Thu, 29 Dec 2016 22:36:48 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"RBfeddvhYI7epaVmxdv8pwEUQo9WV0bawZm+dL4mVG4="}'
+      string: '{"status":true,"token":"qgfkLFz06nhIP3aNAwD15C5ZVs84P8Daz5sblVczCFs="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+  recorded_at: Thu, 29 Dec 2016 22:36:49 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/addresses
     body:
       encoding: UTF-8
-      string: '{"full_name":"Pinco Pallo","user_id":105690,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
+      string: '{"full_name":"Pinco Pallo","user_id":107237,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
         Vittor Pisani 13","postal_code":"20127"}'
     headers:
       User-Agent:
@@ -138,7 +138,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:RBfeddvhYI7epaVmxdv8pwEUQo9WV0bawZm+dL4mVG4=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:qgfkLFz06nhIP3aNAwD15C5ZVs84P8Daz5sblVczCFs=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -149,11 +149,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '296'
+      - '291'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"da-Vs6RaWn6QA1BYtCGIlO3rA"
+      - W/"db-zDiUA/w5/v9wtyjg4vgdxg"
       Vary:
       - Accept-Encoding
       Server:
@@ -163,11 +163,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:56 GMT
+      - Thu, 29 Dec 2016 22:36:48 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"full_name":"Pinco Pallo","user_id":105690,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
-        Vittor Pisani 13","postal_code":"20127","application_id":11736,"id":106972}}'
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","user_id":107237,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
+        Vittor Pisani 13","postal_code":"20127","application_id":107224,"id":107239}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+  recorded_at: Thu, 29 Dec 2016 22:36:49 GMT
 recorded_with: VCR 3.0.3

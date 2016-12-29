@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"AApOdVCscSAL2wvKUHFiiwuoKW66xkOFrUlCzVW/ESM=","timestamp":1482917329}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"4oAjP5TGgkQrP9Km7B7eXmqcH0iJropcIAC7ZF2YBcA=","timestamp":1483050807}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '197'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-pnf1AguZLyan2H+eVvIHtg"
+      - W/"46-7U9JnfOL15mFi5EzjJRqmA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,15 +35,15 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:51 GMT
+      - Thu, 29 Dec 2016 22:33:26 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"tOnWxZJE3etA9/N0jmcoATlmeLj7hxb95yXF5b/UJ38="}'
+      string: '{"status":true,"token":"uz7+JZhCH6VzRQI48H7ebvkJpaqT6D+OR7fzF59KcKM="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:52 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/addresses?user_id105690
+    uri: http://api.marketcloud.it/v0/addresses?user_id107227
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:tOnWxZJE3etA9/N0jmcoATlmeLj7hxb95yXF5b/UJ38=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:uz7+JZhCH6VzRQI48H7ebvkJpaqT6D+OR7fzF59KcKM=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '443'
+      - '475'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"2c0-wYImNoaRnG9913u1IkDGCw"
+      - W/"373-ZdDMjxxMLJVcpg8AqOFd8A"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,12 +78,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:51 GMT
+      - Thu, 29 Dec 2016 22:33:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"full_name":"Pinco Pallo","id":106859,"user_id":105690,"address1":"Via
-        Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":11736},{"full_name":"Pinco
-        Pallo","id":106858,"user_id":105690,"address1":"Via Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":11736}],"_links":{"curr":"http://api.marketcloud.it/v0/addresses?user_id105690=0&"},"count":2,"page":1,"pages":1}'
+      string: '{"status":true,"data":[{"full_name":"Pinco Pallo","id":107234,"user_id":null,"address1":"via
+        Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20124","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.it","vat":null,"application_id":107224},{"full_name":"ad","id":107231,"user_id":0,"address1":"ad","address2":"ad","city":"ad","country":"ad","postal_code":"ad","company":null,"phone_number":"ad","alternate_phone_number":"ad","email":"ad","vat":"ad","application_id":107224},{"full_name":"ad","id":107230,"user_id":0,"address1":"ad","address2":"ad","city":"ad","country":"ad","postal_code":"ad","company":null,"phone_number":"ad","alternate_phone_number":"ad","email":"ad","vat":"ad","application_id":107224}],"_links":{"curr":"http://api.marketcloud.it/v0/addresses?user_id107227=0&"},"count":3,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:53 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
 recorded_with: VCR 3.0.3

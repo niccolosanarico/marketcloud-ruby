@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"DAdeoGn/DjxLBBqy626UhK8kN/h54w7aJx6iLd++mLs=","timestamp":1482917356}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"gTdo48YPvZGutt9cGS8wsU2QQBFZFLoXAaoKwmSwHfw=","timestamp":1483051896}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '196'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-DHvwxnB3bC93C6WYtA19uA"
+      - W/"46-GMGvRK6dNJ7OgIl3GG8z9w"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,25 +35,25 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:15 GMT
+      - Thu, 29 Dec 2016 22:51:36 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"g0tCfJ7ZkBssK/G+Rcc9SBnhgtVIRFEaVo25d7y/Kgs="}'
+      string: '{"status":true,"token":"1gpzyAGEPHDd27urK/OEk5rxjWY2QU7Tyv/mMfq8WKo="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:17 GMT
+  recorded_at: Thu, 29 Dec 2016 22:51:36 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/orders
     body:
       encoding: UTF-8
-      string: '{"cart_id":106974,"user_id":105690,"shipping_address_id":106859,"billing_address_id":106859,"shipping_id":106867}'
+      string: '{"cart_id":107243,"user_id":107227,"shipping_address_id":107234,"billing_address_id":107234,"shipping_id":107233}'
     headers:
       User-Agent:
       - Faraday v0.10.0
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:g0tCfJ7ZkBssK/G+Rcc9SBnhgtVIRFEaVo25d7y/Kgs=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:1gpzyAGEPHDd27urK/OEk5rxjWY2QU7Tyv/mMfq8WKo=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '1097'
+      - '906'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"74c-OCrvHc7LRGTtIWx4zGz0aA"
+      - W/"621-CsS/T4aronWFxHLGxdymhw"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,16 +78,14 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:16 GMT
+      - Thu, 29 Dec 2016 22:51:36 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"items":[{"product_id":11744,"quantity":2,"variant_id":0}],"shipping_address":{"full_name":"Pinco
-        Pallo","id":106859,"user_id":105690,"address1":"Via Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"billing_address":{"full_name":"Pinco
-        Pallo","id":106859,"user_id":105690,"address1":"Via Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"shipping":{"_id":"5862bcbdf0a1c8622c9411f0","name":"SDA","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"max_weight":50,"id":106867,"application_id":11736},"user":{"email":"prova@prova.it","name":"prova","created_at":"2016-12-19T22:31:16.906Z","id":105690,"registered_with":"marketcloud"},"application_id":11736,"cart_id":106974,"shipping_id":106867,"user_id":105690,"products":[{"price":925.11,"name":"Impastatrice
-        a testa fissa","description":"<p>&#34;Impastatrice a testa fissa - costruzione
-        in acciaio inox verniciato bianco -vasca, coper-chio, spirale e spacca pasta
-        in acciaio AISI304&#34;</p>","images":["https://shop.coalca.it/spree/products/216/product/SK_10.jpg"],"variants":[],"is_master":true,"has_variants":false,"published":true,"sku":"0000778405199","stock_type":"infinite","variantsDefinition":{},"id":11744,"product_id":11744,"variant_id":0,"stock_level":null,"stock_status":null,"type":"simple_product","media":[],"display_price":"925.11
-        EUR","category_id":104429,"requires_shipping":true,"quantity":2}],"items_total":1850.22,"shipping_total":17,"taxes_total":410.79,"total":2278.01,"created_at":1482917358655,"status":"pending","id":106975,"_id":"586385eef0a1c8622c9416b9"}}'
+      string: '{"status":true,"data":{"items":[{"product_id":107226,"quantity":2,"variant_id":0}],"shipping_address":{"full_name":"Pinco
+        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"billing_address":{"full_name":"Pinco
+        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"shipping":{"_id":"58658e4cf0a1c8622c942803","name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"id":107233,"application_id":107224},"user":{"name":"Pinco
+        Pallo","created_at":"2016-12-29T22:10:50.905Z","registered_with":"marketcloud","email":"pinco@pallo.it","id":107227},"application_id":107224,"cart_id":107243,"shipping_id":107233,"user_id":107227,"products":[{"price":99.99,"name":"Pentola","description":"<p>Una
+        bellissima pentola<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107225,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"quantity":2}],"items_total":199.98,"shipping_total":17,"taxes_total":47.74,"total":264.72,"created_at":1483051896846,"status":"pending","id":107244,"_id":"58659378f0a1c8622c94287c"}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:18 GMT
+  recorded_at: Thu, 29 Dec 2016 22:51:37 GMT
 recorded_with: VCR 3.0.3

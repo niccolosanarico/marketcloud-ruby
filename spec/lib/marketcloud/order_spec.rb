@@ -1,12 +1,12 @@
 require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Order do
-	let(:user_id) { 105690 }
-	let(:prod_id) { 11744 }
-	let(:order_id) { 106869 }
-	let(:shipping_address_id) { 106859 }
-	let(:billing_address_id) { 106859 }
-	let(:shipping_id) { 106867 }
+	let(:user_id) { 107227 }
+	let(:prod_id) { 107226 }
+	let(:order_id) { 107236 }
+	let(:shipping_address_id) { 107234 }
+	let(:billing_address_id) { 107234 }
+	let(:shipping_id) { 107233 }
 
 	let(:cart) {
 		VCR.use_cassette('order_new_cart') {

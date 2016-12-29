@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"QtrWVFxmVEyoKV2je+GHy+g4R9B003OdlXqZPoFB68M=","timestamp":1482917337}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OA9Yn8H2k0WMFyNf4PQ0a6T1l1OMBfbxel/IHqt4A6o=","timestamp":1483050808}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '196'
+      - '195'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-9eg8s5q5GKSA8t7XZdyJxg"
+      - W/"46-3674ayTZLZPgfFD52Pj8qQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,15 +35,15 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:28:56 GMT
+      - Thu, 29 Dec 2016 22:33:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"XSQqMhlnf5eIG2JNL39zF4sPEqgyYwjCZhFRrw41q8U="}'
+      string: '{"status":true,"token":"1moKDk7GE/r03JcIbjvqN3MG0Qqudw6u6/KrAjLR2Po="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:28:57 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/addresses/106858
+    uri: http://api.marketcloud.it/v0/addresses/107234
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:XSQqMhlnf5eIG2JNL39zF4sPEqgyYwjCZhFRrw41q8U=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:1moKDk7GE/r03JcIbjvqN3MG0Qqudw6u6/KrAjLR2Po=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '341'
+      - '333'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"135-XDr7A6Nj6QwQf9FEkclgzw"
+      - W/"134-sCxZkftpaUHVEr+Gls8yhQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,19 +78,19 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:00 GMT
+      - Thu, 29 Dec 2016 22:33:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":106858,"user_id":105690,"address1":"Via
-        Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":11736}}'
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":null,"address1":"via
+        Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20124","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.it","vat":null,"application_id":107224}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:01 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"l0gvX/1W+Orf9N5a0AUvLky2avAwiL1AuMwAoS28nGM=","timestamp":1482917341}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OA9Yn8H2k0WMFyNf4PQ0a6T1l1OMBfbxel/IHqt4A6o=","timestamp":1483050808}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -110,7 +110,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-Y1aELJdu5Wl8emso3qzT0w"
+      - W/"46-JjMyDKwX3lbXhM7g13lJ7g"
       Vary:
       - Accept-Encoding
       Server:
@@ -120,18 +120,18 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:01 GMT
+      - Thu, 29 Dec 2016 22:33:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"14Hu2crdJdCz/II3XPAjZyzgSmzWmFSaSgbxa+ytX6E="}'
+      string: '{"status":true,"token":"3JXr8otVjwgObZLNqwcrqcbPyqjLiykSezk3ff7a2bU="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:01 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:29 GMT
 - request:
     method: put
-    uri: http://api.marketcloud.it/v0/addresses/106858
+    uri: http://api.marketcloud.it/v0/addresses/107234
     body:
       encoding: UTF-8
-      string: '{"full_name":"Pinco Pallo","user_id":105690,"email":"pinco@pallo.com","country":"Norway","city":"Oslo","address1":"Via
+      string: '{"full_name":"Pinco Pallo","user_id":107227,"email":"pinco@pallo.com","country":"Norway","city":"Oslo","address1":"Via
         Vittor Pisani 13","postal_code":"20127"}'
     headers:
       User-Agent:
@@ -139,7 +139,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:14Hu2crdJdCz/II3XPAjZyzgSmzWmFSaSgbxa+ytX6E=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:3JXr8otVjwgObZLNqwcrqcbPyqjLiykSezk3ff7a2bU=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -150,11 +150,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '341'
+      - '335'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"135-XDr7A6Nj6QwQf9FEkclgzw"
+      - W/"136-kUZWGP4xEeo+m/+qCe33bw"
       Vary:
       - Accept-Encoding
       Server:
@@ -164,11 +164,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:00 GMT
+      - Thu, 29 Dec 2016 22:33:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":106858,"user_id":105690,"address1":"Via
-        Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":11736}}'
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":107227,"address1":"Via
+        Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":107224}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:01 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:29 GMT
 recorded_with: VCR 3.0.3

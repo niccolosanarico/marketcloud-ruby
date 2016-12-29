@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"l0gvX/1W+Orf9N5a0AUvLky2avAwiL1AuMwAoS28nGM=","timestamp":1482917341}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"cVnjBtitut95BB+O0PgwEExrW76pYj+sEHe6gledWjo=","timestamp":1483051235}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '196'
+      - '195'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-qOGqpWj4kexPss2nDFz5Yw"
+      - W/"46-thKo4n5+mfjuFCq9G3oKaw"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,25 +35,25 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:00 GMT
+      - Thu, 29 Dec 2016 22:40:33 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"QfEpkLE6nyz3hCD+yeAkz1QDtzO6QqSRo7QJ7SAFKk8="}'
+      string: '{"status":true,"token":"FIhLcq5zEy007qetELSvTzlz2EBkLCu6GiEfHSXZZ+8="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:01 GMT
+  recorded_at: Thu, 29 Dec 2016 22:40:35 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/users/authenticate
     body:
       encoding: UTF-8
-      string: '{"email":"prova@prova.it","password":"provapw"}'
+      string: '{"email":"prova2@prova.it","password":"provapw"}'
     headers:
       User-Agent:
       - Faraday v0.10.0
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:QfEpkLE6nyz3hCD+yeAkz1QDtzO6QqSRo7QJ7SAFKk8=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:FIhLcq5zEy007qetELSvTzlz2EBkLCu6GiEfHSXZZ+8=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '240'
+      - '244'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7d-9IFJQUCBnS8Tm5IZOY7uEg"
+      - W/"7e-fa4nJAs8xfa/iEgxBZYafA"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,18 +78,18 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:03 GMT
+      - Thu, 29 Dec 2016 22:40:34 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"token":"0/2u7XLqzCenhzy13yqM0wLaOwnidAxOCUerloclYFs=","user":{"id":105690,"email":"prova@prova.it"}}}'
+      string: '{"status":true,"data":{"token":"NDJqFYCCKbARaYbFl2MY3u/LQJ8cvD1QvoL6SWtdyf4=","user":{"id":107237,"email":"prova2@prova.it"}}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:04 GMT
+  recorded_at: Thu, 29 Dec 2016 22:40:36 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"gGsz1GSi/bZ1N8VKu4BuDoGWsmdhWW6K7JFIJ/nnUBE=","timestamp":1482917344}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"z0OfaEZ8PYjZL3yLaOAIbCOTrXzRs4xeay7RlVXRbOM=","timestamp":1483051236}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -109,7 +109,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-fAqTfrLPh3MTg4H3x8RvZQ"
+      - W/"46-8lVlxzNlcbWhSIGLsr+WzA"
       Vary:
       - Accept-Encoding
       Server:
@@ -119,15 +119,15 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:03 GMT
+      - Thu, 29 Dec 2016 22:40:34 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"f1/n4tfM/ZSMNwaI17HbnPX6dY+rzTpHD6IAPzgBRGc="}'
+      string: '{"status":true,"token":"8bKwxcdwk2TBslvQ45g7PA3q+OUDBHuQsLn9b52NA+k="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:05 GMT
+  recorded_at: Thu, 29 Dec 2016 22:40:36 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/carts?user_id=105690
+    uri: http://api.marketcloud.it/v0/carts?user_id=107237
     body:
       encoding: US-ASCII
       string: ''
@@ -137,7 +137,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:f1/n4tfM/ZSMNwaI17HbnPX6dY+rzTpHD6IAPzgBRGc=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:8bKwxcdwk2TBslvQ45g7PA3q+OUDBHuQsLn9b52NA+k=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -148,11 +148,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '793'
+      - '227'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"520-Cii9vyo7ktenSzkgEHmvAw"
+      - W/"85-Po5RInDKsUp/D1u7YXCyQQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -162,16 +162,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:04 GMT
+      - Thu, 29 Dec 2016 22:40:34 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"created_at":1482865767962,"application_id":11736,"items":[{"product_id":11744,"quantity":2,"variant_id":0,"price":925.11,"name":"Impastatrice
-        a testa fissa","description":"<p>&#34;Impastatrice a testa fissa - costruzione
-        in acciaio inox verniciato bianco -vasca, coper-chio, spirale e spacca pasta
-        in acciaio AISI304&#34;</p>","images":["https://shop.coalca.it/spree/products/216/product/SK_10.jpg"],"variants":[],"is_master":true,"has_variants":false,"published":true,"sku":"0000778405199","stock_type":"infinite","variantsDefinition":{},"id":11744,"stock_level":null,"stock_status":null,"type":"simple_product","media":[],"display_price":"925.11
-        EUR","category_id":104429,"requires_shipping":true}],"status":"closed","user_id":105690,"id":106866},{"created_at":1482856621686,"application_id":11736,"items":[],"status":"open","user_id":105690,"id":106854},{"created_at":1482840426014,"application_id":11736,"items":[{"product_id":105688,"quantity":2,"variant_id":0,"price":59.99,"name":"Padella","description":"<p>Un
-        padella bellissima<br/></p>","images":[],"media":[],"published":false,"type":"simple_product","slug":"padella","category_id":105362,"sku":"34532412312412","id":105688,"display_price":"59.99
-        EUR","requires_shipping":true}],"status":"open","user_id":105690,"id":106825}]}'
+      string: '{"status":true,"data":[{"created_at":1483051136481,"application_id":107224,"items":[],"status":"open","user_id":107237,"id":107240}]}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:05 GMT
+  recorded_at: Thu, 29 Dec 2016 22:40:36 GMT
 recorded_with: VCR 3.0.3

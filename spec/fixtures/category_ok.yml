@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/categories/104429
+    uri: http://api.marketcloud.it/v0/categories/107225
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc
+      - e8152fe2-237a-4360-8ad2-f3773082226c
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '246'
+      - '231'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b7-OxOoFtZkscP6HvmG/kXSDQ"
+      - W/"a3-az7PJb8uGX7rebBdX6JQAw"
       Vary:
       - Accept-Encoding
       Server:
@@ -37,11 +37,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:10 GMT
+      - Thu, 29 Dec 2016 22:33:32 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"id":104429,"name":"Per impastare","description":null,"image_url":null,"url":null,"parent_id":104428,"path":"/Macchinari/Per
-        impastare","application_id":11736}}'
+      string: '{"status":true,"data":{"id":107225,"name":"Minuteria","description":null,"image_url":null,"url":null,"parent_id":null,"path":"/Minuteria","application_id":107224}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:11 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:33 GMT
 recorded_with: VCR 3.0.3

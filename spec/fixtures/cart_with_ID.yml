@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"rziey99IxtUzbVdnN4U0wiCbW52n+7id1ZNbe0axSZM=","timestamp":1482917345}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"623pshIGiQnAE6RBUddhELIXELq7bQ6Ur3y2WJmhUe8=","timestamp":1483050810}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '194'
+      - '192'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-z+7I0PH1R1lpMN2Ha2EgTA"
+      - W/"46-gSYwAVPLo2EjZUUpBr9Hxg"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,15 +35,15 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:05 GMT
+      - Thu, 29 Dec 2016 22:33:29 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"BvFs0R/Ylne6s9o6Z95QGO+CSh5KZriMgJtQYiqiAto="}'
+      string: '{"status":true,"token":"Sk7IAKmF/iWyN2CFD2plhHb4wx6b3FxD1r2RzOugTP4="}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:05 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:31 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/carts/106825
+    uri: http://api.marketcloud.it/v0/carts/107232
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:BvFs0R/Ylne6s9o6Z95QGO+CSh5KZriMgJtQYiqiAto=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:Sk7IAKmF/iWyN2CFD2plhHb4wx6b3FxD1r2RzOugTP4=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '463'
+      - '241'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"1e7-6bFdeG6MhRYxtWud961j+g"
+      - W/"9d-Wb7gvF7/7/U74FHR3Ue3xQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,12 +78,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Wed, 28 Dec 2016 09:29:05 GMT
+      - Thu, 29 Dec 2016 22:33:29 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"created_at":1482840426014,"application_id":11736,"items":[{"price":59.99,"name":"Padella","description":"<p>Un
-        padella bellissima<br/></p>","images":[],"media":[],"published":false,"type":"simple_product","slug":"padella","category_id":105362,"sku":"34532412312412","id":105688,"product_id":105688,"variant_id":0,"display_price":"59.99
-        EUR","requires_shipping":true,"quantity":2}],"status":"open","user_id":105690,"id":106825,"items_total":119.98,"total":119.98}}'
+      string: '{"status":true,"data":{"created_at":1483050364666,"application_id":107224,"items":[],"status":"open","user_id":107227,"id":107232,"items_total":0,"total":0}}'
     http_version: 
-  recorded_at: Wed, 28 Dec 2016 09:29:05 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:31 GMT
 recorded_with: VCR 3.0.3

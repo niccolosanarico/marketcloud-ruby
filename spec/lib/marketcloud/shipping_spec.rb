@@ -1,8 +1,8 @@
 require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Shipping do
-	let(:ship_id) { 106867 }
-	let(:ship_name) { "SDA" }
+	let(:ship_id) { 107233 }
+	let(:ship_name) { "DHL" }
 
 	describe 'a GET on a valid shipping method' do
 	  let(:shipping) { VCR.use_cassette('shipping') { Marketcloud::Shipping.find(ship_id) }}

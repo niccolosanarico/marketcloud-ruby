@@ -1,10 +1,10 @@
 ---
 http_interactions:
 - request:
-    method: get
+    method: post
     uri: http://api.marketcloud.it/v0/integrations/braintree/clientToken
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
       User-Agent:
@@ -12,22 +12,26 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc
+      - e8152fe2-237a-4360-8ad2-f3773082226c
+      Content-Length:
+      - '0'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Content-Length:
-      - '127'
+      - '1364'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7f-4uDKlfdsDqAiKxuQ9wo4oQ"
+      - W/"6c1-qGzhIFEQ/M2m3vFFfpwRsg"
+      Vary:
+      - Accept-Encoding
       Server:
       - Microsoft-IIS/8.0
       X-Powered-By:
@@ -35,11 +39,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 21:56:18 GMT
+      - Thu, 29 Dec 2016 22:33:28 GMT
     body:
-      encoding: UTF-8
-      string: '{"status":false,"errors":[{"code":404,"message":"The requested path
-        (/v0/integrations/braintree/clientToken) does not exist"}]}'
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"clientToken":"eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJkNzJiMzkyM2U2MTQzMjA2OGJmMGMyYjE4MTM1YzA0MDZmNGNiZGU3ZGM2NWVhZTk1MzM2NTg4YjdmMjZmNDBhfGNyZWF0ZWRfYXQ9MjAxNi0xMi0yOVQyMjozMzozMC4xNzQ1MDc0MTArMDAwMFx1MDAyNm1lcmNoYW50X2lkPTVmZHBka21mczVnbXF4anhcdTAwMjZwdWJsaWNfa2V5PXNidnBxd3k1andremJiejQiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvNWZkcGRrbWZzNWdtcXhqeC9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzLzVmZHBka21mczVnbXF4angvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tLzVmZHBka21mczVnbXF4angifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoiQ29hbGNhIHNybCIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwiYnJhaW50cmVlQ2xpZW50SWQiOiJtYXN0ZXJjbGllbnQzIiwiYmlsbGluZ0FncmVlbWVudHNFbmFibGVkIjp0cnVlLCJtZXJjaGFudEFjY291bnRJZCI6InZ4enZ4NW1zOTlkY21ybjQiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6IjVmZHBka21mczVnbXF4angiLCJ2ZW5tbyI6Im9mZiJ9"}}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 21:56:19 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:30 GMT
 recorded_with: VCR 3.0.3

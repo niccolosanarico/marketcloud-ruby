@@ -2,9 +2,9 @@ require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Address do
 
-	let(:user_id)    { 105690 }
+	let(:user_id)    { 107227 }
   let(:addr_name)  { "Pinco Pallo" }
-	let(:addr_id)    { 106858 }
+	let(:addr_id)    { 107234 }
 
 	describe 'a GET on a valid address' do
 	  let(:address) { VCR.use_cassette('address') { Marketcloud::Address.find(addr_id) }}
@@ -33,7 +33,7 @@ RSpec.describe Marketcloud::Address do
 	describe 'a POST for a new address' do
     let(:address) {
       VCR.use_cassette('address_creation') {
-        user = Marketcloud::User.authenticate('prova@prova.it', 'provapw')
+        user = Marketcloud::User.authenticate('prova2@prova.it', 'provapw')
         Marketcloud::Address.create(
                         {
                           full_name: "Pinco Pallo",

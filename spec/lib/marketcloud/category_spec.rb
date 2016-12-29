@@ -1,16 +1,17 @@
 require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Category do
+	let(:cat_id) { 107225 }
 
 	describe 'a GET on a valid category' do
-		let(:category) { VCR.use_cassette('category_ok') { Marketcloud::Category.find(104429) }}
+		let(:category) { VCR.use_cassette('category_ok') { Marketcloud::Category.find(cat_id) }}
 
 		it 'should return 200' do
 			expect(category.response.status).to eq 200
 		end
 
 		it 'answers to find with a valid category' do
-		  expect(category.name).to eq "Per impastare"
+		  expect(category.name).to eq "Minuteria"
 		end
 	end
 

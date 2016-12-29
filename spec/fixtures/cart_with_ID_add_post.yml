@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"a0d35ddd-a510-41be-b476-c1457753afcc","secretKey":"nPneqbgZd9jPfJUNzjlRJ1TuggrJamJHudI4n7TpBEI=","timestamp":1483030044}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"MwsMfl0PIe/wjwvtOKXYcafbwsLK/Maa7Bga46uTk1E=","timestamp":1483050812}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '194'
+      - '191'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-9B2y6nv9SUlMchLRTehgxw"
+      - W/"46-o/CdWB7CVw/AKCA3C5U9ZQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,25 +35,25 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 16:47:23 GMT
+      - Thu, 29 Dec 2016 22:33:31 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"g7x6x+dud0ksajaE3PcVnx5e6VmpfujGjV9+VglqOj0="}'
+      string: '{"status":true,"token":"WhEyFBJ2aL4trs18LGm24+HYSeIACt1c45mlPA1IPyk="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 16:47:25 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:32 GMT
 - request:
     method: patch
-    uri: http://api.marketcloud.it/v0/carts/106825
+    uri: http://api.marketcloud.it/v0/carts/107232
     body:
       encoding: UTF-8
-      string: '{"op":"add","items":[{"product_id":105688,"quantity":2}]}'
+      string: '{"op":"add","items":[{"product_id":107226,"quantity":2}]}'
     headers:
       User-Agent:
       - Faraday v0.10.0
       Content-Type:
       - application/json
       Authorization:
-      - a0d35ddd-a510-41be-b476-c1457753afcc:g7x6x+dud0ksajaE3PcVnx5e6VmpfujGjV9+VglqOj0=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:WhEyFBJ2aL4trs18LGm24+HYSeIACt1c45mlPA1IPyk=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '419'
+      - '463'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"1a5-aGnWWimqRjHoG/c1gl807A"
+      - W/"1e9-S3CTDZ0smXAyz+xaQKrUnA"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,12 +78,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 16:47:23 GMT
+      - Thu, 29 Dec 2016 22:33:32 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"items":[{"price":59.99,"name":"Padella","description":"<p>Un
-        padella bellissima<br/></p>","images":[],"media":[],"published":false,"type":"simple_product","slug":"padella","category_id":105362,"sku":"34532412312412","id":105688,"product_id":105688,"variant_id":0,"display_price":"59.99
-        EUR","requires_shipping":true,"quantity":8}],"id":106825,"user_id":105690,"items_total":479.92,"total":479.92}}'
+      string: '{"status":true,"data":{"items":[{"price":99.99,"name":"Pentola","description":"<p>Una
+        bellissima pentola<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107225,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"product_id":107226,"variant_id":0,"quantity":4}],"id":107232,"user_id":107227,"items_total":399.96,"total":399.96}}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 16:47:25 GMT
+  recorded_at: Thu, 29 Dec 2016 22:33:33 GMT
 recorded_with: VCR 3.0.3

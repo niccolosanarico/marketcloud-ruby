@@ -1,8 +1,8 @@
 require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Product do
-	let(:prod_id) { 11744 }
-	let(:cat_id) { 104429 }
+	let(:prod_id) { 107226 }
+	let(:cat_id) { 107225 }
 
 	describe 'a GET on a valid product' do
 	  let(:product) { VCR.use_cassette('product') { Marketcloud::Product.find(prod_id) }}
@@ -12,7 +12,7 @@ RSpec.describe Marketcloud::Product do
 		end
 
 		it 'answers to find with a valid product' do
-		  expect(product.name).to eq "Impastatrice a testa fissa"
+		  expect(product.name).to eq "Pentola"
 		end
 
 	end
