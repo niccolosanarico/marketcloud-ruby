@@ -18,7 +18,7 @@ module Marketcloud
 		#
 		#
 		#
-		def update!(items)
+		def update(items)
 			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
 				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
@@ -41,15 +41,15 @@ module Marketcloud
 				return nil
 			end
 
-			#update the cart
-			self.items = attributes["data"]["items"]
+			#return an updated cart
+			Cart.new(attributes["data"])
 		end
 
 
 		#
 		# Add merges the quantity of existing products in the cart
 		#
-		def add!(items)
+		def add(items)
 			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
 				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
@@ -62,7 +62,7 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 				req.body = {
 					op: "add",
-					items: items
+					items: items.map { |item| { product_id: item["product_id"], quantity: item["quantity"] } }
 				}.to_json
 			end
 
@@ -73,7 +73,7 @@ module Marketcloud
 			end
 
 			#added to the cart
-			self.items = attributes["data"]["items"]
+			Cart.new(attributes["data"])
 		end
 
 
@@ -138,7 +138,7 @@ module Marketcloud
 		#
 		# Create a cart without products in it
 		#
-		def self.create(user_id)
+		def self.create(user_id=nil)
 			query = Faraday.new(url: "#{API_URL}/carts") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
 				# faraday.response :logger                  # log requests to STDOUT

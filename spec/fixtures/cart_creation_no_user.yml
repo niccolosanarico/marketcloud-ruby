@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"YuJ7AnuB6Sa8TgoKZdJ7YJd5AENsCkmDPDoAV0CJySw=","timestamp":1483123149}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '193'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-AoMUxWKE/kS0jio1euziag"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Fri, 30 Dec 2016 18:39:08 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"MotPkcWim1wUqy1StrRmueOjmf4jd/HHBaq8ZsYLhOk="}'
+    http_version: 
+  recorded_at: Fri, 30 Dec 2016 18:39:09 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/carts
+    body:
+      encoding: UTF-8
+      string: '{"user_id":null,"items":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:MotPkcWim1wUqy1StrRmueOjmf4jd/HHBaq8ZsYLhOk=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '240'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b-ITPDhhD8QKvz8GK46n++5w"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Fri, 30 Dec 2016 18:39:08 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"created_at":1483123149430,"application_id":107224,"items":[],"status":"open","user_id":null,"id":107384,"items_total":0,"total":0}}'
+    http_version: 
+  recorded_at: Fri, 30 Dec 2016 18:39:10 GMT
+recorded_with: VCR 3.0.3

@@ -40,18 +40,17 @@ RSpec.describe Marketcloud::Cart do
 
 	end
 
-	describe 'a PUT should update a cart' do
+	describe 'a PATCH should update a cart' do
 
 		context 'with UPDATE it should update the products' do
 
 			let(:cart) {
 				VCR.use_cassette('cart_with_ID_update') {
 					cart = Marketcloud::Cart.find(cart_id)
-					cart.update!([{
+					cart.update([{
 							product_id: product_id,
 							quantity: product_quantity
 						}])
-					cart
 				}
 			}
 
@@ -67,9 +66,6 @@ RSpec.describe Marketcloud::Cart do
 				expect(cart.items.length).to eq 1
 			end
 		end
-	end
-
-	describe 'a PATCH should update a cart' do
 
 		context 'with ADD it should add the products' do
 
@@ -85,11 +81,10 @@ RSpec.describe Marketcloud::Cart do
 
 			let(:updated_cart) {
 				VCR.use_cassette('cart_with_ID_add_post') {
-					cart.add!([{
+					cart.add([{
 							product_id: product_id,
 							quantity: product_quantity
 						}])
-					cart
 				}
 			}
 
@@ -103,11 +98,27 @@ RSpec.describe Marketcloud::Cart do
 		end
 	end
 
-	describe 'Using a POST to create a new cart' do
+	describe 'Using a POST to create a new cart with a user' do
 		let(:cart) {
 			VCR.use_cassette('cart_creation') {
 				user = Marketcloud::User.find_by_email('prova2@prova.it')
 				Marketcloud::Cart.create(user.id)
+			}
+		}
+
+		it 'should return 200' do
+			expect(cart).not_to be_nil
+		end
+
+		it 'should not contain products' do
+			expect(cart.items.length).to eq 0
+		end
+	end
+
+	describe 'Using a POST to create a new cart with no user' do
+		let(:cart) {
+			VCR.use_cassette('cart_creation_no_user') {
+				Marketcloud::Cart.create()
 			}
 		}
 
