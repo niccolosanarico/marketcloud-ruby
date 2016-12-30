@@ -24,7 +24,7 @@ module Marketcloud
 				}.to_json
 			end
 
-			if response.status != 200
+			if response.body.status == false
 				Marketcloud.logger.error(response.body)
 				return nil
 			end
