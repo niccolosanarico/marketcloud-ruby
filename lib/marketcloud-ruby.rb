@@ -15,6 +15,11 @@ require_relative 'marketcloud/user'
 API_URL = "http://api.marketcloud.it/v0"
 
 module Marketcloud
+  class NotFound < StandardError; end
+  class BadRequest < StandardError; end
+  class Anauthorized < StandardError; end
+  class InternalServerError < StandardError; end
+
   class << self
     attr_accessor :configuration
   end
