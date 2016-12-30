@@ -96,6 +96,37 @@ RSpec.describe Marketcloud::Cart do
 				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity+initial_quantity
 			end
 		end
+
+		context 'with ADD! it should add the products and modify the original object' do
+
+			let(:cart) {
+				VCR.use_cassette('cart_with_ID_add_') {
+					Marketcloud::Cart.find(cart_id)
+				}
+			}
+
+			let!(:initial_quantity) {
+				cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
+			}
+
+			let(:updated_cart) {
+				VCR.use_cassette('cart_with_ID_add__post') {
+					cart.add!([{
+							product_id: product_id,
+							quantity: product_quantity
+						}])
+					cart
+				}
+			}
+
+			it 'should return 200' do
+				expect(updated_cart).not_to be_nil
+			end
+
+			it 'should update the product quantity' do
+				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity+initial_quantity
+			end
+		end
 	end
 
 	describe 'Using a POST to create a new cart with a user' do

@@ -10,6 +10,7 @@ require_relative 'marketcloud/payment'
 require_relative 'marketcloud/product'
 require_relative 'marketcloud/shipping'
 require_relative 'marketcloud/user'
+require 'logger'
 
 
 API_URL = "http://api.marketcloud.it/v0"

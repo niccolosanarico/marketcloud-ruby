@@ -83,6 +83,38 @@ module Marketcloud
 			Cart.new(attributes["data"])
 		end
 
+		#
+		# Add merges the quantity of existing products in the cart
+		#
+		# With hashbang modifies caller
+		#
+		def add!(items)
+			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
+				faraday.request  :url_encoded             # form-encode POST params
+				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			end
+
+			auth = Marketcloud::Authentication.get_token()
+
+			response = query.patch do |req|
+				req.headers['Content-Type'] = 'application/json'
+				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
+				req.body = {
+					op: "add",
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
+				}.to_json
+			end
+
+			attributes = JSON.parse(response.body)
+
+			if response.status != 200
+				Marketcloud.logger.error(response.body)
+				return nil
+			end
+
+			#added to the cart
+			self.items = attributes["data"]["items"]
+		end
 
 		# CLASS METHODS
 
