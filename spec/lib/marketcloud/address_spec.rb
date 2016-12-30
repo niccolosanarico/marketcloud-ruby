@@ -33,7 +33,7 @@ RSpec.describe Marketcloud::Address do
 	describe 'a POST for a new address' do
     let(:address) {
       VCR.use_cassette('address_creation') {
-        user = Marketcloud::User.authenticate('prova2@prova.it', 'provapw')
+        user = Marketcloud::User.find_by_email('prova2@prova.it')
         Marketcloud::Address.create(
                         {
                           full_name: "Pinco Pallo",

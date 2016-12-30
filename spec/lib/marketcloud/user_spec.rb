@@ -2,6 +2,7 @@ require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::User do
 	let(:user_id) { 107227 }
+	let(:user_email) { "prova2@prova.it" }
 
 	describe 'a GET on a valid user' do
 	  let(:user) { VCR.use_cassette('user') { Marketcloud::User.find(user_id) }}
@@ -13,7 +14,18 @@ RSpec.describe Marketcloud::User do
 		it 'answers to find with a valid user' do
 		  expect(user.name).to eq "Pinco Pallo"
 		end
+	end
 
+	describe 'a GET on a valid user by email' do
+	  let(:user) { VCR.use_cassette('user_by_email') { Marketcloud::User.find_by_email(user_email) }}
+
+		it 'should return 200' do
+			expect(user.response.status).to eq 200
+		end
+
+		it 'answers to find with a valid user' do
+		  expect(user.name).to eq "prova"
+		end
 	end
 
 	describe 'a POST creating a new user' do
@@ -29,7 +41,11 @@ RSpec.describe Marketcloud::User do
 	end
 
 	describe 'a POST authenticating a user' do
-		let(:auth_user) { VCR.use_cassette('user_authenticate') { Marketcloud::User.authenticate('prova2@prova.it', 'provapw') }}
+		let(:user) { VCR.use_cassette('user_find_for_authentication') { Marketcloud::User.find_by_email('prova2@prova.it') }}
+		let(:auth_user) { VCR.use_cassette('user_authenticate') {
+			user.authenticate!('provapw')
+			user
+		}}
 		it 'should return 200' do
 			expect(auth_user.response.status).to eq 200
 		end

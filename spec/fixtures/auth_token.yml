@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"5cqEUCCV0W1alrBuPGkoteTNa2M90NeowACicibVIwQ=","timestamp":1483050809}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"QSk27dh4tADtGtV6khEzNcCbGQUDV1zD2pgqzDl+0/4=","timestamp":1483115052}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '197'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-i825JEgwIwaidYE5SufKyA"
+      - W/"46-3ldWseQnxHt7n68C21fp8A"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,10 +35,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:33:29 GMT
+      - Fri, 30 Dec 2016 16:24:11 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"1AyzXk7SD/bggihxunlmMUGwQ90rQf5aQaVOrCR3iOk="}'
+      string: '{"status":true,"token":"D0uCsUWRJOllHMEtHMjU9ZyfzgGbjSCXtLfUJYxJQlQ="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:29 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:13 GMT
 recorded_with: VCR 3.0.3

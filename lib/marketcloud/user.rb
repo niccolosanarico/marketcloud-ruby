@@ -11,12 +11,14 @@ module Marketcloud
 		#
 		#
 		#
-		def initialize(id, name, email, image_url, token, response)
-			@id = id
-			@name = name
-			@email = email
-			@token = token
-			@image_url = image_url
+		def initialize(attributes, response)
+			if !attributes.nil?
+				@id = attributes['id']
+				@name = attributes['name']
+				@email = attributes['email']
+				@token = attributes['token']
+				@image_url = attributes['image_url']
+			end
 			@response = response
 		end
 
@@ -50,11 +52,29 @@ module Marketcloud
       attributes = JSON.parse(response.body)
 
 			#return a user
-			new(attributes['data']['id'],
-					attributes['data']['name'],
-					attributes['data']['email'],
-					attributes['data']['image_url'],
-					nil, response)
+			new(attributes['data'], response)
+		end
+
+		#
+		#
+		#
+		def self.find_by_email(email)
+      query = Faraday.new(url: "#{API_URL}/users?email=#{email}") do |faraday|
+				faraday.request  :url_encoded             # form-encode POST params
+				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			end
+
+			auth = Marketcloud::Authentication.get_token()
+
+			response = query.get do |req|
+			  req.headers['Content-Type'] = 'application/json'
+				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
+			end
+
+      attributes = JSON.parse(response.body)
+
+			#return a user - it is an array, so get the first one
+			new(attributes['data'].first, response)
 		end
 
 		#
@@ -82,13 +102,13 @@ module Marketcloud
 			attributes = JSON.parse(response.body)
 
 			#return the newly created user
-			new(attributes['data']['id'], attributes['data']['name'], attributes['data']['email'], nil, nil, response)
+			new(attributes['data'], response)
 		end
 
 		#
 		#
 		#
-		def self.authenticate(email, password)
+		def authenticate!(password)
 			query = Faraday.new(url: "#{API_URL}/users/authenticate") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
 				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
@@ -100,7 +120,7 @@ module Marketcloud
 				req.headers['Content-Type'] = 'application/json'
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 				req.body = {
-					email: email,
+					email: self.email,
 					password: password
 				}.to_json
 			end
@@ -109,12 +129,9 @@ module Marketcloud
 			attributes = JSON.parse(response.body)
 
 			#return the newly authenticated user
-			new(attributes['data']['user']['id'],
-					attributes['data']['user']['name'],
-					attributes['data']['user']['email'],
-					nil,
-					attributes['data']['token'],
-					response)
+			self.token = attributes['data']['token']
+			puts "THE TOKEN #{self.token}"
+			self.response = response
 		end
 
 	end

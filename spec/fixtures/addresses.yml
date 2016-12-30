@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"4oAjP5TGgkQrP9Km7B7eXmqcH0iJropcIAC7ZF2YBcA=","timestamp":1483050807}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"pRc4WiMYx2vG09ieYQRSDvAh9jdnE5gTKLYD1j65ytE=","timestamp":1483115051}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '197'
+      - '195'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-7U9JnfOL15mFi5EzjJRqmA"
+      - W/"46-eeIb8kUOBWMSg0odqj6+JA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:33:26 GMT
+      - Fri, 30 Dec 2016 16:24:09 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"uz7+JZhCH6VzRQI48H7ebvkJpaqT6D+OR7fzF59KcKM="}'
+      string: '{"status":true,"token":"2TNxrCBDNyIV97MztF8RJP/y/wYDlppOjGvg4q+QHtI="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:11 GMT
 - request:
     method: get
     uri: http://api.marketcloud.it/v0/addresses?user_id107227
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:uz7+JZhCH6VzRQI48H7ebvkJpaqT6D+OR7fzF59KcKM=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:2TNxrCBDNyIV97MztF8RJP/y/wYDlppOjGvg4q+QHtI=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '475'
+      - '659'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"373-ZdDMjxxMLJVcpg8AqOFd8A"
+      - W/"1394-1oySWakjWFPGaBJxYboSmg"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,11 +78,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:33:27 GMT
+      - Fri, 30 Dec 2016 16:24:09 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"full_name":"Pinco Pallo","id":107234,"user_id":null,"address1":"via
-        Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20124","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.it","vat":null,"application_id":107224},{"full_name":"ad","id":107231,"user_id":0,"address1":"ad","address2":"ad","city":"ad","country":"ad","postal_code":"ad","company":null,"phone_number":"ad","alternate_phone_number":"ad","email":"ad","vat":"ad","application_id":107224},{"full_name":"ad","id":107230,"user_id":0,"address1":"ad","address2":"ad","city":"ad","country":"ad","postal_code":"ad","company":null,"phone_number":"ad","alternate_phone_number":"ad","email":"ad","vat":"ad","application_id":107224}],"_links":{"curr":"http://api.marketcloud.it/v0/addresses?user_id107227=0&"},"count":3,"page":1,"pages":1}'
+      string: '{"status":true,"data":[{"full_name":"asd","id":107358,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107357,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"ASD","id":107345,"user_id":0,"address1":"ASD","address2":"ASD","city":"ASD","country":"ASD","postal_code":"ASD","company":null,"phone_number":"ASD","alternate_phone_number":"ASD","email":"ASD","vat":"ASD","application_id":107224},{"full_name":"ASD","id":107344,"user_id":0,"address1":"ASD","address2":"ASD","city":"ASD","country":"ASD","postal_code":"ASD","company":null,"phone_number":"ASD","alternate_phone_number":"ASD","email":"ASD","vat":"ASD","application_id":107224},{"full_name":"asd","id":107339,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107338,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"v","id":107334,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"v","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107333,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"v","alternate_phone_number":"v","email":"asd","vat":"v","application_id":107224},{"full_name":"asd","id":107328,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107327,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107325,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107324,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107323,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107322,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107321,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107320,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107319,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"asd","id":107318,"user_id":0,"address1":"asd","address2":"asd","city":"asd","country":"asd","postal_code":"asd","company":null,"phone_number":"asd","alternate_phone_number":"asd","email":"asd","vat":"asd","application_id":107224},{"full_name":"","id":107294,"user_id":0,"address1":"","address2":"","city":"","country":"","postal_code":"","company":null,"phone_number":"","alternate_phone_number":"","email":"","vat":"","application_id":107224},{"full_name":"","id":107293,"user_id":0,"address1":"","address2":"","city":"","country":"","postal_code":"","company":null,"phone_number":"","alternate_phone_number":"","email":"","vat":"","application_id":107224}],"_links":{"curr":"http://api.marketcloud.it/v0/addresses?user_id107227=0&","next":"http://api.marketcloud.it/v0/addresses?user_id107227=0&page=2&"},"count":38,"page":1,"pages":2}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:11 GMT
 recorded_with: VCR 3.0.3

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"9shjSHReuZbetNUr9zjuQ+Ljts9XHg7f+UsqAvRXmSQ=","timestamp":1483050953}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"nSgXkNREKlEznB8bTGdFC0TsaHtl+cWhOcazgdJscYg=","timestamp":1483115573}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-+Vx+YoRvMiBTjvkBf4Tfdg"
+      - W/"46-5WwnIuiP61SHftExYNyKeA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:35:53 GMT
+      - Fri, 30 Dec 2016 16:32:53 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"XN05wF4JlKtBXgjdCZjhXQMBENB0aPwFVes4ttpdJ8A="}'
+      string: '{"status":true,"token":"bIxAjdXIjFVvwQkXAaNGN6ra4qsYuQzoYobhVcvGs/E="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:35:53 GMT
+  recorded_at: Fri, 30 Dec 2016 16:32:53 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/users/authenticate
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:XN05wF4JlKtBXgjdCZjhXQMBENB0aPwFVes4ttpdJ8A=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:bIxAjdXIjFVvwQkXAaNGN6ra4qsYuQzoYobhVcvGs/E=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '243'
+      - '242'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7e-DLNrcAV3sx69ftggsNDM4g"
+      - W/"7e-ByOAkQ2E1jlXQV7lQIXXeA"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,10 +78,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:35:52 GMT
+      - Fri, 30 Dec 2016 16:32:51 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"token":"azhemWQdUyAP3ULlrQM5qXG+Nz+Fs4xVTfiRqttpHgM=","user":{"id":107237,"email":"prova2@prova.it"}}}'
+      string: '{"status":true,"data":{"token":"apv9dEDXoXn3aw6BwMZ7179eUZ7bpZMJNoK1wigVt3c=","user":{"id":107237,"email":"prova2@prova.it"}}}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:35:54 GMT
+  recorded_at: Fri, 30 Dec 2016 16:32:53 GMT
 recorded_with: VCR 3.0.3

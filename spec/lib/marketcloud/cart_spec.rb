@@ -8,7 +8,7 @@ RSpec.describe Marketcloud::Cart do
 	describe 'a GET for a cart starting from a given user' do
 		let(:carts) {
 			VCR.use_cassette('cart_with_user_ID') {
-				user = Marketcloud::User.authenticate('prova2@prova.it', 'provapw')
+				user = Marketcloud::User.find_by_email('prova2@prova.it')
 				Marketcloud::Cart.find_by_user(user.id)
 			}
 		}
@@ -106,7 +106,7 @@ RSpec.describe Marketcloud::Cart do
 	describe 'Using a POST to create a new cart' do
 		let(:cart) {
 			VCR.use_cassette('cart_creation') {
-				user = Marketcloud::User.authenticate('prova2@prova.it', 'provapw')
+				user = Marketcloud::User.find_by_email('prova2@prova.it')
 				Marketcloud::Cart.create(user.id)
 			}
 		}

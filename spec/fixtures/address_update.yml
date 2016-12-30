@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OA9Yn8H2k0WMFyNf4PQ0a6T1l1OMBfbxel/IHqt4A6o=","timestamp":1483050808}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"QSk27dh4tADtGtV6khEzNcCbGQUDV1zD2pgqzDl+0/4=","timestamp":1483115052}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '195'
+      - '192'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-3674ayTZLZPgfFD52Pj8qQ"
+      - W/"46-4dNwCTV6wWymjs6GPSVdfA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:33:27 GMT
+      - Fri, 30 Dec 2016 16:24:11 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"1moKDk7GE/r03JcIbjvqN3MG0Qqudw6u6/KrAjLR2Po="}'
+      string: '{"status":true,"token":"aoIgEz1feKrh9WeNFpzJsGQWZE7edGUmGR5suD/NfeI="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:12 GMT
 - request:
     method: get
     uri: http://api.marketcloud.it/v0/addresses/107234
@@ -53,93 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:1moKDk7GE/r03JcIbjvqN3MG0Qqudw6u6/KrAjLR2Po=
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '333'
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"134-sCxZkftpaUHVEr+Gls8yhQ"
-      Vary:
-      - Accept-Encoding
-      Server:
-      - Microsoft-IIS/8.0
-      X-Powered-By:
-      - ASP.NET
-      Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
-      Date:
-      - Thu, 29 Dec 2016 22:33:27 GMT
-    body:
-      encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":null,"address1":"via
-        Vittor Pisani 13","address2":null,"city":"Milano","country":"Italy","postal_code":"20124","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.it","vat":null,"application_id":107224}}'
-    http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:28 GMT
-- request:
-    method: post
-    uri: http://api.marketcloud.it/v0/tokens
-    body:
-      encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OA9Yn8H2k0WMFyNf4PQ0a6T1l1OMBfbxel/IHqt4A6o=","timestamp":1483050808}'
-    headers:
-      User-Agent:
-      - Faraday v0.10.0
-      Content-Type:
-      - application/json
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '194'
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"46-JjMyDKwX3lbXhM7g13lJ7g"
-      Vary:
-      - Accept-Encoding
-      Server:
-      - Microsoft-IIS/8.0
-      X-Powered-By:
-      - ASP.NET
-      Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
-      Date:
-      - Thu, 29 Dec 2016 22:33:27 GMT
-    body:
-      encoding: ASCII-8BIT
-      string: '{"status":true,"token":"3JXr8otVjwgObZLNqwcrqcbPyqjLiykSezk3ff7a2bU="}'
-    http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:29 GMT
-- request:
-    method: put
-    uri: http://api.marketcloud.it/v0/addresses/107234
-    body:
-      encoding: UTF-8
-      string: '{"full_name":"Pinco Pallo","user_id":107227,"email":"pinco@pallo.com","country":"Norway","city":"Oslo","address1":"Via
-        Vittor Pisani 13","postal_code":"20127"}'
-    headers:
-      User-Agent:
-      - Faraday v0.10.0
-      Content-Type:
-      - application/json
-      Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:3JXr8otVjwgObZLNqwcrqcbPyqjLiykSezk3ff7a2bU=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:aoIgEz1feKrh9WeNFpzJsGQWZE7edGUmGR5suD/NfeI=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -164,11 +78,97 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:33:27 GMT
+      - Fri, 30 Dec 2016 16:24:10 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":107227,"address1":"Via
         Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":107224}}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:33:29 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:12 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"QSk27dh4tADtGtV6khEzNcCbGQUDV1zD2pgqzDl+0/4=","timestamp":1483115052}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '193'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-74gEIv7N4X4e+51uLDfNyA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Fri, 30 Dec 2016 16:24:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"XJlw3lF1SkSl2oQBuyDRgxVctxcdrF5wHZFGXuxcZ08="}'
+    http_version: 
+  recorded_at: Fri, 30 Dec 2016 16:24:12 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/addresses/107234
+    body:
+      encoding: UTF-8
+      string: '{"full_name":"Pinco Pallo","user_id":107227,"email":"pinco@pallo.com","country":"Norway","city":"Oslo","address1":"Via
+        Vittor Pisani 13","postal_code":"20127"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:XJlw3lF1SkSl2oQBuyDRgxVctxcdrF5wHZFGXuxcZ08=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '335'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"136-kUZWGP4xEeo+m/+qCe33bw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Fri, 30 Dec 2016 16:24:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":107227,"address1":"Via
+        Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":107224}}'
+    http_version: 
+  recorded_at: Fri, 30 Dec 2016 16:24:12 GMT
 recorded_with: VCR 3.0.3

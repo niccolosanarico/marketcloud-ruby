@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"rCjFuyMkGrxacn2m8HMPbkFAb0JU1LCKFMs62o5dxjY=","timestamp":1483051674}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"4/xW0zhM4yFdLjJjI/2UtqJmxQLFMV3On+1fvXREZRc=","timestamp":1483115064}'
     headers:
       User-Agent:
       - Faraday v0.10.0
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '197'
+      - '193'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-wS+aex9sadB3nXH2TowkAg"
+      - W/"46-Q2pnqoogaHdzTmc8NcNXdA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:47:52 GMT
+      - Fri, 30 Dec 2016 16:24:24 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"U81qWHKONpxtf//QNK4TxdZXfowSbPGuyzlvqH+rHQw="}'
+      string: '{"status":true,"token":"iyI611TtQIIxvEdENAfZSbFFmQz7RbpCuESGelEM8YY="}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:47:54 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:24 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/users/
@@ -53,7 +53,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:U81qWHKONpxtf//QNK4TxdZXfowSbPGuyzlvqH+rHQw=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:iyI611TtQIIxvEdENAfZSbFFmQz7RbpCuESGelEM8YY=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -76,11 +76,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 29 Dec 2016 22:47:54 GMT
+      - Fri, 30 Dec 2016 16:24:22 GMT
     body:
       encoding: UTF-8
       string: '{"status":false,"errors":[{"code":400,"type":"EmailAddressExists","message":"The
         email address prova2@prova.it is already taken."}]}'
     http_version: 
-  recorded_at: Thu, 29 Dec 2016 22:47:54 GMT
+  recorded_at: Fri, 30 Dec 2016 16:24:25 GMT
 recorded_with: VCR 3.0.3
