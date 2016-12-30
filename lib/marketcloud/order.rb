@@ -99,9 +99,9 @@ module Marketcloud
       attributes = JSON.parse(response.body)
 
 			if response.status != 200
-        raise NotFound.new(response) if response.status == 404
-				raise Anauthorized.new(response) if response.status == 401
-        raise BadRequest.new(response) if response.status == 400
+        raise NotFound.new(attributes) if response.status == 404
+				raise Anauthorized.new(attributes) if response.status == 401
+        raise BadRequest.new(attributes) if response.status == 400
 			end
 
 			#return a order
