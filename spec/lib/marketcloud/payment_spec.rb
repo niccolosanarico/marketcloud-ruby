@@ -5,10 +5,10 @@ RSpec.describe Marketcloud::Payment do
 
 	describe 'a POST for a new Braintree nonce' do
 
-		# let(:payment) { VCR.use_cassette('payment') { Marketcloud::Payment.create(order_id, token.token) }}
+		let(:payment) { VCR.use_cassette('payment') { Marketcloud::Payment.create(order_id, "fake-valid-nonce") }}
 
 		it 'should return 200' do
-			pending "How to test braintree nonce?"
+			expect(payment.response.status).to eq 200
 		end
 
 	end
