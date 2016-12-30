@@ -19,6 +19,7 @@ module Marketcloud
   class BadRequest < StandardError; end
   class Anauthorized < StandardError; end
   class InternalServerError < StandardError; end
+  class ExistingUserError < StandardError; end
 
   class << self
     attr_accessor :configuration

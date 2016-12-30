@@ -5,15 +5,13 @@ require 'digest'
 module Marketcloud
 	class Authentication
 
-		attr_accessor :token, :response, :config
+		attr_accessor :token
 
 		#
 		#
 		#
-		def initialize(token, response, config = Configuration.new)
+		def initialize(token)
       @token = token
-			@response = response
-			@config = config
 		end
 
 		#
@@ -45,11 +43,14 @@ module Marketcloud
       # puts "Response: #{response.body}"
 
       resp = JSON.parse(response.body)
-			# puts "Response: #{resp["token"]}"
-			token = resp["token"]
 
-			#return a product
-			new(token, response)
+			if response.status != 200
+				return nil
+			end
+
+			token = resp["token"]
+			#return a token
+			new(token)
     end
 	end
 end

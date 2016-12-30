@@ -7,7 +7,7 @@ RSpec.describe Marketcloud::Authentication do
 		let(:token) { VCR.use_cassette('auth_token') { Marketcloud::Authentication.get_token() }}
 
 		it 'should return 200' do
-			expect(token.response.status).to eq 200
+			expect(token).not_to be_nil
 		end
 
 	end

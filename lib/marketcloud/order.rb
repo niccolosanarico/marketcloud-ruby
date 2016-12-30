@@ -10,13 +10,12 @@ module Marketcloud
 									:billing_address_id,
 									:shipping_id,
 									:user_id,
-									:store_id,
-									:response
+									:store_id
 
 		#
 		#
 		#
-		def initialize(attributes, response)
+		def initialize(attributes)
 			@id = attributes['id']
 			@user_id = attributes['user_id']
 			@status = attributes['status']
@@ -25,7 +24,6 @@ module Marketcloud
 			@shipping_id = attributes['shipping_id']
 			@user_id = attributes['user_id']
 			@store_id = attributes['store_id']
-			@response = response
 		end
 
 
@@ -45,10 +43,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			#return a order
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 
 		#
@@ -67,10 +69,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       orders = JSON.parse(response.body)
 
 			#return a order
-			orders['data'].map { |o| new(o, response) }
+			orders['data'].map { |o| new(o) }
     end
 
 		#
@@ -96,6 +102,10 @@ module Marketcloud
 				}.to_json
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			if response.status != 200
@@ -105,7 +115,7 @@ module Marketcloud
 			end
 
 			#return a order
-			new(attributes['data'], response)
+			new(attributes['data'])
 		end
 	end
 end

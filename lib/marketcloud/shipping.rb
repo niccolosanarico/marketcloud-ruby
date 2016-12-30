@@ -5,17 +5,15 @@ module Marketcloud
 	class Shipping
 		attr_accessor :name,
 									:id,
-									:price,
-									:response
+									:price
 
 		#
 		#
 		#
-		def initialize(attributes, response)
+		def initialize(attributes)
 			@id = attributes['id']
 			@name = attributes['name']
 			@price = attributes['price']
-			@response = response
 		end
 
 		#
@@ -32,10 +30,14 @@ module Marketcloud
 				req.headers['Authorization'] = Marketcloud.configuration.public_key
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			#return a product
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 
 
@@ -56,10 +58,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       shippings = JSON.parse(response.body)
 
 			#return a list of shippings
-			shippings['data'].map { |s| new(s, response) }
+			shippings['data'].map { |s| new(s) }
 
 		end
 

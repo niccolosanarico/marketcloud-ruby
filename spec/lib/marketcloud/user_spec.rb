@@ -8,7 +8,7 @@ RSpec.describe Marketcloud::User do
 	  let(:user) { VCR.use_cassette('user') { Marketcloud::User.find(user_id) }}
 
 		it 'should return 200' do
-			expect(user.response.status).to eq 200
+			expect(user).not_to be_nil
 		end
 
 		it 'answers to find with a valid user' do
@@ -20,7 +20,7 @@ RSpec.describe Marketcloud::User do
 	  let(:user) { VCR.use_cassette('user_by_email') { Marketcloud::User.find_by_email(user_email) }}
 
 		it 'should return 200' do
-			expect(user.response.status).to eq 200
+			expect(user).not_to be_nil
 		end
 
 		it 'answers to find with a valid user' do
@@ -29,15 +29,23 @@ RSpec.describe Marketcloud::User do
 	end
 
 	describe 'a POST creating a new user' do
-		let(:new_user) { VCR.use_cassette('user_new') { Marketcloud::User.create('prova', 'prova2@prova.it', 'provapw') }}
+		let(:new_user) { VCR.use_cassette('user_new') { Marketcloud::User.create('prova', 'prova3@prova.it', 'provapw') }}
 
 		it 'should return 200' do
-			expect(new_user.response.status).to eq 200
+			expect(new_user).not_to be_nil
 		end
 
 		it 'should return a valid user' do
 			expect(new_user.name).to eq 'prova'
 		end
+	end
+
+	describe 'a POST creating a new user with existing email' do
+
+		it 'should raise an expection' do
+			expect { VCR.use_cassette('user_new_existing') { Marketcloud::User.create('prova', 'prova2@prova.it', 'provapw') } }.to raise_error(Marketcloud::ExistingUserError)
+		end
+
 	end
 
 	describe 'a POST authenticating a user' do
@@ -47,7 +55,7 @@ RSpec.describe Marketcloud::User do
 			user
 		}}
 		it 'should return 200' do
-			expect(auth_user.response.status).to eq 200
+			expect(auth_user).not_to be_nil
 		end
 
 		it 'should return a valid user' do

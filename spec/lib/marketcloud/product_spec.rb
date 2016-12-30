@@ -8,7 +8,7 @@ RSpec.describe Marketcloud::Product do
 	  let(:product) { VCR.use_cassette('product') { Marketcloud::Product.find(prod_id) }}
 
 		it 'should return 200' do
-			expect(product.response.status).to eq 200
+			expect(product).not_to be_nil
 		end
 
 		it 'answers to find with a valid product' do
@@ -25,7 +25,7 @@ RSpec.describe Marketcloud::Product do
 		end
 
 		it 'returns 200' do
-			expect(products.first.response.status).to eq 200
+			expect(products).not_to be_nil
 		end
 	end
 
@@ -37,7 +37,7 @@ RSpec.describe Marketcloud::Product do
 		end
 
 		it 'returns 200' do
-			expect(products.first.response.status).to eq 200
+			expect(products).not_to be_nil
 		end
 	end
 end

@@ -3,15 +3,14 @@ require 'json'
 
 module Marketcloud
 	class User
-		attr_accessor :name, :id, :email, :image_url,
-									:response, :token
+		attr_accessor :name, :id, :email, :image_url, :token
 
 		# INSTANCE METHODS
 
 		#
 		#
 		#
-		def initialize(attributes, response)
+		def initialize(attributes)
 			if !attributes.nil?
 				@id = attributes['id']
 				@name = attributes['name']
@@ -19,7 +18,6 @@ module Marketcloud
 				@token = attributes['token']
 				@image_url = attributes['image_url']
 			end
-			@response = response
 		end
 
 
@@ -49,10 +47,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			#return a user
-			new(attributes['data'], response)
+			new(attributes['data'])
 		end
 
 		#
@@ -71,10 +73,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
-			#return a user - it is an array, so get the first one
-			new(attributes['data'].first, response)
+			#return a user - it is an array, so get the first one because of email uniqueness
+			new(attributes['data'].first)
 		end
 
 		#
@@ -101,8 +107,16 @@ module Marketcloud
 			# check for return code
 			attributes = JSON.parse(response.body)
 
+			if response.status == 400 && attributes["errors"].select { |e| e["type"] == "EmailAddressExists"}.length >= 1
+				raise ExistingUserError
+			end
+
+			if response.status != 200
+				return nil
+			end
+
 			#return the newly created user
-			new(attributes['data'], response)
+			new(attributes['data'])
 		end
 
 		#
@@ -125,13 +139,15 @@ module Marketcloud
 				}.to_json
 			end
 
+			if response.status != 200
+				return nil
+			end
+
 			# check for return code
 			attributes = JSON.parse(response.body)
 
 			#return the newly authenticated user
 			self.token = attributes['data']['token']
-			puts "THE TOKEN #{self.token}"
-			self.response = response
 		end
 
 	end

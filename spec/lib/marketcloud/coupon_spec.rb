@@ -8,7 +8,7 @@ RSpec.describe Marketcloud::Coupon do
 		let(:coupon) { VCR.use_cassette('coupon') { Marketcloud::Coupon.find(coupon_id) }}
 
 		it 'should return 200' do
-			expect(coupon.response.status).to eq 200
+			expect(coupon).not_to be_nil
 		end
 
 		it 'answers to find with a valid coupon' do

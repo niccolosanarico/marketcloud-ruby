@@ -10,7 +10,7 @@ RSpec.describe Marketcloud::Address do
 	  let(:address) { VCR.use_cassette('address') { Marketcloud::Address.find(addr_id) }}
 
 		it 'should return 200' do
-			expect(address.response.status).to eq 200
+			expect(address).not_to be_nil
 		end
 
 		it 'answers to find with a valid product' do
@@ -26,7 +26,7 @@ RSpec.describe Marketcloud::Address do
 		end
 
 		it 'returns 200' do
-			expect(addresses.first.response.status).to eq 200
+			expect(addresses).not_to be_nil
 		end
 	end
 
@@ -48,7 +48,7 @@ RSpec.describe Marketcloud::Address do
     }
 
     it 'should return 200' do
-      expect(address.response.status).to eq 200
+      expect(address).not_to be_nil
     end
 
     it 'should be a valid address' do
@@ -75,7 +75,7 @@ RSpec.describe Marketcloud::Address do
     }
 
     it 'should return 200' do
-      expect(address.response.status).to eq 200
+      expect(address).not_to be_nil
     end
 
     it 'should be an updated address' do

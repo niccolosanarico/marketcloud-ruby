@@ -3,16 +3,12 @@ require 'json'
 
 module Marketcloud
 	class Braintree
-		attr_accessor :token,
-									:response
+		attr_accessor :token
 
-		def initialize(attributes, response)
-
+		def initialize(attributes)
 			if !attributes.nil?
 				@token = attributes['clientToken']
 			end
-
-			@response = response
 		end
 
 
@@ -32,8 +28,12 @@ module Marketcloud
 
       attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return a product
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 	end
 end

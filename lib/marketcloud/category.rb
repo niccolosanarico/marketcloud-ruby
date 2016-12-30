@@ -8,10 +8,9 @@ module Marketcloud
 									:description,
 									:url,
 									:image_url,
-									:parent_id,
-									:response
+									:parent_id
 
-		def initialize(attributes, response)
+		def initialize(attributes)
 
 			if !attributes.nil?
 				@id = attributes['id']
@@ -21,8 +20,6 @@ module Marketcloud
 				@image_url = attributes['image_url']
 				@parent_id = attributes['parent_id']
 			end
-
-			@response = response
 		end
 
 
@@ -37,10 +34,14 @@ module Marketcloud
 				req.headers['Authorization'] = Marketcloud.configuration.public_key
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			#return a product
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 	end
 end

@@ -14,7 +14,7 @@ RSpec.describe Marketcloud::Cart do
 		}
 
 		it 'should return 200' do
-			expect(carts.first.response.status).to eq 200
+			expect(carts).not_to be_nil
 		end
 
 		it 'returns an array of carts' do
@@ -31,7 +31,7 @@ RSpec.describe Marketcloud::Cart do
 		}
 
 		it 'should return 200' do
-			expect(cart.response.status).to eq 200
+			expect(cart).not_to be_nil
 		end
 
 		it 'answers to find with a valid cart containing items' do
@@ -56,7 +56,7 @@ RSpec.describe Marketcloud::Cart do
 			}
 
 			it 'should return 200' do
-				expect(cart.response.status).to eq 200
+				expect(cart).not_to be_nil
 			end
 
 			it 'should update the product quantity' do
@@ -94,7 +94,7 @@ RSpec.describe Marketcloud::Cart do
 			}
 
 			it 'should return 200' do
-				expect(updated_cart.response.status).to eq 200
+				expect(updated_cart).not_to be_nil
 			end
 
 			it 'should update the product quantity' do
@@ -112,7 +112,7 @@ RSpec.describe Marketcloud::Cart do
 		}
 
 		it 'should return 200' do
-			expect(cart.response.status).to eq 200
+			expect(cart).not_to be_nil
 		end
 
 		it 'should not contain products' do

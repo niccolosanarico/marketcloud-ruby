@@ -5,15 +5,12 @@ module Marketcloud
 	class Cart
 		attr_accessor :id,
 									:user_id,
-									:items,
-									:response,
-									:config
+									:items
 
-		def initialize(attributes, response)
+		def initialize(attributes)
 			@id = attributes['id']
 			@user_id = attributes['user_id']
 			@items = attributes['items']
-			@response = response
 		end
 
 		# INSTANCE METHODS
@@ -40,9 +37,12 @@ module Marketcloud
 
       attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#update the cart
 			self.items = attributes["data"]["items"]
-			self.response = response
 		end
 
 
@@ -68,9 +68,12 @@ module Marketcloud
 
 			attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#added to the cart
 			self.items = attributes["data"]["items"]
-			self.response = response
 		end
 
 
@@ -96,8 +99,12 @@ module Marketcloud
 			# puts response.body
       attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return a cart
-			new(attributes['data'], response)
+			new(attributes['data'])
   	end
 
 		#
@@ -120,7 +127,11 @@ module Marketcloud
 			# puts response.body
       carts = JSON.parse(response.body)
 
-			carts['data'].map { |c| new(c, response) }
+			if response.status != 200
+				return nil
+			end
+
+			carts['data'].map { |c| new(c) }
     end
 
 
@@ -148,8 +159,12 @@ module Marketcloud
 
 			attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return a newly created cart
-			new(attributes['data'], response)
+			new(attributes['data'])
 		end
 	end
 end

@@ -3,13 +3,12 @@ require 'json'
 
 module Marketcloud
 	class Coupon
-		attr_accessor :name, :id, :code, :response
+		attr_accessor :name, :id, :code
 
-		def initialize(attributes, response)
+		def initialize(attributes)
 			@id = attributes['id']
 			@name = attributes['name']
 			@code = attributes['code']
-			@response = response
 		end
 
 
@@ -29,10 +28,13 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
-      attributes = JSON.parse(response.body)
+			if response.status != 200
+				return nil
+			end
 
+      attributes = JSON.parse(response.body)
 			#return a coupon
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 	end
 end

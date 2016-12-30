@@ -5,9 +5,9 @@ module Marketcloud
 	class Address
 		attr_accessor :id, :full_name, :user_id, :email, :country, :state, :city, :address1,
 									:address2, :postal_code, :phone_number, :alternate_phone_number,
-									:vat, :response, :config
+									:vat
 
-		def initialize(attributes, response, config = Configuration.new)
+		def initialize(attributes)
 			@id = attributes['id']
 			@full_name = attributes['full_name']
 			@user_id = attributes['user_id']
@@ -21,11 +21,9 @@ module Marketcloud
 			@phone_number = attributes['phone_number']
 			@alternate_phone_number = attributes['alternate_phone_number']
 			@vat = attributes['vat']
-			@response = response
-			@config = config
 		end
 
-		def update_fields(attributes, response)
+		def update_fields(attributes)
 			self.id = attributes['id']
 			self.full_name = attributes['full_name']
 			self.user_id = attributes['user_id']
@@ -39,7 +37,6 @@ module Marketcloud
 			self.phone_number = attributes['phone_number']
 			self.alternate_phone_number = attributes['alternate_phone_number']
 			self.vat = attributes['vat']
-			self.response = response
 		end
 
 		#
@@ -61,8 +58,12 @@ module Marketcloud
 
       attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return a product
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 
 		#
@@ -84,8 +85,12 @@ module Marketcloud
 
       addresses = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return an array of addresses associated with this user
-			addresses['data'].map { |a| new(a, response) }
+			addresses['data'].map { |a| new(a) }
     end
 
 
@@ -109,8 +114,12 @@ module Marketcloud
 
 			attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
+
 			#return an address
-			new(attributes['data'], response)
+			new(attributes['data'])
 		end
 
 		#
@@ -133,8 +142,11 @@ module Marketcloud
 
 			attributes = JSON.parse(response.body)
 
+			if response.status != 200
+				return nil
+			end
 			#update the fields
-			update_fields(attributes['data'], response)
+			update_fields(attributes['data'])
 		end
 	end
 end

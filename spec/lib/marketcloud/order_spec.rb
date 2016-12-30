@@ -24,7 +24,7 @@ RSpec.describe Marketcloud::Order do
 		}
 
 		it 'should return 200' do
-			expect(order.response.status).to eq 200
+			expect(order).not_to be_nil
 		end
 	end
 
@@ -36,7 +36,7 @@ RSpec.describe Marketcloud::Order do
 		}
 
 		it 'should return 200' do
-			expect(orders.first.response.status).to eq 200
+			expect(orders).not_to be_nil
 		end
 
 		it 'should return an array' do
@@ -52,7 +52,7 @@ RSpec.describe Marketcloud::Order do
 		}
 
 		it 'should return 200' do
-			expect(new_order.response.status).to eq 200
+			expect(new_order).not_to be_nil
 		end
 
 		it 'should return an order in the "created" phase' do

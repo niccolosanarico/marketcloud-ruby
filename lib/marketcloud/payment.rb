@@ -3,11 +3,9 @@ require 'json'
 
 module Marketcloud
 	class Payment
-		attr_accessor :response
 
-		def initialize(attributes, response)
+		def initialize()
 
-			@response = response
 		end
 
 		def self.create(order_id, nonce)
@@ -28,8 +26,11 @@ module Marketcloud
 
       attributes = JSON.parse(response.body)
 
-			#return a product
-			new(attributes['data'], response)
+			if response.status != 200
+				return nil
+			end
+
+			return true
     end
 	end
 end

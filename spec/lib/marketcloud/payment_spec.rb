@@ -7,8 +7,8 @@ RSpec.describe Marketcloud::Payment do
 
 		let(:payment) { VCR.use_cassette('payment') { Marketcloud::Payment.create(order_id, "fake-valid-nonce") }}
 
-		it 'should return 200' do
-			expect(payment.response.status).to eq 200
+		it 'should return true' do
+			expect(payment).to be true
 		end
 
 	end

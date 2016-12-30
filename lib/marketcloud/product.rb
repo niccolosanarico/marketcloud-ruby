@@ -4,10 +4,9 @@ require 'json'
 module Marketcloud
 	class Product
 		attr_accessor :name, :id, :sku, :description,
-									:category_id, :brand_id, :price,
-									:response, :config
+									:category_id, :brand_id, :price
 
-		def initialize(attributes, response, config = Configuration.new)
+		def initialize(attributes)
 			@id = attributes['id']
 			@name = attributes['name']
 			@sku = attributes['sku']
@@ -15,8 +14,6 @@ module Marketcloud
 			@category_id = attributes['category_id']
 			@brand_id = attributes['brand_id']
 			@price = attributes['price']
-			@response = response
-			@config = config
 		end
 
 		#
@@ -33,10 +30,14 @@ module Marketcloud
 				req.headers['Authorization'] = Marketcloud.configuration.public_key
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       attributes = JSON.parse(response.body)
 
 			#return a product
-			new(attributes['data'], response)
+			new(attributes['data'])
     end
 
 		#
@@ -53,10 +54,14 @@ module Marketcloud
 				req.headers['Authorization'] = Marketcloud.configuration.public_key
 			end
 
+			if response.status != 200
+				return nil
+			end
+
 			products = JSON.parse(response.body)
 
 			#return a list of products
-			products['data'].map { |p| new(p, response) }
+			products['data'].map { |p| new(p) }
     end
 
 
@@ -76,10 +81,14 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 			end
 
+			if response.status != 200
+				return nil
+			end
+
       products = JSON.parse(response.body)
 
 			#return a list of products
-			products['data'].map { |p| new(p, response) }
+			products['data'].map { |p| new(p) }
 
 		end
 
