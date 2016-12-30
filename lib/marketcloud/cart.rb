@@ -31,7 +31,7 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 				req.body = {
 					op: "update",
-					items: items.map { |item| { product_id: item["product_id"], quantity: item["quantity"] } }
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
 				}.to_json
 			end
 
@@ -66,7 +66,7 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 				req.body = {
 					op: "add",
-					items: items.map { |item| { product_id: item["product_id"], quantity: item["quantity"] } }
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
 				}.to_json
 			end
 
