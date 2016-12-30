@@ -44,6 +44,7 @@ module Marketcloud
 			end
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -70,6 +71,7 @@ module Marketcloud
 			end
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -102,16 +104,15 @@ module Marketcloud
 				}.to_json
 			end
 
-			if response.status != 200
-				return nil
-			end
-
       attributes = JSON.parse(response.body)
 
 			if response.status != 200
         raise NotFound.new(attributes) if response.status == 404
 				raise Anauthorized.new(attributes) if response.status == 401
         raise BadRequest.new(attributes) if response.status == 400
+
+				Marketcloud.logger.error(response.body)
+				return nil
 			end
 
 			#return a order
