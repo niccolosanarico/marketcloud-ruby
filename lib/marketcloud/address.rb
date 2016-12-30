@@ -59,6 +59,7 @@ module Marketcloud
       attributes = JSON.parse(response.body)
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -86,6 +87,7 @@ module Marketcloud
       addresses = JSON.parse(response.body)
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -115,6 +117,7 @@ module Marketcloud
 			attributes = JSON.parse(response.body)
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -143,6 +146,7 @@ module Marketcloud
 			attributes = JSON.parse(response.body)
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 			#update the fields

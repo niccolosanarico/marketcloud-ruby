@@ -24,7 +24,6 @@ module Marketcloud
 
       query = Faraday.new(url: "#{API_URL}/tokens") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
 				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
 			end
 
@@ -36,20 +35,17 @@ module Marketcloud
           secretKey: hash,
           timestamp: timestamp
         }.to_json
-
-				# puts "Request: #{req.body}"
 			end
-
-      # puts "Response: #{response.body}"
 
       resp = JSON.parse(response.body)
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
 			token = resp["token"]
-			#return a token
+			
 			new(token)
     end
 	end

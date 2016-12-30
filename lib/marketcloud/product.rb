@@ -31,6 +31,7 @@ module Marketcloud
 			end
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -55,6 +56,7 @@ module Marketcloud
 			end
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
@@ -82,6 +84,7 @@ module Marketcloud
 			end
 
 			if response.status != 200
+				Marketcloud.logger.error(response.body)
 				return nil
 			end
 
