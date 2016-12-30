@@ -31,7 +31,7 @@ module Marketcloud
 				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
 				req.body = {
 					op: "update",
-					items: items
+					items: items.map { |item| { product_id: item["product_id"], quantity: item["quantity"] } }
 				}.to_json
 			end
 
@@ -39,6 +39,7 @@ module Marketcloud
 
 			if response.status != 200
 
+				Marketcloud.logger.error(items)
 				Marketcloud.logger.error(response.body)
 
 				return nil
@@ -72,7 +73,7 @@ module Marketcloud
 			attributes = JSON.parse(response.body)
 
 			if response.status != 200
-
+				Marketcloud.logger.error(items)
 				Marketcloud.logger.error(response.body)
 
 				return nil
