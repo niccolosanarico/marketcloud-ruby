@@ -30,4 +30,16 @@ RSpec.describe Marketcloud::Category do
 			expect(category).to be_nil
 		end
 	end
+
+	describe 'a GET for a paginated list of categories' do
+		let(:categories) { VCR.use_cassette('category_list_paginated') { Marketcloud::Category.all() }}
+
+		it 'should return an array' do
+			expect(categories).to be_kind_of(Array)
+		end
+
+		it 'should contain a list of elements' do
+			expect(categories.length).to be >= 0
+		end
+	end
 end
