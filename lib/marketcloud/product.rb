@@ -4,7 +4,8 @@ require 'json'
 module Marketcloud
 	class Product
 		attr_accessor :name, :id, :sku, :description,
-									:category_id, :brand_id, :price
+									:category_id, :brand_id,
+									:price, :images
 
 		def initialize(attributes)
 			@id = attributes['id']
@@ -14,6 +15,7 @@ module Marketcloud
 			@category_id = attributes['category_id']
 			@brand_id = attributes['brand_id']
 			@price = attributes['price']
+			@images = attributes['images']
 		end
 
 		#
