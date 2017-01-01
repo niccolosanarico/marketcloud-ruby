@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Cart
+	class Cart < Request
 		attr_accessor :id,
 									:user_id,
 									:items
@@ -15,195 +16,95 @@ module Marketcloud
 
 		# INSTANCE METHODS
 
-		#
-		#
-		#
+		# Creates a new cart with updated items
+		# @param items [Array] the items to be inserted
+		# @return a new cart
 		def update(items)
-			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
+				{ op: "update",
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+				}}, true
+
+			if cart
+				Cart.new(cart["data"])
+			else
+				false
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.patch do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					op: "update",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
-				}.to_json
-			end
-
-      attributes = JSON.parse(response.body)
-
-			if response.status != 200
-
-				Marketcloud.logger.error(items)
-				Marketcloud.logger.error(response.body)
-
-				return nil
-			end
-
-			#return an updated cart
-			Cart.new(attributes["data"])
 		end
 
 
-		#
-		# Add merges the quantity of existing products in the cart
-		#
+		# Adds items to a cart
+		# @param items [Array] the items to be added
+		# @return a new cart
 		def add(items)
-			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
+				{ op: "add",
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+				}}, true
+
+			if cart
+				Cart.new(cart["data"])
+			else
+				false
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.patch do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					op: "add",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
-				}.to_json
-			end
-
-			attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(items)
-				Marketcloud.logger.error(response.body)
-
-				return nil
-			end
-
-			#added to the cart
-			Cart.new(attributes["data"])
 		end
 
-		#
-		# Add merges the quantity of existing products in the cart
-		#
-		# With hashbang modifies caller
-		#
+		# Adds items to a cart (modifies the caller!)
+		# @param items [Array] the items to be added
+		# @return a new cart
 		def add!(items)
-			query = Faraday.new(url: "#{API_URL}/carts/#{self.id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
+				{ op: "add",
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+				}}, true
+
+			if cart
+				self.items = cart["data"]["items"]
+			else
+				false
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.patch do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					op: "add",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] } }
-				}.to_json
-			end
-
-			attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#added to the cart
-			self.items = attributes["data"]["items"]
 		end
 
 		# CLASS METHODS
 
-		#
 		# Find a cart by ID
-		#
+		# @param id [Integer] the ID of the cart
+		# @return a Cart or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/carts/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			cart = perform_request api_url("carts/#{id}"), :get, nil, true
+
+			if cart
+				new cart['data']
+			else
+				nil
 			end
+		end
 
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			# puts response.body
-      attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				return nil
-			end
-
-			#return a cart
-			new(attributes['data'])
-  	end
-
-		#
-		# Find a cart by user id. It might be more than one
-		#
+		# Find all the carts belonging to a user
+		# @param user_id [Integer] the user ID
+		# @return an array of Cart or nil
 		def self.find_by_user(user_id)
-      query = Faraday.new(url: "#{API_URL}/carts?user_id=#{user_id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			carts = perform_request api_url("carts", { user_id: user_id }), :get, nil, true
+
+			if carts
+				carts['data'].map { |a| new(a) }
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			# puts response.body
-      carts = JSON.parse(response.body)
-
-			if response.status != 200
-				return nil
-			end
-
-			carts['data'].map { |c| new(c) }
-    end
+		end
 
 
-		#
-		# Create a cart without products in it
-		#
+		# Create a new cart with no items and optional user
+		# @param user_id [Integer] the user to which the cart belogns (optional)
+		# @return the newly created cart
 		def self.create(user_id=nil)
-			query = Faraday.new(url: "#{API_URL}/carts") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			cart = perform_request api_url("carts", {}), :post, { user_id: user_id, items: [] }, true
+
+			if cart
+				new cart['data']
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.post do |req|
-			  req.headers['content-type'] = 'application/json'
-        req.headers['accept'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-        req.body = {
-          user_id: user_id,
-					items: []
-        }.to_json
-			end
-
-			attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				return nil
-			end
-
-			#return a newly created cart
-			new(attributes['data'])
 		end
 	end
 end

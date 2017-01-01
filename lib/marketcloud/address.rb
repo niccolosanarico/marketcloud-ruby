@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Address
+	class Address < Request
 		attr_accessor :id, :full_name, :user_id, :email, :country, :state, :city, :address1,
 									:address2, :postal_code, :phone_number, :alternate_phone_number,
 									:vat
@@ -37,120 +38,60 @@ module Marketcloud
 			self.phone_number = attributes['phone_number']
 			self.alternate_phone_number = attributes['alternate_phone_number']
 			self.vat = attributes['vat']
+			true
 		end
 
-		#
-		#
-		#
+		# Find an address by ID
+		# @param id [Integer] the ID of the address
+		# @return an Address or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/addresses/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			address = perform_request api_url("addresses/#{id}"), :get, nil, true
+
+			if address
+				new address['data']
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-      attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return a product
-			new(attributes['data'])
-    end
-
-		#
-		#
-		#
-		def self.find_by_user(user_id)
-			query = Faraday.new(url: "#{API_URL}/addresses?user_id#{user_id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-      addresses = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return an array of addresses associated with this user
-			addresses['data'].map { |a| new(a) }
-    end
-
-
-		#
-		#
-		#
-		def self.create(address)
-			query = Faraday.new(url: "#{API_URL}/addresses") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.post do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = address.to_json
-			end
-
-			attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return an address
-			new(attributes['data'])
 		end
 
-		#
-		#
-		#
+		# Find all the addresses belonging to a user
+		# @param user_id [Integer] the user ID
+		# @return an array of Addresses or nil
+		def self.find_by_user(user_id)
+			addresses = perform_request api_url("addresses", { user_id: user_id }), :get, nil, true
+
+			if addresses
+				addresses['data'].map { |a| new(a) }
+			else
+				nil
+			end
+		end
+
+
+		# Create a new address
+		# @param address [Address] the new address
+		# @return the newly created address
+		def self.create(address)
+			address = perform_request api_url("addresses", {}), :post, address, true
+
+			if address
+				new address['data']
+			else
+				nil
+			end
+		end
+
+		# Updates the current address (! modifies object!)
+		# @param address [Address] the updated addresss
+		# @return true for success, false otherwise
 		def update!(address)
-			query = Faraday.new(url: "#{API_URL}/addresses/#{self.id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				# faraday.response :logger                  # log requests to STDOUT
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			address = Address.perform_request Address.api_url("addresses/#{self.id}", {}), :put, address, true
+
+			if address
+				update_fields(address['data'])
+			else
+				false
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.put do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = address.to_json
-			end
-
-			attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-			#update the fields
-			update_fields(attributes['data'])
 		end
 	end
 end

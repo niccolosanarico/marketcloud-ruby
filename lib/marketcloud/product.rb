@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Product
+	class Product < Request
 		attr_accessor :name, :id, :sku, :description,
 									:category_id, :brand_id,
 									:price, :images
@@ -18,83 +19,44 @@ module Marketcloud
 			@images = attributes['images']
 		end
 
-		#
-		#
-		#
+		# Find a product by ID
+		# @param id [Integer] the ID of the product
+		# @return a Product or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/products/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			product = perform_request api_url("products/#{id}")
+
+			if product
+				new product['data']
+			else
+				nil
 			end
+		end
 
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = Marketcloud.configuration.public_key
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-
-			#return a product
-			new(attributes['data'])
-    end
-
-		#
-		#
-		#
+		# Find all the products belonging to a category
+		# @param cat_id [Integer] the category ID
+		# @param published [Boolean] whether query only for published products, defaults to true
+		# @return an array of Products or nil
 		def self.find_by_category(cat_id, published=true)
-      query = Faraday.new(url: "#{API_URL}/products?category_id=#{cat_id}&published=#{published}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			products = perform_request(api_url("products", { category_id: cat_id, published: published }), :get, nil, false)
+
+			if products
+				products['data'].map { |p| new(p) }
+			else
+				nil
 			end
+		end
 
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = Marketcloud.configuration.public_key
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			products = JSON.parse(response.body)
-
-			#return a list of products
-			products['data'].map { |p| new(p) }
-    end
-
-
-		#
-		#
-		#
+		# Return all the products
+		# @param published [Boolean] whether query only for published products, defaults to true
+		# @return an array of Products#
 		def self.all(published=true)
-			query = Faraday.new(url: "#{API_URL}/products?published=#{published}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			products = perform_request(api_url("products"), :get, nil, true)
+
+			if products
+				products['data'].map { |p| new(p) }
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      products = JSON.parse(response.body)
-
-			#return a list of products
-			products['data'].map { |p| new(p) }
-
 		end
 
 	end

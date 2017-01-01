@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Coupon
+	class Coupon < Request
 		attr_accessor :name, :id, :code
 
 		def initialize(attributes)
@@ -11,31 +12,17 @@ module Marketcloud
 			@code = attributes['code']
 		end
 
-
-		#
 		# Find a coupon by ID
-		#
+		# @param id [Integer] the ID of the coupon
+		# @return a Coupon or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/coupons/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			coupon = perform_request api_url("coupons/#{id}"), :get, nil, true
+
+			if coupon
+				new coupon['data']
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-			#return a coupon
-			new(attributes['data'])
-    end
+		end
 	end
 end

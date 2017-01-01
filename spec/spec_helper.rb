@@ -70,6 +70,7 @@ RSpec.configure do |config|
     Marketcloud.configure do |conf|
       conf.public_key = ENV["MARKETCLOUD_PUBLIC_KEY"]
       conf.private_key = ENV["MARKETCLOUD_PRIVATE_KEY"]
+      conf.set_up_cache(ENV["REDIS_URL"], 1800)
     end
   end
 

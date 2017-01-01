@@ -2,32 +2,30 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.marketcloud.it/v0/payments
+    uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"method":"Braintree","order_id":107236,"nonce":"fake-valid-nonce"}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"5SDYEeZMEyg70xd+EXn9OYbioHruc7cgaMHgLHwbEAo=","timestamp":1483309337}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
-      Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Length:
-      - '1370'
+      - '197'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b39-x78kH72o/uJBS5ZprJqzPg"
+      - W/"46-skjpTa1er0BpIYWQCM6mjQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -37,10 +35,53 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:20 GMT
+      - Sun, 01 Jan 2017 22:22:15 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"id":"nwb20jna","status":"authorized","type":"sale","currencyIsoCode":"USD","amount":"264.72","merchantAccountId":"vxzvx5ms99dcmrn4","subMerchantAccountId":null,"masterMerchantAccountId":null,"orderId":"107236","createdAt":"2016-12-30T16:24:22Z","updatedAt":"2016-12-30T16:24:22Z","customer":{"id":null,"firstName":null,"lastName":null,"company":null,"email":null,"website":null,"phone":null,"fax":null},"billing":{"id":null,"firstName":null,"lastName":null,"company":null,"streetAddress":null,"extendedAddress":null,"locality":null,"region":null,"postalCode":"94107","countryName":null,"countryCodeAlpha2":null,"countryCodeAlpha3":null,"countryCodeNumeric":null},"refundId":null,"refundIds":[],"refundedTransactionId":null,"partialSettlementTransactionIds":[],"authorizedTransactionId":null,"settlementBatchId":null,"shipping":{"id":null,"firstName":null,"lastName":null,"company":null,"streetAddress":null,"extendedAddress":null,"locality":null,"region":null,"postalCode":null,"countryName":null,"countryCodeAlpha2":null,"countryCodeAlpha3":null,"countryCodeNumeric":null},"customFields":"","avsErrorResponseCode":null,"avsPostalCodeResponseCode":"M","avsStreetAddressResponseCode":"I","cvvResponseCode":"M","gatewayRejectionReason":null,"processorAuthorizationCode":"R60XK5","processorResponseCode":"1000","processorResponseText":"Approved","additionalProcessorResponse":null,"voiceReferralNumber":null,"purchaseOrderNumber":null,"taxAmount":null,"taxExempt":false,"creditCard":{"token":null,"bin":"401288","last4":"1881","cardType":"Visa","expirationMonth":"12","expirationYear":"2020","customerLocation":"US","cardholderName":null,"imageUrl":"https://assets.braintreegateway.com/payment_method_logo/visa.png?environment=sandbox","prepaid":"No","healthcare":"Unknown","debit":"Unknown","durbinRegulated":"Unknown","commercial":"Unknown","payroll":"Unknown","issuingBank":"Unknown","countryOfIssuance":"","productId":"Unknown","uniqueNumberIdentifier":null,"venmoSdk":false,"maskedNumber":"401288******1881","expirationDate":"12/2020"},"statusHistory":[{"timestamp":"2016-12-30T16:24:22Z","status":"authorized","amount":"264.72","user":"coalcashop","transactionSource":"api"}],"planId":null,"subscriptionId":null,"subscription":{"billingPeriodEndDate":null,"billingPeriodStartDate":null},"addOns":[],"discounts":[],"descriptor":{"name":null,"phone":null,"url":null},"recurring":false,"channel":null,"serviceFeeAmount":null,"escrowStatus":null,"disbursementDetails":{"disbursementDate":null,"settlementAmount":null,"settlementCurrencyIsoCode":null,"settlementCurrencyExchangeRate":null,"fundsHeld":null,"success":null},"disputes":[],"paymentInstrumentType":"credit_card","processorSettlementResponseCode":"","processorSettlementResponseText":"","threeDSecureInfo":null,"paypalAccount":{},"coinbaseAccount":{},"applePayCard":{},"androidPayCard":{}}}'
+      string: '{"status":true,"token":"LWYqEnNXuDb7JWK0qdS8uLRMjTTDCSkzqpgj4dTgefU="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:22 GMT
+  recorded_at: Sun, 01 Jan 2017 22:22:17 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it//v0/payments
+    body:
+      encoding: UTF-8
+      string: '{"method":"Braintree","order_id":107236,"nonce":"fake-valid-nonce"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:LWYqEnNXuDb7JWK0qdS8uLRMjTTDCSkzqpgj4dTgefU=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '1368'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b39-5bfKkgjwBgjHh45JggLP6A"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sun, 01 Jan 2017 22:22:17 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"id":"hjf9twr5","status":"authorized","type":"sale","currencyIsoCode":"USD","amount":"264.72","merchantAccountId":"vxzvx5ms99dcmrn4","subMerchantAccountId":null,"masterMerchantAccountId":null,"orderId":"107236","createdAt":"2017-01-01T22:22:18Z","updatedAt":"2017-01-01T22:22:18Z","customer":{"id":null,"firstName":null,"lastName":null,"company":null,"email":null,"website":null,"phone":null,"fax":null},"billing":{"id":null,"firstName":null,"lastName":null,"company":null,"streetAddress":null,"extendedAddress":null,"locality":null,"region":null,"postalCode":"94107","countryName":null,"countryCodeAlpha2":null,"countryCodeAlpha3":null,"countryCodeNumeric":null},"refundId":null,"refundIds":[],"refundedTransactionId":null,"partialSettlementTransactionIds":[],"authorizedTransactionId":null,"settlementBatchId":null,"shipping":{"id":null,"firstName":null,"lastName":null,"company":null,"streetAddress":null,"extendedAddress":null,"locality":null,"region":null,"postalCode":null,"countryName":null,"countryCodeAlpha2":null,"countryCodeAlpha3":null,"countryCodeNumeric":null},"customFields":"","avsErrorResponseCode":null,"avsPostalCodeResponseCode":"M","avsStreetAddressResponseCode":"I","cvvResponseCode":"M","gatewayRejectionReason":null,"processorAuthorizationCode":"XZHRCT","processorResponseCode":"1000","processorResponseText":"Approved","additionalProcessorResponse":null,"voiceReferralNumber":null,"purchaseOrderNumber":null,"taxAmount":null,"taxExempt":false,"creditCard":{"token":null,"bin":"401288","last4":"1881","cardType":"Visa","expirationMonth":"12","expirationYear":"2020","customerLocation":"US","cardholderName":null,"imageUrl":"https://assets.braintreegateway.com/payment_method_logo/visa.png?environment=sandbox","prepaid":"No","healthcare":"Unknown","debit":"Unknown","durbinRegulated":"Unknown","commercial":"Unknown","payroll":"Unknown","issuingBank":"Unknown","countryOfIssuance":"","productId":"Unknown","uniqueNumberIdentifier":null,"venmoSdk":false,"maskedNumber":"401288******1881","expirationDate":"12/2020"},"statusHistory":[{"timestamp":"2017-01-01T22:22:18Z","status":"authorized","amount":"264.72","user":"coalcashop","transactionSource":"api"}],"planId":null,"subscriptionId":null,"subscription":{"billingPeriodEndDate":null,"billingPeriodStartDate":null},"addOns":[],"discounts":[],"descriptor":{"name":null,"phone":null,"url":null},"recurring":false,"channel":null,"serviceFeeAmount":null,"escrowStatus":null,"disbursementDetails":{"disbursementDate":null,"settlementAmount":null,"settlementCurrencyIsoCode":null,"settlementCurrencyExchangeRate":null,"fundsHeld":null,"success":null},"disputes":[],"paymentInstrumentType":"credit_card","processorSettlementResponseCode":"","processorSettlementResponseText":"","threeDSecureInfo":null,"paypalAccount":{},"coinbaseAccount":{},"applePayCard":{},"androidPayCard":{}}}'
+    http_version: 
+  recorded_at: Sun, 01 Jan 2017 22:22:18 GMT
 recorded_with: VCR 3.0.3

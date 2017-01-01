@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class User
+	class User < Request
 		attr_accessor :name, :id, :email, :image_url, :token
 
 		# INSTANCE METHODS
@@ -21,9 +22,8 @@ module Marketcloud
 		end
 
 
-		#
-		#
-		#
+		# Check whether the user iis authenticated
+		# @return true if authenticated
 		def authenticated?
 			return !self.token.nil?
 		end
@@ -31,127 +31,65 @@ module Marketcloud
 
 		# CLASS METHODS
 
-		#
-		#
-		#
+		# Find a user by ID
+		# @param id [Integer] the ID of the user
+		# @return a User or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/users/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			user = perform_request api_url("users/#{id}"), :get, nil, true
+
+			if user
+				new user['data']
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-
-			#return a user
-			new(attributes['data'])
 		end
 
-		#
-		#
-		#
+		# Find a user by email
+		# @param email [String] the email of the user
+		# @return a User or nil
 		def self.find_by_email(email)
-      query = Faraday.new(url: "#{API_URL}/users?email=#{email}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			user = perform_request api_url("users", { email: email }), :get, nil, true
+
+			if user
+				new user['data'].first
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-
-			#return a user - it is an array, so get the first one because of email uniqueness
-			new(attributes['data'].first)
 		end
 
-		#
-		#
-		#
+		# Create a new user
+		# @param name [Integer] the user name
+		# @param email [Integer] the user email
+		# @param password [Integer] the user password
+		# @return the newly created user
 		def self.create(name, email, password)
-			query = Faraday.new(url: "#{API_URL}/users/") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			user = perform_request api_url("users", {}), :post, { email: email, name: name, password: password }, true
+
+			if user
+				new user['data']
+			else
+				nil
 			end
 
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.post do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					email: email,
-					name: name,
-					password: password
-				}.to_json
-			end
-
-			# check for return code
-			attributes = JSON.parse(response.body)
-
-			if response.status == 400 && attributes["errors"].select { |e| e["type"] == "EmailAddressExists"}.length >= 1
-				raise ExistingUserError
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return the newly created user
-			new(attributes['data'])
+			# if response.status == 400 && attributes["errors"].select { |e| e["type"] == "EmailAddressExists"}.length >= 1
+			# 	raise ExistingUserError
+			# end
 		end
 
-		#
-		#
-		#
+		# Authenticate the current user
+		# @param password [Integer] the password
+		# @return true in case of success
 		def authenticate!(password)
-			query = Faraday.new(url: "#{API_URL}/users/authenticate") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			auth = User.perform_request User.api_url("users/authenticate", {}), :post,
+				{ email: self.email,
+					password: password }, true
+
+			if auth
+				self.token = auth['data']['token']
+				true
+			else
+				false
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.post do |req|
-				req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					email: self.email,
-					password: password
-				}.to_json
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			# check for return code
-			attributes = JSON.parse(response.body)
-
-			#return the newly authenticated user
-			self.token = attributes['data']['token']
 		end
 
 	end

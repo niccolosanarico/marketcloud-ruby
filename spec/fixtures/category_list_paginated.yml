@@ -5,10 +5,10 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"wF8ebHBJrSJyka4wW5Pr6ny+Mp9fzWHGvPrOQtKsB7M=","timestamp":1483184312}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"xdbZ/FDtpyXxYhyg/PTcoHgDppcY0Yxyycqxka59hTo=","timestamp":1483309017}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '194'
+      - '192'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-w+Kx1Aq/VaLt7rPYlxWNmA"
+      - W/"46-zCqmLib4+vSD0i7MBcbZAQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,29 +35,29 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sat, 31 Dec 2016 11:38:31 GMT
+      - Sun, 01 Jan 2017 22:16:56 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"qtabsUn76IZq/aORfzlPQF1AgXNis4iuSGt9Fm+/QYc="}'
+      string: '{"status":true,"token":"j6wDoC7wbARsI0CrsAVKqFIVhFsldf4+7sCeN6dJbd8="}'
     http_version: 
-  recorded_at: Sat, 31 Dec 2016 11:38:32 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/categories
+    uri: http://api.marketcloud.it//v0/categories
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:qtabsUn76IZq/aORfzlPQF1AgXNis4iuSGt9Fm+/QYc=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:j6wDoC7wbARsI0CrsAVKqFIVhFsldf4+7sCeN6dJbd8=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -78,7 +78,7 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sat, 31 Dec 2016 11:38:31 GMT
+      - Sun, 01 Jan 2017 22:16:56 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":[{"id":107590,"name":"Lavastoviglie","description":"Lavastoviglie
@@ -86,5 +86,5 @@ http_interactions:
         professionali","image_url":null,"url":null,"parent_id":null,"path":"/Macchinari","application_id":107224},{"id":107588,"name":"Pentole","description":"Pentole
         e padelle molto belle","image_url":null,"url":null,"parent_id":107225,"path":"/Minuteria/Pentole","application_id":107224},{"id":107225,"name":"Minuteria","description":null,"image_url":null,"url":null,"parent_id":null,"path":"/Minuteria","application_id":107224}],"_links":{"curr":"http://api.marketcloud.it/v0/categories?"},"count":4,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Sat, 31 Dec 2016 11:38:32 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
 recorded_with: VCR 3.0.3

@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Shipping
+	class Shipping < Request
 		attr_accessor :name,
 									:id,
 									:price
@@ -16,59 +17,31 @@ module Marketcloud
 			@price = attributes['price']
 		end
 
-		#
-		#
-		#
+		# Find a shipping by ID
+		# @param id [Integer] the ID of the shipping
+		# @return a Shipping or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/shippings/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			shipping = perform_request api_url("shippings/#{id}")
+
+			if shipping
+				new shipping['data']
+			else
+				nil
 			end
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = Marketcloud.configuration.public_key
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-
-			#return a product
-			new(attributes['data'])
     end
 
 
 
-		#
-		#
-		#
+		# Return all the shippings
+		# @return an array of Shippings
 		def self.all()
-			query = Faraday.new(url: "#{API_URL}/shippings") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			shippings = perform_request(api_url("shippings"), :get, nil, true)
+
+			if shippings
+				shippings['data'].map { |p| new(p) }
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      shippings = JSON.parse(response.body)
-
-			#return a list of shippings
-			shippings['data'].map { |s| new(s) }
-
 		end
 
 	end

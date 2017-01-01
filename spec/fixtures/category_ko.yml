@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/categories/-1
+    uri: http://api.marketcloud.it//v0/categories/-1
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Authorization:
       - e8152fe2-237a-4360-8ad2-f3773082226c
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 400
@@ -35,11 +35,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:17 GMT
+      - Sun, 01 Jan 2017 22:16:56 GMT
     body:
       encoding: UTF-8
       string: '{"status":false,"errors":[{"code":400,"type":"BadRequest","message":"id
         must be integer"}]}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:18 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
 recorded_with: VCR 3.0.3

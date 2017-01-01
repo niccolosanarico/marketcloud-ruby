@@ -5,10 +5,10 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"pRc4WiMYx2vG09ieYQRSDvAh9jdnE5gTKLYD1j65ytE=","timestamp":1483115051}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"BQTYMR3JYbPR0lBla9hyRSZOC3tgekuEdZEV0ErAAIg=","timestamp":1483309009}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '195'
+      - '194'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-ligtnMRROOenqkJZN1xdyQ"
+      - W/"46-rABL7l565zZAZDwHOSJCWQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,29 +35,29 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:09 GMT
+      - Sun, 01 Jan 2017 22:16:48 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"kRQEZqwgUGgAIgtWerdBAfWrJ+NIaQXWbKKbw1SOb4U="}'
+      string: '{"status":true,"token":"yQlyk3FaeS7Wb6fDKDbgnbWJKtBfBS6fF+KItZIUInc="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:11 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:49 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/addresses/107234
+    uri: http://api.marketcloud.it//v0/addresses/107234
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:kRQEZqwgUGgAIgtWerdBAfWrJ+NIaQXWbKKbw1SOb4U=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:yQlyk3FaeS7Wb6fDKDbgnbWJKtBfBS6fF+KItZIUInc=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -78,11 +78,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:08 GMT
+      - Sun, 01 Jan 2017 22:16:48 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":107227,"address1":"Via
         Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null,"application_id":107224}}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:11 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:49 GMT
 recorded_with: VCR 3.0.3

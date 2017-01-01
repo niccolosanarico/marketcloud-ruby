@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Order
+	class Order < Request
 		attr_accessor :id,
 									:cart_id,
 									:status,
@@ -27,96 +28,54 @@ module Marketcloud
 		end
 
 
-		#
-		#
-		#
+		# Find a order by ID
+		# @param id [Integer] the ID of the order
+		# @return a Order or nil
 		def self.find(id)
-      query = Faraday.new(url: "#{API_URL}/orders/#{id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			order = perform_request api_url("orders/#{id}"), :get, nil, true
+
+			if order
+				new order['data']
+			else
+				nil
 			end
+		end
 
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      attributes = JSON.parse(response.body)
-
-			#return a order
-			new(attributes['data'])
-    end
-
-		#
-		#
-		#
+		# Find all the orders belonging to a user
+		# @param user_id [Integer] the user ID
+		# @return an array of Order or nil
 		def self.find_by_user(user_id)
-      query = Faraday.new(url: "#{API_URL}/orders?user_id=#{user_id}") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			orders = perform_request api_url("orders", { user_id: user_id }), :get, nil, true
+
+			if orders
+				orders['data'].map { |a| new(a) }
+			else
+				nil
 			end
+		end
 
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.get do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-			end
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-      orders = JSON.parse(response.body)
-
-			#return a order
-			orders['data'].map { |o| new(o) }
-    end
-
-		#
-		#
-		#
+		# Create a new order
+		# @param user_id [Integer] the user to which the order belongs
+		# @param cart_id [Integer] the cart for the order
+		# @param shipping_address_id [Integer] the shipping address
+		# @param billing_address_id [Integer] the billing address
+		# @param shipping_id [Integer] the shipping ID
+		# @return the newly created order
 		def self.create(user_id, cart_id, shipping_address_id, billing_address_id, shipping_id)
-			query = Faraday.new(url: "#{API_URL}/orders") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			order = perform_request api_url("orders", {}), :post,
+						{
+							user_id: user_id,
+							cart_id: cart_id,
+							shipping_address_id: shipping_address_id,
+							billing_address_id: billing_address_id,
+							shipping_id: shipping_id
+						}, true
+
+			if order
+				new order['data']
+			else
+				nil
 			end
-
-			auth = Marketcloud::Authentication.get_token()
-
-			response = query.post do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
-				req.body = {
-					cart_id: cart_id,
-					user_id: user_id,
-					shipping_address_id: shipping_address_id,
-					billing_address_id: billing_address_id,
-					shipping_id: shipping_id
-				}.to_json
-			end
-
-      attributes = JSON.parse(response.body)
-
-			if response.status != 200
-        raise NotFound.new(attributes) if response.status == 404
-				raise Anauthorized.new(attributes) if response.status == 401
-        raise BadRequest.new(attributes) if response.status == 400
-
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return a order
-			new(attributes['data'])
 		end
 	end
 end

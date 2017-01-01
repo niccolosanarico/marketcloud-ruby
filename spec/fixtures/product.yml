@@ -2,32 +2,32 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/products/107226
+    uri: http://api.marketcloud.it//v0/products/107226
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
+      - application/json
+      Accept:
       - application/json
       Authorization:
       - e8152fe2-237a-4360-8ad2-f3773082226c
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Length:
-      - '475'
+      - '479'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"206-vG3gbcdCi7vbeqE5ernS0Q"
+      - W/"206-X58rMyjSCQIanhcKHJmDtQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -37,12 +37,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:21 GMT
+      - Sun, 01 Jan 2017 22:16:58 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"price":99.99,"name":"Pentola","description":"<p>Una
-        bellissima pentola<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107225,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"application_id":107224,"product_id":107226,"variant_id":0,"stock_level":null,"stock_type":"status","stock_status":"in_stock","display_price":"99.99
-        EUR"}}'
+        bellissima pentola<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107588,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"application_id":107224,"product_id":107226,"variant_id":0,"display_price":"99.99
+        EUR","stock_level":null,"stock_type":"status","stock_status":"in_stock"}}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:23 GMT
+  recorded_at: Sun, 01 Jan 2017 22:17:00 GMT
 recorded_with: VCR 3.0.3

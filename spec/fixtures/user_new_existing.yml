@@ -5,10 +5,10 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"c9s2CeOZvvndGU/iaJuTpHYbAFQFxMPV+vL04Dl3sS0=","timestamp":1483121310}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"DaKqYOOvb/4dxsQTt7vQOsyulw0Ib8OGRDr/l4n0VCU=","timestamp":1483309771}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '195'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-uzXzlrcRABco/vQyyQRqnw"
+      - W/"46-doInQ+403VxiI40BDDrM3Q"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,29 +35,29 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 18:08:29 GMT
+      - Sun, 01 Jan 2017 22:29:30 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"PAH0Ubb6A3TGp4DGFabPKOn8EpGvbkFOuioceY+w5OE="}'
+      string: '{"status":true,"token":"JlHLDA0ZJP5yW0AMeliTfwJfOKPPz4CKLvpiJtuE3Y4="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 18:08:31 GMT
+  recorded_at: Sun, 01 Jan 2017 22:29:31 GMT
 - request:
     method: post
-    uri: http://api.marketcloud.it/v0/users/
+    uri: http://api.marketcloud.it//v0/users
     body:
       encoding: UTF-8
       string: '{"email":"prova2@prova.it","name":"prova","password":"provapw"}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:PAH0Ubb6A3TGp4DGFabPKOn8EpGvbkFOuioceY+w5OE=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:JlHLDA0ZJP5yW0AMeliTfwJfOKPPz4CKLvpiJtuE3Y4=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 400
@@ -76,11 +76,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 18:08:30 GMT
+      - Sun, 01 Jan 2017 22:29:29 GMT
     body:
       encoding: UTF-8
       string: '{"status":false,"errors":[{"code":400,"type":"EmailAddressExists","message":"The
         email address prova2@prova.it is already taken."}]}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 18:08:31 GMT
+  recorded_at: Sun, 01 Jan 2017 22:29:31 GMT
 recorded_with: VCR 3.0.3

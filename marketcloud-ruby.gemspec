@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "marketcloud-ruby"
-  spec.version       = "0.0.3"
+  spec.version       = "0.1.0"
   spec.authors       = ["Niccolo Sanarico"]
   spec.email         = ["nico@niccolosanarico.com"]
 
   spec.summary       = %q{Wrapper for Marketcloud API}
-  spec.description   = %q{Wrapper for Marketcloud API, it supports V0}
+  spec.description   = %q{Wrapper for Marketcloud API, it supports V0 and Redis for caching}
   spec.homepage      = "https://www.marketcloud.it"
   spec.license       = "MIT"
 
@@ -36,5 +36,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday"
   spec.add_dependency "json"
+  spec.add_dependency "redis"
+  spec.add_dependency 'faraday_middleware'
 
 end

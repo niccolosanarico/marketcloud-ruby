@@ -1,8 +1,9 @@
+require_relative 'request'
 require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Braintree
+	class Braintree < Request
 		attr_accessor :token
 
 		def initialize(attributes)
@@ -12,29 +13,17 @@ module Marketcloud
 		end
 
 
+		# Create a new braintree token
+		# @param user_id [Integer] the user for which the token is being created
+		# @return an object with the token
 		def self.get_token(user_id = nil)
-      query = Faraday.new(url: "#{API_URL}/integrations/braintree/clientToken") do |faraday|
-				faraday.request  :url_encoded             # form-encode POST params
-				faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+			braintree = perform_request api_url("integrations/braintree/clientToken", {}), :post, { customer_id: user_id }, false
+
+			if braintree
+				new braintree['data']
+			else
+				nil
 			end
-
-			response = query.post do |req|
-			  req.headers['Content-Type'] = 'application/json'
-				req.headers['Authorization'] = Marketcloud.configuration.public_key
-				req.body = {
-					customer_id: user_id
-				}.to_json
-			end
-
-      attributes = JSON.parse(response.body)
-
-			if response.status != 200
-				Marketcloud.logger.error(response.body)
-				return nil
-			end
-
-			#return a product
-			new(attributes['data'])
-    end
+		end
 	end
 end

@@ -5,10 +5,10 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"REtAsoedgQ1jkQx0bNTfJd3RwgmkBeJ/+NuoxQRUQ6M=","timestamp":1483115059}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"xdbZ/FDtpyXxYhyg/PTcoHgDppcY0Yxyycqxka59hTo=","timestamp":1483309017}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '194'
+      - '193'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-3ruf/eWscA+htDrR8LuiOA"
+      - W/"46-yVgO2utEZcn57LChpVllwA"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,29 +35,29 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:17 GMT
+      - Sun, 01 Jan 2017 22:16:55 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"/fGLTTzQyMwcdscF2tSV9sHELwBpDAaMKCt3PgBDZXM="}'
+      string: '{"status":true,"token":"/09jnM1T9OIKo7Oy4lq+pBfQde1PJ15o84JeKt8PfCo="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:19 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/coupons/107241
+    uri: http://api.marketcloud.it//v0/coupons/107241
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:/fGLTTzQyMwcdscF2tSV9sHELwBpDAaMKCt3PgBDZXM=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:/09jnM1T9OIKo7Oy4lq+pBfQde1PJ15o84JeKt8PfCo=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -78,11 +78,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:24:18 GMT
+      - Sun, 01 Jan 2017 22:16:57 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"_id":"58659143f0a1c8622c942862","code":"MINUTERIA5","name":"Minuteria
         a sconto","type":"total","target_type":"CART_COUPON","discount_type":"PERCENTAGE_REDUCTION","discount_value":5,"application_id":107224,"active":false,"id":107241}}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:24:19 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:58 GMT
 recorded_with: VCR 3.0.3

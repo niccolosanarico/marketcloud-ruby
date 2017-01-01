@@ -5,10 +5,10 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"/2lOwJquTrsFg8GNDiOYd3vLmssnv+oVzEVKptWyR4k=","timestamp":1483115763}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"BQTYMR3JYbPR0lBla9hyRSZOC3tgekuEdZEV0ErAAIg=","timestamp":1483309009}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-f8xXO/WJYOFKzjOWNm2u9A"
+      - W/"46-xjPHlGKfzMvbEnt0fT53Qw"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,29 +35,29 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:36:02 GMT
+      - Sun, 01 Jan 2017 22:16:48 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"xVCwVpObWcbZcogyJxdK1A1tqEvodI4Cq+GR3lrnCb8="}'
+      string: '{"status":true,"token":"mi6KsNF3BT8ZlgHQYctkgryAHcNcKyMvb4Sm36duCMg="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:36:03 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:50 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/users?email=prova2@prova.it
+    uri: http://api.marketcloud.it//v0/users?email=prova2@prova.it
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:xVCwVpObWcbZcogyJxdK1A1tqEvodI4Cq+GR3lrnCb8=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:mi6KsNF3BT8ZlgHQYctkgryAHcNcKyMvb4Sm36duCMg=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -78,21 +78,21 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:36:01 GMT
+      - Sun, 01 Jan 2017 22:16:48 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":[{"email":"prova2@prova.it","name":"prova","created_at":"2016-12-29T22:33:39.341Z","id":107237,"registered_with":"marketcloud"}],"_links":{"curr":"http://api.marketcloud.it/v0/users?email=prova2@prova.it&"},"count":1,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:36:03 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:50 GMT
 - request:
     method: post
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"/2lOwJquTrsFg8GNDiOYd3vLmssnv+oVzEVKptWyR4k=","timestamp":1483115763}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"Q9M7otBKJrqfXbdEeBWT4UWdDNolJ5vJW05vO7cBPY8=","timestamp":1483309010}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
       Accept:
@@ -105,11 +105,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '195'
+      - '196'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-PXMMM+7BHE9zBwYkpiHadA"
+      - W/"46-hL4xOTTgX1yM6Sqj4Cs7EA"
       Vary:
       - Accept-Encoding
       Server:
@@ -119,30 +119,30 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:36:02 GMT
+      - Sun, 01 Jan 2017 22:16:49 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"v/RI6cqXkOL/rDO5cKhZJZiT7U8+rR0cx2FmaM593ng="}'
+      string: '{"status":true,"token":"J5YRIq0sw0c/Vy5XPZze9xOilTFYl7zzDiyWOKDmiVA="}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:36:03 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:50 GMT
 - request:
     method: post
-    uri: http://api.marketcloud.it/v0/addresses
+    uri: http://api.marketcloud.it//v0/addresses
     body:
       encoding: UTF-8
       string: '{"full_name":"Pinco Pallo","user_id":107237,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
         Vittor Pisani 13","postal_code":"20127"}'
     headers:
       User-Agent:
-      - Faraday v0.10.0
+      - Faraday v0.10.1
       Content-Type:
       - application/json
+      Accept:
+      - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:v/RI6cqXkOL/rDO5cKhZJZiT7U8+rR0cx2FmaM593ng=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:J5YRIq0sw0c/Vy5XPZze9xOilTFYl7zzDiyWOKDmiVA=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -153,7 +153,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"db-iL2l0VoPQWsIV/9INBqvpA"
+      - W/"db-xV/HdFogHvH/Zuj3YuN+YA"
       Vary:
       - Accept-Encoding
       Server:
@@ -163,11 +163,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Fri, 30 Dec 2016 16:36:02 GMT
+      - Sun, 01 Jan 2017 22:16:49 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"full_name":"Pinco Pallo","user_id":107237,"email":"pinco@pallo.com","country":"Italy","city":"Milano","address1":"Via
-        Vittor Pisani 13","postal_code":"20127","application_id":107224,"id":107365}}'
+        Vittor Pisani 13","postal_code":"20127","application_id":107224,"id":107728}}'
     http_version: 
-  recorded_at: Fri, 30 Dec 2016 16:36:04 GMT
+  recorded_at: Sun, 01 Jan 2017 22:16:50 GMT
 recorded_with: VCR 3.0.3
