@@ -11,7 +11,10 @@ module Marketcloud
 									:billing_address_id,
 									:shipping_id,
 									:user_id,
-									:store_id
+									:store_id,
+									:display_total,
+									:total,
+									:currency_id
 
 		#
 		#
@@ -25,6 +28,9 @@ module Marketcloud
 			@shipping_id = attributes['shipping_id']
 			@user_id = attributes['user_id']
 			@store_id = attributes['store_id']
+			@display_total = attributes['display_total']
+			@total = attributes['total']
+			@currency_id = attributes['currency_id']
 		end
 
 
