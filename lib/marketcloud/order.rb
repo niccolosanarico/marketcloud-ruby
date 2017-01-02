@@ -12,8 +12,10 @@ module Marketcloud
 									:shipping_id,
 									:user_id,
 									:store_id,
-									:display_total,
 									:total,
+									:items_total,
+									:shipping_total,
+									:taxes_total,
 									:currency_id
 
 		#
