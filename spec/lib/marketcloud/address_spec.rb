@@ -74,12 +74,52 @@ RSpec.describe Marketcloud::Address do
       }
     }
 
-    it 'should return 200' do
+    it 'should return an object' do
       expect(address).not_to be_nil
     end
 
     it 'should be an updated address' do
       expect(address.country).to eq "Norway"
+    end
+	end
+
+	describe 'a DELETE on an address' do
+		let(:address) {
+      VCR.use_cassette('address_delete_prepare') {
+				user = Marketcloud::User.find_by_email('prova2@prova.it')
+        addr = Marketcloud::Address.create({
+						full_name: "Pinco Pallo",
+						user_id: user.id,
+						email: "pinco@pallo.com",
+						country: "Italy",
+						city: "Milano",
+						address1: "Via Vittor Pisani 13",
+						postal_code: "20127"
+					})
+				addr
+      }
+    }
+
+		let(:deleted) {
+			VCR.use_cassette('address_delete') {
+				deleted = Marketcloud::Address.delete(address.id)
+				deleted
+			}
+		}
+
+		let(:check) {
+			VCR.use_cassette('address_delete_check') {
+				check = Marketcloud::Address.find(address.id)
+				check
+			}
+		}
+
+		it 'should return an object' do
+      expect(deleted).not_to be_nil
+    end
+
+		it 'should have deleted the cart' do
+      expect(check).to be_nil
     end
 	end
 end
