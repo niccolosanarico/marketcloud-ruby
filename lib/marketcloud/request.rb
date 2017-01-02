@@ -12,6 +12,12 @@ module Marketcloud
       "v0"
     end
 
+    # Stub method. Each subclass should have manage whether it should be cached
+    # @return [Boolean] whether calls to this object should be cached
+    def self.cache_me?
+      true
+    end
+
     # Returns a full url for an API call
     # @param path [String] API path to call
     # @return [String] full fledged url
@@ -46,7 +52,7 @@ module Marketcloud
     def self.perform_request url, verb = :get, body = nil, need_token = false, options = {}
       options_id = options.inspect
 
-      can_cache = [:post, :put, :patch, :delete].include?(verb) ? false : cached?
+      can_cache = [:post, :put, :patch, :delete].include?(verb) || !self.cache_me? ? false : cached?
 
       if can_cache && result = store.get("#{clean_url(url)}#{options_id}")
         return JSON.parse(result)

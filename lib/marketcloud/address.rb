@@ -41,6 +41,10 @@ module Marketcloud
 			true
 		end
 
+		def self.cache_me?
+			false
+		end
+		
 		# Find an address by ID
 		# @param id [Integer] the ID of the address
 		# @return an Address or nil
