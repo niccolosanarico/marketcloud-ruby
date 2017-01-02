@@ -46,7 +46,7 @@ module Marketcloud
     def self.perform_request url, verb = :get, body = nil, need_token = false, options = {}
       options_id = options.inspect
 
-      can_cache = [:post, :put, :patch].include?(verb) ? false : cached?
+      can_cache = [:post, :put, :patch, :delete].include?(verb) ? false : cached?
 
       if can_cache && result = store.get("#{clean_url(url)}#{options_id}")
         return JSON.parse(result)
@@ -79,7 +79,7 @@ module Marketcloud
 		      req.headers['Authorization']  = Marketcloud.configuration.public_key
         end
 
-        if [:post, :put, :patch].include?(verb)
+        if [:post, :put, :patch, :delete].include?(verb)
           req.body = body.to_json if body
         end
 			end

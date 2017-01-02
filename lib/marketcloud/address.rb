@@ -81,6 +81,19 @@ module Marketcloud
 			end
 		end
 
+		# Delete an address
+		# @param address_ID [Integer] the address to be deleted
+		# @return true in case of success
+		def self.delete(id)
+			success = perform_request api_url("addresses/#{id}", {}), :delete, address, true
+
+			if success
+				true
+			else
+				false
+			end
+		end
+
 		# Updates the current address (! modifies object!)
 		# @param address [Address] the updated addresss
 		# @return true for success, false otherwise

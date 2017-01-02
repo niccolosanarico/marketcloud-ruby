@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"XGg4s7lsKGJi6Edn4J2XXjKYme+wlzqtDhvG95ORsJk=","timestamp":1483356808}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '194'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-2KVTd6rVkbW21L4aVIeWQA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Mon, 02 Jan 2017 11:33:26 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"WJxUDkFc1JYmwT4D1OluSuCoR51J6DkGHM62FvLIndo="}'
+    http_version: 
+  recorded_at: Mon, 02 Jan 2017 11:33:28 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/products
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:WJxUDkFc1JYmwT4D1OluSuCoR51J6DkGHM62FvLIndo=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '1203'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"847-SUtpuP8lCTZDczUIP386Iw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Mon, 02 Jan 2017 11:33:27 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdGF0dXMiOnRydWUsImRhdGEiOlt7Im5hbWUiOiJMYXZhYmljY2hpZXJp
+        IGEgY2VzdGVsbG8gcHJvZmVzc2lvbmFsZSIsImRlc2NyaXB0aW9uIjoiPGRp
+        dj7CoExhdmFiaWNjaGllcmkgYSBjZXN0ZWxsbyBwcm9mZXNzaW9uYWxlLjxw
+        PjxlbT5DYXJhdHRlcmlzdGljaGUgdGVjbmljaGU8L2VtPjwvcD48YnIvPjx1
+        bD48bGk+Y2ljbG8gZGkgbGF2YWdnaW8gMTIwIHNlYyA8L2xpPjxsaT5hbHRl
+        enphIG1heCB4IGJpY2NoaWVyZSBjbSAyMyw1IDwvbGk+PGxpPmFsdGV6emEg
+        bWF4IHBpYXR0byBjbSAyNSw1IDwvbGk+PGxpPmNlc3RvIGNtIDQweDQwIDwv
+        bGk+PGxpPmFsaW1lbnRhemlvbmUgYWNxdWEgY29uc2lnbGlhdGEgKzU1IMKw
+        QyA8L2xpPjxsaT5jb25zdW1vIGFjcXVhIHBlciBjaWNsbyBhIDIgYmFyIGx0
+        IDIsMCA8L2xpPjxsaT5kb3NhdG9yZSBicmlsbGFudGFudGUgZSBkZXRlcmdl
+        bnRlIDwvbGk+PGxpPnNjYXJpY28gYSBjYWR1dGE8L2xpPjxsaT5jYXBhY2l0
+        w6AgdmFzY2EgbHQgMTcgPC9saT48L3VsPjxici8+PHA+PGVtPklsIGNvcnJl
+        ZG8gc3RhbmRhcmQgaW5jbHVkZTo8L2VtPjwvcD48YnIvPjx1bD48bGk+Q2Vz
+        dG8gcGVyIGJpY2NoaWVyaSA0MHg0MHgxNTwvbGk+PGxpPlBvcnRhY3VjY2hp
+        YWluaTwvbGk+PGxpPlBvcnRhcGlhdHRpbmkgMTIgcG9zdGk8L2xpPjwvdWw+
+        PGJyLz48YnIvPjxwPjxlbT5OT1RBPC9lbT46IGxhIHBvbXBhIGRpIHNjYXJp
+        Y28gbm9uIMOoIGluY2x1c2E8L3A+PGJyLz48cD48ZW0+RGF0aSBlbGV0dHJp
+        Y2k8L2VtPjwvcD48dWw+PGxpPktXIDMsMjYgLyAxNkE8L2xpPjxsaT5WIDIz
+        MCA8L2xpPjxsaT41MC82MCBIeiA8L2xpPjxsaT5yZXNpc3RlbnphIHZhc2Nh
+        IEtXIDMsMCA8L2xpPjxsaT5yZXNpc3RlbnphIGJvaWxlciBXVyAzLDAgPC9s
+        aT48bGk+Y2FwYWNpdMOgIGJvaWxlciBsdCAzLDIgPC9saT48bGk+cG90ZW56
+        YSBwb21wYSBLVyAwLDI2LzAsMzUgSHA8L2xpPjwvdWw+PGJyLz48cD5EaW1l
+        bnNpb25lIGltYmFsbG86IDY2eDU2LjV4ODVoIChjbSksIHBlc28gNDJLZzwv
+        cD48cD5JbmdvbWJybzogNDd4NTUuNXg2NWggKGNtKTwvcD48L2Rpdj4iLCJp
+        bWFnZXMiOlsiaHR0cHM6Ly9zaG9wLmNvYWxjYS5pdC9zcHJlZS9wcm9kdWN0
+        cy8yMjIvcHJvZHVjdC9nNDAyNi5qcGVnPzE0NTEyMTg1MzIiXSwibWVkaWEi
+        OltdLCJwdWJsaXNoZWQiOnRydWUsInR5cGUiOiJzaW1wbGVfcHJvZHVjdCIs
+        InNsdWciOiJsYXZhYmljY2hpZXJpLWEtY2VzdGVsbG8tcHJvZmVzc2lvbmFs
+        ZSIsImNhdGVnb3J5X2lkIjoxMDc1OTAsInJlcXVpcmVzX3NoaXBwaW5nIjp0
+        cnVlLCJ3ZWlnaHQiOjQyLCJkZXB0aCI6NDcsIndpZHRoIjo1NS41LCJoZWln
+        aHQiOjY1LCJwcmljZSI6ODkwLCJpZCI6MTA3NTk4LCJhcHBsaWNhdGlvbl9p
+        ZCI6MTA3MjI0LCJwcm9kdWN0X2lkIjoxMDc1OTgsInZhcmlhbnRfaWQiOjAs
+        ImRpc3BsYXlfcHJpY2UiOiI4OTAgRVVSIiwic3RvY2tfbGV2ZWwiOm51bGws
+        InN0b2NrX3R5cGUiOiJzdGF0dXMiLCJzdG9ja19zdGF0dXMiOiJpbl9zdG9j
+        ayJ9LHsicHJpY2UiOjk5Ljk5LCJuYW1lIjoiUGVudG9sYSIsImRlc2NyaXB0
+        aW9uIjoiPHA+VW5hIGJlbGxpc3NpbWEgcGVudG9sYTxici8+PC9wPiIsImlt
+        YWdlcyI6WyJodHRwczovL3Nob3AuY29hbGNhLml0L3NwcmVlL3Byb2R1Y3Rz
+        LzMyNy9wcm9kdWN0LzA1MDAwNzAuanBnPzE0ODAwMjM1NTYiXSwibWVkaWEi
+        OltdLCJwdWJsaXNoZWQiOnRydWUsInR5cGUiOiJzaW1wbGVfcHJvZHVjdCIs
+        InNsdWciOiJwZW50b2xhIiwiY2F0ZWdvcnlfaWQiOjEwNzU4OCwicmVxdWly
+        ZXNfc2hpcHBpbmciOnRydWUsIndlaWdodCI6MywiZGVwdGgiOjUwLCJ3aWR0
+        aCI6NTAsImhlaWdodCI6MTAsImlkIjoxMDcyMjYsImFwcGxpY2F0aW9uX2lk
+        IjoxMDcyMjQsInByb2R1Y3RfaWQiOjEwNzIyNiwidmFyaWFudF9pZCI6MCwi
+        ZGlzcGxheV9wcmljZSI6Ijk5Ljk5IEVVUiIsInN0b2NrX2xldmVsIjpudWxs
+        LCJzdG9ja190eXBlIjoic3RhdHVzIiwic3RvY2tfc3RhdHVzIjoiaW5fc3Rv
+        Y2sifV0sIl9saW5rcyI6eyJjdXJyIjoiaHR0cDovL2FwaS5tYXJrZXRjbG91
+        ZC5pdC92MC9wcm9kdWN0cz8ifSwiY291bnQiOjIsInBhZ2UiOjEsInBhZ2Vz
+        IjoxfQ==
+    http_version: 
+  recorded_at: Mon, 02 Jan 2017 11:33:28 GMT
+recorded_with: VCR 3.0.3
