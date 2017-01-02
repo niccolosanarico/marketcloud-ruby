@@ -46,7 +46,7 @@ RSpec.describe Marketcloud::Cart do
 
 			let(:cart) {
 				VCR.use_cassette('cart_with_ID_update') {
-					cart = Marketcloud::Cart.find(cart_id)
+					cart = Marketcloud::Cart.create
 					cart.update([{
 							product_id: product_id,
 							quantity: product_quantity
@@ -71,13 +71,13 @@ RSpec.describe Marketcloud::Cart do
 
 			let(:cart) {
 				VCR.use_cassette('cart_with_ID_add') {
-					Marketcloud::Cart.find(cart_id)
+					Marketcloud::Cart.create
 				}
 			}
 
-			let!(:initial_quantity) {
-				cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
-			}
+			# let!(:initial_quantity) {
+			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
+			# }
 
 			let(:updated_cart) {
 				VCR.use_cassette('cart_with_ID_add_post') {
@@ -93,7 +93,7 @@ RSpec.describe Marketcloud::Cart do
 			end
 
 			it 'should update the product quantity' do
-				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity+initial_quantity
+				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity
 			end
 		end
 
@@ -101,13 +101,13 @@ RSpec.describe Marketcloud::Cart do
 
 			let(:cart) {
 				VCR.use_cassette('cart_with_ID_add_') {
-					Marketcloud::Cart.find(cart_id)
+					Marketcloud::Cart.create
 				}
 			}
 
-			let!(:initial_quantity) {
-				cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
-			}
+			# let!(:initial_quantity) {
+			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
+			# }
 
 			let(:updated_cart) {
 				VCR.use_cassette('cart_with_ID_add__post') {
@@ -124,7 +124,7 @@ RSpec.describe Marketcloud::Cart do
 			end
 
 			it 'should update the product quantity' do
-				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity+initial_quantity
+				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity
 			end
 		end
 	end
