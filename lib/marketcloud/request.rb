@@ -21,7 +21,7 @@ module Marketcloud
     end
 
     def self.api_base_url
-      "http://api.marketcloud.it/"
+      "http://api.marketcloud.it"
     end
 
     def self.api_query_string params = {}
@@ -42,7 +42,7 @@ module Marketcloud
     # @param body [Hash] Body for POST request
     # @param need_token [Boolean] True if need authentication token
     # @param options [Hash] Options passed to HTTParty
-    # @return [String] raw response of the call
+    # @return [String] response body
     def self.perform_request url, verb = :get, body = nil, need_token = false, options = {}
       options_id = options.inspect
 
@@ -55,7 +55,7 @@ module Marketcloud
       response = perform_uncached_request url, verb, body, need_token, options
 
       store.setex "#{clean_url(url)}#{options_id}", ttl, response.body.to_json if can_cache && !response.nil?
-      return response.body unless response.nil?
+      return response.body if !response.nil?
       nil
     end
 
@@ -97,7 +97,7 @@ module Marketcloud
 
 				Marketcloud.logger.error(response.body)
 				return nil
-			end
+      end
 
       response
     end

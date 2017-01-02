@@ -32,7 +32,6 @@ module Marketcloud
 			end
 		end
 
-
 		# Adds items to a cart
 		# @param items [Array] the items to be added
 		# @return a new cart
