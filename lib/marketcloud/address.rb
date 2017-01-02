@@ -85,7 +85,7 @@ module Marketcloud
 		# @param address_ID [Integer] the address to be deleted
 		# @return true in case of success
 		def self.delete(id)
-			success = perform_request api_url("addresses/#{id}", {}), :delete, address, true
+			success = perform_request api_url("addresses/#{id}", {}), :delete, nil, true
 
 			if success
 				true
