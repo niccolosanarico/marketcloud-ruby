@@ -19,7 +19,8 @@ module Marketcloud
 									:taxes_total,
 									:total,
 									:products,
-									:currency_id
+									:currency_id,
+									:created_at,
 
 		#
 		#
@@ -41,6 +42,7 @@ module Marketcloud
 			@total = attributes['total']
 			@products = attributes['products']
 			@currency_id = attributes['currency_id']
+			@created_at = attributes['created_at']
 		end
 
 
