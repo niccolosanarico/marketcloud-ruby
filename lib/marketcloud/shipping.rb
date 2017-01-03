@@ -14,7 +14,7 @@ module Marketcloud
 		def initialize(attributes)
 			@id = attributes['id']
 			@name = attributes['name']
-			@price = attributes['price']
+			@base_cost = attributes['base_cost']
 		end
 
 		# Find a shipping by ID
@@ -28,7 +28,7 @@ module Marketcloud
 			else
 				nil
 			end
-    end
+		end
 
 
 
