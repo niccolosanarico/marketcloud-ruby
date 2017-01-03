@@ -6,7 +6,7 @@ module Marketcloud
 	class Shipping < Request
 		attr_accessor :name,
 									:id,
-									:price
+									:base_cost
 
 		#
 		#
