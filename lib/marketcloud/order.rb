@@ -20,7 +20,7 @@ module Marketcloud
 									:total,
 									:products,
 									:currency_id,
-									:created_at,
+									:created_at
 
 		#
 		#
