@@ -18,6 +18,7 @@ module Marketcloud
 									:shipping_total,
 									:taxes_total,
 									:total,
+									:items,
 									:products,
 									:currency_id,
 									:created_at
@@ -40,6 +41,7 @@ module Marketcloud
 			@shipping_total = attributes['shipping_total']
 			@taxes_total = attributes['taxes_total']
 			@total = attributes['total']
+			@items = attributes['items']
 			@products = attributes['products']
 			@currency_id = attributes['currency_id']
 			@created_at = attributes['created_at']
