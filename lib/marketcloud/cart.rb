@@ -66,6 +66,10 @@ module Marketcloud
 
 		# CLASS METHODS
 
+		def self.cache_me?
+      false
+    end
+
 		# Find a cart by ID
 		# @param id [Integer] the ID of the cart
 		# @return a Cart or nil

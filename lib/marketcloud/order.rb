@@ -44,6 +44,10 @@ module Marketcloud
 		end
 
 
+		def self.cache_me?
+      false
+    end
+
 		# Find a order by ID
 		# @param id [Integer] the ID of the order
 		# @return a Order or nil
