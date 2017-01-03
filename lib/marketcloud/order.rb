@@ -12,10 +12,13 @@ module Marketcloud
 									:shipping_id,
 									:user_id,
 									:store_id,
-									:total,
 									:items_total,
+									:display_total,
+									:display_items_total,
 									:shipping_total,
 									:taxes_total,
+									:total,
+									:products,
 									:currency_id
 
 		#
@@ -25,13 +28,18 @@ module Marketcloud
 			@id = attributes['id']
 			@user_id = attributes['user_id']
 			@status = attributes['status']
-			@shipping_address_id = attributes['shipping_address_id']
-			@billing_address_id = attributes['billing_address_id']
+			@shipping_address = attributes['shipping_address']
+			@billing_address = attributes['billing_address']
 			@shipping_id = attributes['shipping_id']
 			@user_id = attributes['user_id']
 			@store_id = attributes['store_id']
+			@items_total = attributes['items_total']
 			@display_total = attributes['display_total']
+			@display_items_total = attributes['display_items_total']
+			@shipping_total = attributes['shipping_total']
+			@taxes_total = attributes['taxes_total']
 			@total = attributes['total']
+			@products = attributes['products']
 			@currency_id = attributes['currency_id']
 		end
 
