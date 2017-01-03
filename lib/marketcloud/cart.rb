@@ -64,6 +64,21 @@ module Marketcloud
 			end
 		end
 
+		# Removes items from a cart (modifies the caller!)
+		# @param product_ids [Array] the products to be removed
+		# @return a new cart
+		def remove!(product_ids)
+			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
+				{ op: "remove",
+					items: product_ids }, true
+
+			if cart
+				self.items = cart["data"]["items"]
+			else
+				false
+			end
+		end
+
 		# CLASS METHODS
 
 		def self.cache_me?

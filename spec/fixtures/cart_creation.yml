@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"Z9fCCMAyCI0ZtfeTL7ZEQf1r4UJW5GCgScgsZj77+HI=","timestamp":1483309016}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"G4Huovd3r84og79EBlQKXXv4AkynstalUixJTTYXg2Q=","timestamp":1483487487}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '192'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-8I3W8uRYTm3T3u2fXH7nEg"
+      - W/"46-ST1INAaPWWIP6mr0zeH4Yw"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,15 +35,15 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:55 GMT
+      - Tue, 03 Jan 2017 23:51:26 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"hoNF1oz92f45yj1H6lMBcsfG6S7MVTUktM6a5fmyLwM="}'
+      string: '{"status":true,"token":"5C2GtWT0KrTCdYiy9/3HWRlUDhdimarrYuTld+JRhOw="}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:16:56 GMT
+  recorded_at: Tue, 03 Jan 2017 23:51:27 GMT
 - request:
     method: post
-    uri: http://api.marketcloud.it//v0/carts
+    uri: http://api.marketcloud.it/v0/carts
     body:
       encoding: UTF-8
       string: '{"user_id":107237,"items":[]}'
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:hoNF1oz92f45yj1H6lMBcsfG6S7MVTUktM6a5fmyLwM=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:5C2GtWT0KrTCdYiy9/3HWRlUDhdimarrYuTld+JRhOw=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '241'
+      - '242'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9d-fFvZTLfV6ajy6MCOJaI0kw"
+      - W/"9d-7KzQU/eLTIkla/Qv81Yelw"
       Vary:
       - Accept-Encoding
       Server:
@@ -78,10 +78,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:55 GMT
+      - Tue, 03 Jan 2017 23:51:26 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"created_at":1483309016294,"application_id":107224,"items":[],"status":"open","user_id":107237,"id":107729,"items_total":0,"total":0}}'
+      string: '{"status":true,"data":{"created_at":1483487487738,"application_id":107224,"items":[],"status":"open","user_id":107237,"id":108135,"items_total":0,"total":0}}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:16:56 GMT
+  recorded_at: Tue, 03 Jan 2017 23:51:28 GMT
 recorded_with: VCR 3.0.3

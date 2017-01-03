@@ -127,6 +127,38 @@ RSpec.describe Marketcloud::Cart do
 				expect(updated_cart.items.select { |p| p["product_id"] == product_id }.first["quantity"]).to eq product_quantity
 			end
 		end
+
+		context 'with REMOVE! it should remove the products and modify the original object' do
+
+			let(:cart) {
+				VCR.use_cassette('cart_with_ID_remove') {
+					cart= Marketcloud::Cart.create
+					cart.add!([{ product_id: product_id, quantity: 2}])
+					cart
+				}
+			}
+
+			# let!(:initial_quantity) {
+			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
+			# }
+
+			let(:removed_cart) {
+				VCR.use_cassette('cart_with_ID_removed') {
+					cart.remove!([
+							product_id: product_id
+						])
+					cart
+				}
+			}
+
+			it 'should return a valid cart' do
+				expect(removed_cart).not_to be_nil
+			end
+
+			it 'should have the product removed' do
+				expect(removed_cart.items.select { |p| p["product_id"] == product_id }).to be_empty
+			end
+		end
 	end
 
 	describe 'Using a POST to create a new cart with a user' do
