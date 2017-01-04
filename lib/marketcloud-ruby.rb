@@ -1,4 +1,5 @@
 require_relative 'marketcloud/address'
+require_relative 'marketcloud/application'
 require_relative 'marketcloud/authentication'
 require_relative 'marketcloud/braintree'
 require_relative 'marketcloud/cart'
