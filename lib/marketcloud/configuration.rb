@@ -4,7 +4,7 @@ require 'redis'
 
 module Marketcloud
 	class Configuration
-    attr_accessor :public_key, :private_key
+    attr_accessor :public_key, :private_key, :application
 
     def initialize(public = nil, private = nil, options = {})
       @public_key ||= public
