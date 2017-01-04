@@ -47,10 +47,11 @@ RSpec.describe Marketcloud::Cart do
 			let(:cart) {
 				VCR.use_cassette('cart_with_ID_update') {
 					cart = Marketcloud::Cart.create
-					cart.update([{
+					cart.update!([{
 							product_id: product_id,
 							quantity: product_quantity
 						}])
+					cart	
 				}
 			}
 

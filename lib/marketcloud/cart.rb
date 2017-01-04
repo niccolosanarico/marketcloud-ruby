@@ -16,17 +16,17 @@ module Marketcloud
 
 		# INSTANCE METHODS
 
-		# Creates a new cart with updated items
+		# Returns a new cart with updated items. Modifies the caller!
 		# @param items [Array] the items to be inserted
 		# @return a new cart
-		def update(items)
+		def update!(items)
 			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
 				{ op: "update",
 					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
 				}}, true
 
 			if cart
-				Cart.new(cart["data"])
+				self.items = cart["data"]["items"]
 			else
 				false
 			end
