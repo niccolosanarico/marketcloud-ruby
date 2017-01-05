@@ -78,5 +78,18 @@ module Marketcloud
 			end
 		end
 
+		# returns how many products and how many pages there are
+		# @param per_page [Integer] how many products per page
+		# @return [count, pages]
+		def self.count_and_pages(per_page: 20)
+			products = perform_request(api_url("products", { per_page: per_page }), :get, nil, false)
+
+			if products
+				[products["count"], products["pages"]]
+			else
+				nil
+			end
+		end
+
 	end
 end
