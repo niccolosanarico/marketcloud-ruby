@@ -62,7 +62,6 @@ module Marketcloud
 		# @return an array of Products
 		def self.all(q=nil, page=1, per_page=20, price_gt=0, price_lt=10000000000000, published=true)
 			query = {
-				q: q,
 				per_page: per_page,
 				page: page,
 				price_gt: price_gt,
