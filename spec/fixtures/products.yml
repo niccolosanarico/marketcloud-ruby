@@ -1,47 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://api.marketcloud.it/v0/tokens
-    body:
-      encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"4x5Xo2pAIihSQntcyuKIlFw4GL5SeYRKXgjGycnLcW8=","timestamp":1483640742}'
-    headers:
-      User-Agent:
-      - Faraday v0.10.1
-      Content-Type:
-      - application/json
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '195'
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"46-PqErjTxd4A0j5veEW9a3cw"
-      Vary:
-      - Accept-Encoding
-      Server:
-      - Microsoft-IIS/8.0
-      X-Powered-By:
-      - ASP.NET
-      Set-Cookie:
-      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
-      Date:
-      - Thu, 05 Jan 2017 18:25:42 GMT
-    body:
-      encoding: ASCII-8BIT
-      string: '{"status":true,"token":"rvjRBFXvhOwa35/DegknGTy6B3YOCKnFVjyCeiZTw38="}'
-    http_version: 
-  recorded_at: Thu, 05 Jan 2017 18:25:42 GMT
-- request:
     method: get
     uri: http://api.marketcloud.it/v0/products?page=1&per_page=20&price_gt=0&price_lt=10000000000000&published=true&q
     body:
@@ -55,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:rvjRBFXvhOwa35/DegknGTy6B3YOCKnFVjyCeiZTw38=
+      - e8152fe2-237a-4360-8ad2-f3773082226c
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -78,7 +37,7 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
       Date:
-      - Thu, 05 Jan 2017 18:25:43 GMT
+      - Thu, 05 Jan 2017 18:40:31 GMT
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -123,5 +82,5 @@ http_interactions:
         bHQ9MTAwMDAwMDAwMDAwMDAmcHVibGlzaGVkPXRydWUmcT0wJiJ9LCJjb3Vu
         dCI6MSwicGFnZSI6MSwicGFnZXMiOjF9
     http_version: 
-  recorded_at: Thu, 05 Jan 2017 18:25:42 GMT
+  recorded_at: Thu, 05 Jan 2017 18:40:32 GMT
 recorded_with: VCR 3.0.3
