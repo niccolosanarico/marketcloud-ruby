@@ -36,11 +36,20 @@ module Marketcloud
 		# @param cat_id [Integer] the category ID
 		# @param published [Boolean] whether query only for published products, defaults to true
 		# @return an array of Products or nil
-		def self.find_by_category(cat_id, published=true)
-			products = perform_request(api_url("products", { category_id: cat_id, published: published }), :get, nil, false)
+		def self.find_by_category(cat_id, q=nil, page=1, per_page=20, price_gt=0, price_lt=10000000000000, published=true)
+			products = perform_request(api_url("products",
+																				{
+																					q: q,
+																					per_page: per_page,
+																					page: page,
+																					price_gt: price_gt,
+																					price_lt: price_lt,
+																					category_id: cat_id,
+																					published: published
+																				}), :get, nil, false)
 
 			if products
-				products['data'].map { |p| new(p) }
+					products['data'].map { |p| new(p) }
 			else
 				nil
 			end
@@ -48,9 +57,17 @@ module Marketcloud
 
 		# Return all the products
 		# @param published [Boolean] whether query only for published products, defaults to true
-		# @return an array of Products#
-		def self.all(published=true)
-			products = perform_request(api_url("products"), :get, nil, true)
+		# @return an array of Products
+		def self.all(q=nil, page=1, per_page=20, price_gt=0, price_lt=10000000000000, published=true)
+			products = perform_request(api_url("products",
+																				{
+																					q: q,
+																					per_page: per_page,
+																					page: page,
+																					price_gt: price_gt,
+																					price_lt: price_lt,
+																					published: published
+																				}), :get, nil, true)
 
 			if products
 				products['data'].map { |p| new(p) }

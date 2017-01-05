@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.marketcloud.it//v0/products?category_id=107225&published=true
+    uri: http://api.marketcloud.it/v0/products?category_id=107225&page=1&per_page=20&price_gt=0&price_lt=10000000000000&published=true&q
     body:
       encoding: US-ASCII
       string: ''
@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '254'
+      - '289'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"93-d9/WNnHUcSkF3BqyAwmmNg"
+      - W/"cd-+lbd+kgjP+nNikPJ93wBZw"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:59 GMT
+      - Thu, 05 Jan 2017 18:25:43 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[],"_links":{"curr":"http://api.marketcloud.it/v0/products?category_id=107225&published=true&"},"count":0,"page":1,"pages":1}'
+      string: '{"status":true,"data":[],"_links":{"curr":"http://api.marketcloud.it/v0/products?category_id=107225&page=1&per_page=20&price_gt=0&price_lt=10000000000000&published=true&q=0&"},"count":0,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:01 GMT
+  recorded_at: Thu, 05 Jan 2017 18:25:43 GMT
 recorded_with: VCR 3.0.3
