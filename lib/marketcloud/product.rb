@@ -6,7 +6,7 @@ module Marketcloud
 	class Product < Request
 		attr_accessor :name, :id, :sku, :description,
 									:category_id, :brand_id,
-									:price, :images
+									:price, :images, :meta
 
 		def initialize(attributes)
 			@id = attributes['id']
