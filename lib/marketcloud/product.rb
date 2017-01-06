@@ -17,7 +17,7 @@ module Marketcloud
 			@brand_id = attributes['brand_id']
 			@price = attributes['price']
 			@images = attributes['images']
-			@meta = attributes['seo']['meta'] #title #keywords #description
+			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
 		end
 
 		# Find a product by ID
