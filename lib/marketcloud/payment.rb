@@ -4,8 +4,12 @@ require 'json'
 
 module Marketcloud
 	class Payment < Request
+		attr_accessor :status, :error, :data
 
-		def initialize
+		def initialize(attributes)
+			@status = attributes['status']
+			@error = attributes['errors']
+			@data = attributes['datas']
 		end
 
 		# Create a new payment
@@ -15,9 +19,9 @@ module Marketcloud
 		def self.create(order_id, nonce)
 			payment = perform_request api_url("payments", {}), :post, { method: "Braintree", order_id: order_id, nonce: nonce }, true
 			if payment
-				true
+				new(payment)
 			else
-				false
+				nil
 			end
 		end
 	end

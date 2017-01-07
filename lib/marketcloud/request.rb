@@ -96,12 +96,15 @@ module Marketcloud
         if response.status == 400
           if response.body["errors"].select { |e| e["type"] == "EmailAddressExists"}.length >= 1
             raise ExistingUserError.new(response.body)
+          elsif response.body["errors"].select { |e| e["message"] == "Braintree transaction error. See object for more details."}.length >= 1
+            # This is a payment error, return it to handle it
+            response
           # else
           #   raise BadRequest.new(response.body)
           end
         end
 
-				Marketcloud.logger.error(response.body)
+				Marketcloud.logger.error("Query to #{url} - #{response.body}")
 				return nil
       end
 
