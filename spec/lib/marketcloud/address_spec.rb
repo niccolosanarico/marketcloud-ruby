@@ -13,9 +13,29 @@ RSpec.describe Marketcloud::Address do
 			expect(address).not_to be_nil
 		end
 
-		it 'answers to find with a valid product' do
+		it 'answers to find with a valid address' do
 		  expect(address.full_name).to eq addr_name
 		end
+	end
+
+	describe 'a GET on a valid address and a check for its valid user' do
+	  let(:address) { VCR.use_cassette('address_check_user') { Marketcloud::Address.find_and_check_user(addr_id, user_id) }}
+
+		it 'should return 200' do
+			expect(address).not_to be_nil
+		end
+
+		it 'answers to find with a valid address' do
+		  expect(address.full_name).to eq addr_name
+		end
+	end
+
+	describe 'a GET on a valid address and a check for another user' do
+
+		it 'should raise an exception AddressNotFound' do
+			expect{ VCR.use_cassette('address_check_user_ko') { Marketcloud::Address.find_and_check_user(addr_id, 10000) }}.to raise_error(Marketcloud::AddressNotFound)
+		end
+
 	end
 
 	describe 'a GET on all addresses by a given user' do
@@ -25,7 +45,7 @@ RSpec.describe Marketcloud::Address do
 		  expect(addresses).to be_kind_of(Array)
 		end
 
-		it 'returns 200' do
+		it 'returns an object and not nil' do
 			expect(addresses).not_to be_nil
 		end
 	end

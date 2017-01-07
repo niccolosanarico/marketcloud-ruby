@@ -44,7 +44,7 @@ module Marketcloud
 		def self.cache_me?
 			false
 		end
-		
+
 		# Find an address by ID
 		# @param id [Integer] the ID of the address
 		# @return an Address or nil
@@ -71,6 +71,23 @@ module Marketcloud
 			end
 		end
 
+		# Find an address by ID and checks it belongs to the user
+		# @param id [Integer] the address ID
+		# @param user_id [Integer] the user ID
+		# @return an Address or nil
+		def self.find_and_check_user(id, user_id)
+			address = perform_request api_url("addresses/#{id}"), :get, nil, true
+
+			if address
+				addr = new address['data']
+				if addr.user_id != user_id
+					raise Marketcloud::AddressNotFound.new("Address #{addr.id} not belonging to user #{user_id}")
+				end
+				addr
+			else
+				nil
+			end
+		end
 
 		# Create a new address
 		# @param address [Address] the new address

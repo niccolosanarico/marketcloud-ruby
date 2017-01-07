@@ -25,6 +25,7 @@ module Marketcloud
   class InternalServerError < StandardError; end
   class ExistingUserError < StandardError; end
   class BraintreeProcessorDeclinedError < StandardError; end
+  class AddressNotFound < StandardError; end
 
   class << self
     attr_accessor :configuration

@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"APFZ0XjKCA9vcE7JB1AIYK52ai715i/1x2i7Kp6Jp90=","timestamp":1483816117}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '194'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-+oIoeMudHqrGMknshA9+oQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sat, 07 Jan 2017 19:08:39 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"yVC1cY738fr9knRBmwIpR247FmlD7Y30NwJDVXojfVE="}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 19:08:38 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/addresses/107234
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:yVC1cY738fr9knRBmwIpR247FmlD7Y30NwJDVXojfVE=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '338'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"130-UrlMc2dvKBtLh4TUWnrYPw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sat, 07 Jan 2017 19:08:38 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"full_name":"Pinco Pallo","id":107234,"user_id":107227,"address1":"Via
+        Vittor Pisani 13","address2":"","city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":"","alternate_phone_number":null,"email":"pinco@pallo.com","vat":"","application_id":107224}}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 19:08:38 GMT
+recorded_with: VCR 3.0.3
