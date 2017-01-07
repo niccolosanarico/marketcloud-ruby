@@ -2,9 +2,11 @@ require 'uri'
 require 'faraday'
 require 'faraday_middleware'
 require 'json'
+require_relative 'handle_errors'
 
 module Marketcloud
   class Request
+    extend Marketcloud::HandleErrors
 
     # Stub method. Each subclass should have its own api version
     # @return [String] api version
@@ -91,20 +93,12 @@ module Marketcloud
 			end
 
       if response.status != 200
-        # raise NotFound.new(response.body) if response.status == 404
-				raise Anauthorized.new(response.body) if response.status == 401
-        if response.status == 400
-          if response.body["errors"].select { |e| e["type"] == "EmailAddressExists"}.length >= 1
-            raise ExistingUserError.new(response.body)
-          elsif response.body["errors"].select { |e| e["message"] == "Braintree transaction error. See object for more details."}.length >= 1
-            # This is a payment error, return it to handle it
-            response
-          # else
-          #   raise BadRequest.new(response.body)
-          end
+
+        response.body["errors"].each do |error|
+          raise_exception(error, response.status)
         end
 
-				Marketcloud.logger.error("Query to #{url} - #{response.body}")
+				Marketcloud.logger.error("Generic error: query to #{url} - #{response.body}")
 				return nil
       end
 

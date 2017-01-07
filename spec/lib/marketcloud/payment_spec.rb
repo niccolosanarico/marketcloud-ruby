@@ -14,11 +14,9 @@ RSpec.describe Marketcloud::Payment do
 
 	end
 
-	describe 'a POST for an order with an invalid nonce should return false' do
-		let(:payment) { VCR.use_cassette('payment_ko') { Marketcloud::Payment.create(order_id_bad, "fake-processor-declined-visa-nonce") }}
-
-		it 'should return true' do
-			expect(payment.status).to be false
+	describe 'a POST for an order with a payment processor error' do
+		it 'should raise an exception' do
+			expect{ VCR.use_cassette('payment_ko') { Marketcloud::Payment.create(order_id_bad, "fake-processor-declined-visa-nonce") } }.to raise_error Marketcloud::BraintreeProcessorDeclinedError
 		end
 	end
 end

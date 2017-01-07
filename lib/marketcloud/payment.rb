@@ -9,7 +9,7 @@ module Marketcloud
 		def initialize(attributes)
 			@status = attributes['status']
 			@error = attributes['errors']
-			@data = attributes['datas']
+			@data = attributes['data']
 		end
 
 		# Create a new payment

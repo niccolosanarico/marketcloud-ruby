@@ -6,6 +6,7 @@ require_relative 'marketcloud/cart'
 require_relative 'marketcloud/category'
 require_relative 'marketcloud/configuration'
 require_relative 'marketcloud/coupon'
+require_relative 'marketcloud/handle_errors'
 require_relative 'marketcloud/order'
 require_relative 'marketcloud/payment'
 require_relative 'marketcloud/product'
@@ -23,6 +24,7 @@ module Marketcloud
   class Anauthorized < StandardError; end
   class InternalServerError < StandardError; end
   class ExistingUserError < StandardError; end
+  class BraintreeProcessorDeclinedError < StandardError; end
 
   class << self
     attr_accessor :configuration
