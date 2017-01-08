@@ -21,7 +21,7 @@ module Marketcloud
         end
       # elsif response.status == 404
       #   raise NotFound.new(response.body)
-      # end
+      end
     end
   end
 end

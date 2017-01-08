@@ -27,8 +27,10 @@ module Marketcloud
 			@has_variants = attributes['has_variants']
 			@variantsDefinition = attributes['variantsDefinition']
 			if @has_variants
+				@variants = Array.new
 				attributes['variants'].each do |variant|
-				@variants << Variant.new(variant)
+					@variants << Variant.new(variant, @variantsDefinition)
+				end
 			end
 		end
 
