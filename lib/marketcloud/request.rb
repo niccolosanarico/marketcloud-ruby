@@ -49,7 +49,7 @@ module Marketcloud
     # @param verb [Symbol] HTTP verb to use. Defaults to :get
     # @param body [Hash] Body for POST request
     # @param need_token [Boolean] True if need authentication token
-    # @param options [Hash] Options passed to HTTParty
+    # @param options [Hash] Options passed to Faraday
     # @return [String] response body
     def self.perform_request url, verb = :get, body = nil, need_token = false, options = {}
       options_id = options.inspect

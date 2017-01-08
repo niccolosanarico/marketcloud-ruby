@@ -92,5 +92,19 @@ module Marketcloud
 			end
 		end
 
+		# Updates a user
+		# @param id [String] the id of the user
+		# @param fields [Hash] a hash containing the fields to be updated
+		# @return a User or nil
+		def update(options: {})
+			user = User.perform_request User.api_url("users/#{id}"), :put, options, true
+
+			if user
+				User.new user['data']
+			else
+				nil
+			end
+		end
+
 	end
 end

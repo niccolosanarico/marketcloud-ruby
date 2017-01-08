@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"S38EhT2VwcOOT6wiZ4cm3XtHu02E9kqhHjdSNP3LHRs=","timestamp":1483875636}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '195'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-YDRi45K1X7KQw3d/PaZ4Yw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sun, 08 Jan 2017 11:40:36 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"GcYL6TAc/ksugOIzQUQhfwuQeBHrRkMCCxmXgQVstR4="}'
+    http_version: 
+  recorded_at: Sun, 08 Jan 2017 11:40:36 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/users/107227
+    body:
+      encoding: UTF-8
+      string: '{"name":"Panco Pillow"}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:GcYL6TAc/ksugOIzQUQhfwuQeBHrRkMCCxmXgQVstR4=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '350'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"113-lQoZ4kPIYG+HNSeu+R0lcQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sun, 08 Jan 2017 11:40:36 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"_id":"586589eaf0a1c8622c9427b8","name":"Panco
+        Pillow","password":"Dci15XmGyrt1+AoT5+nOBvaKDaw=","created_at":"2016-12-29T22:10:50.905Z","registered_with":"marketcloud","email":"pinco@pallo.it","application_id":107224,"id":107227,"status":"confirmed"}}'
+    http_version: 
+  recorded_at: Sun, 08 Jan 2017 11:40:36 GMT
+recorded_with: VCR 3.0.3

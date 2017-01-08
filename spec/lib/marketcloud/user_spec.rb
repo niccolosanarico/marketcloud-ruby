@@ -66,4 +66,20 @@ RSpec.describe Marketcloud::User do
 			expect(auth_user.token).not_to be_nil
 		end
 	end
+
+	describe 'a PUT on a valid user to change a custom field' do
+	  let(:user) {
+			VCR.use_cassette('user_update') {
+				the_user = Marketcloud::User.find(user_id)
+				the_user.update(options: {name: 'Panco Pillow'})
+			}}
+
+		it 'should return 200' do
+			expect(user).not_to be_nil
+		end
+
+		it 'answers to find with a valid user' do
+		  expect(user.name).to eq "Panco Pillow"
+		end
+	end
 end
