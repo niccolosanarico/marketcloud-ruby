@@ -4,6 +4,7 @@ RSpec.describe Marketcloud::Order do
 	let(:user_id) { 107227 }
 	let(:prod_id) { 107226 }
 	let(:order_id) { 107236 }
+	let(:order_to_delete) { 108910 }
 	let(:shipping_address_id) { 107234 }
 	let(:billing_address_id) { 107234 }
 	let(:shipping_id) { 107233 }
@@ -56,6 +57,24 @@ RSpec.describe Marketcloud::Order do
 
 		it 'should return an order in the "created" phase' do
 			expect(new_order.status).to eq "pending"
+		end
+	end
+
+	describe 'a DELETE to delete an order' do
+		let(:delete_order) {
+			VCR.use_cassette('order_delete') {
+				Marketcloud::Order.delete(order_to_delete)
+			}
+		}
+
+		it 'should return success' do
+			expect(delete_order).to eq true
+		end
+
+		it 'should have deleted the order' do
+			expect( VCR.use_cassette('order_check_deletion') {
+				Marketcloud::Order.find(order_to_delete)
+			} ).to be_nil
 		end
 	end
 end

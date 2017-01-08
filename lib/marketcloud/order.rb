@@ -101,5 +101,19 @@ module Marketcloud
 				nil
 			end
 		end
+
+		# delete a order by ID
+		# @param id [Integer] the ID of the order
+		# @return a true in case of success
+		def self.delete(id)
+			order = perform_request api_url("orders/#{id}"), :delete, nil, true
+
+			if order["status"] == true
+				true
+			else
+				false
+			end
+		end
+
 	end
 end
