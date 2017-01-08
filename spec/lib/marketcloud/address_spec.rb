@@ -45,8 +45,12 @@ RSpec.describe Marketcloud::Address do
 		  expect(addresses).to be_kind_of(Array)
 		end
 
-		it 'returns an object and not nil' do
-			expect(addresses).not_to be_nil
+		it 'returns only addresses that belong to the user' do
+			check = true
+
+			addresses.each { |addr| check &&= (addr.user_id == user_id) }
+
+		  expect(check).to be true
 		end
 	end
 
