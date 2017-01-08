@@ -22,7 +22,7 @@ module Marketcloud
 		def update!(items)
 			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
 				{ op: "update",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity], variant_id: item[:variant_id] }
 				}}, true
 
 			if cart
@@ -38,7 +38,7 @@ module Marketcloud
 		def add(items)
 			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
 				{ op: "add",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity], variant_id: item[:variant_id] }
 				}}, true
 
 			if cart
@@ -54,7 +54,7 @@ module Marketcloud
 		def add!(items)
 			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :patch,
 				{ op: "add",
-					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity] }
+					items: items.map { |item| { product_id: item[:product_id], quantity: item[:quantity], variant_id: item[:variant_id] }
 				}}, true
 
 			if cart

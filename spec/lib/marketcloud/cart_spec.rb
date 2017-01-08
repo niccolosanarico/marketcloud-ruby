@@ -51,7 +51,7 @@ RSpec.describe Marketcloud::Cart do
 							product_id: product_id,
 							quantity: product_quantity
 						}])
-					cart	
+					cart
 				}
 			}
 
@@ -75,10 +75,6 @@ RSpec.describe Marketcloud::Cart do
 					Marketcloud::Cart.create
 				}
 			}
-
-			# let!(:initial_quantity) {
-			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
-			# }
 
 			let(:updated_cart) {
 				VCR.use_cassette('cart_with_ID_add_post') {
@@ -105,10 +101,6 @@ RSpec.describe Marketcloud::Cart do
 					Marketcloud::Cart.create
 				}
 			}
-
-			# let!(:initial_quantity) {
-			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
-			# }
 
 			let(:updated_cart) {
 				VCR.use_cassette('cart_with_ID_add__post') {
@@ -138,10 +130,6 @@ RSpec.describe Marketcloud::Cart do
 					cart
 				}
 			}
-
-			# let!(:initial_quantity) {
-			# 	cart.items.select { |c| c["product_id"] == product_id }.first["quantity"]
-			# }
 
 			let(:removed_cart) {
 				VCR.use_cassette('cart_with_ID_removed') {
