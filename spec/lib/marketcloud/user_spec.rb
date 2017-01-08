@@ -71,7 +71,8 @@ RSpec.describe Marketcloud::User do
 	  let(:user) {
 			VCR.use_cassette('user_update') {
 				the_user = Marketcloud::User.find(user_id)
-				the_user.update(options: {name: 'Panco Pillow'})
+				the_user.update!(options: {name: 'Panco Pillowo'})
+				the_user
 			}}
 
 		it 'should return 200' do
@@ -79,7 +80,7 @@ RSpec.describe Marketcloud::User do
 		end
 
 		it 'answers to find with a valid user' do
-		  expect(user.name).to eq "Panco Pillow"
+		  expect(user.name).to eq "Panco Pillowo"
 		end
 	end
 end
