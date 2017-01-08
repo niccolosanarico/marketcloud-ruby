@@ -13,6 +13,7 @@ require_relative 'marketcloud/product'
 require_relative 'marketcloud/request'
 require_relative 'marketcloud/shipping'
 require_relative 'marketcloud/user'
+require_relative 'marketcloud/variant'
 require 'logger'
 
 

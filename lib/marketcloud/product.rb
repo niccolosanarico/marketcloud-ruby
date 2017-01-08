@@ -6,7 +6,9 @@ module Marketcloud
 	class Product < Request
 		attr_accessor :name, :id, :sku, :description,
 									:category_id, :brand_id,
-									:price, :images, :meta
+									:price, :images, :meta,
+									:has_variants, :variantsDefinition, :variants,
+									:weight, :depth, :width, :height
 
 		def initialize(attributes)
 			@id = attributes['id']
@@ -18,6 +20,16 @@ module Marketcloud
 			@price = attributes['price']
 			@images = attributes['images']
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
+			@weight = attributes['weight']
+			@depth = attributes['depth']
+			@width = attributes['width']
+			@height = attributes['height']
+			@has_variants = attributes['has_variants']
+			@variantsDefinition = attributes['variantsDefinition']
+			if @has_variants
+				attributes['variants'].each do |variant|
+				@variants << Variant.new(variant)
+			end
 		end
 
 		# Find a product by ID
