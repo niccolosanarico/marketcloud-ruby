@@ -28,7 +28,7 @@ module Marketcloud
       # add the custom attributes for the variant
       definitions.each do |k, v|
         key = k.downcase
-        self.class.class_eval { attr_accessor k }
+        self.class.class_eval { attr_accessor key }
         instance_variable_set "@#{key}", attributes[k]
       end
     end
