@@ -29,7 +29,7 @@ module Marketcloud
       definitions.each do |k, v|
         key = k.downcase
         self.class.class_eval { attr_accessor k }
-        self.send("#{key}=", attributes[k])
+        instance_variable_set "@#{key}", attributes[k]
       end
     end
   end
