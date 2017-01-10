@@ -8,7 +8,7 @@ module Marketcloud
 									:category_id, :brand_id,
 									:price, :images, :meta,
 									:has_variants, :variantsDefinition, :variants,
-									:weight, :depth, :width, :height
+									:weight, :depth, :width, :height, :stock_status
 
 		def initialize(attributes)
 			@id = attributes['id']
@@ -24,6 +24,7 @@ module Marketcloud
 			@depth = attributes['depth']
 			@width = attributes['width']
 			@height = attributes['height']
+			@stock_status = attributes['stock_status']
 			@has_variants = attributes['has_variants']
 			@variantsDefinition = attributes['variantsDefinition']
 			if @has_variants

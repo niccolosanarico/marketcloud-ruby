@@ -8,7 +8,8 @@ module Marketcloud
                   :description,
                   :images,
                   :price,
-                  :weight, :depth, :width, :height
+                  :weight, :depth, :width, :height,
+                  :stock_status
 
 
     def initialize(attributes, definitions)
@@ -24,6 +25,7 @@ module Marketcloud
       @depth = attributes['depth']
       @width = attributes['width']
       @height = attributes['height']
+      @stock_status = attributes['stock_status']
 
       # add the custom attributes for the variant
       definitions.each do |k, v|
