@@ -29,8 +29,14 @@ module Marketcloud
 			@variantsDefinition = attributes['variantsDefinition']
 			if @has_variants
 				@variants = Array.new
-				attributes['variants'].each do |variant|
-					@variants << Variant.new(variant, @variantsDefinition)
+				if attributes['variants']
+					attributes['variants'].each do |variant|
+						@variants << Variant.new(variant, @variantsDefinition)
+					end
+				elsif attributes['variant'] # in this case there is only a variant, and this is the outcome of an order
+					attributes['variant'].each do |variant|
+						@variants << Variant.new(variant, @variantsDefinition)
+					end
 				end
 			end
 		end
