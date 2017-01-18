@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '246'
+      - '266'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"99-7QgRHCcbXEKB/Wdr/Dc30A"
+      - W/"bb-QlMIblUBN61t/5a16SdK8g"
       Vary:
       - Accept-Encoding
       Server:
@@ -37,10 +37,10 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
       Date:
-      - Mon, 16 Jan 2017 23:24:15 GMT
+      - Wed, 18 Jan 2017 21:04:53 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"id":107233,"max_weight":100,"min_depth":10}}'
+      string: '{"status":true,"data":{"name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"},{"name":"Europe","code":"EUROPE"}],"id":107233,"max_weight":100,"min_depth":10}}'
     http_version: 
-  recorded_at: Mon, 16 Jan 2017 23:24:16 GMT
+  recorded_at: Wed, 18 Jan 2017 21:04:57 GMT
 recorded_with: VCR 3.0.3
