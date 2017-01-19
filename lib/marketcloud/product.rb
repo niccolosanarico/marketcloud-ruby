@@ -20,10 +20,10 @@ module Marketcloud
 			@price = attributes['price']
 			@images = attributes['images']
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
-			@weight = attributes['weight']
-			@depth = attributes['depth']
-			@width = attributes['width']
-			@height = attributes['height']
+			@weight = attributes['weight'] || 1
+			@depth = attributes['depth'] || 1
+			@width = attributes['width'] || 1
+			@height = attributes['height'] || 1
 			@stock_status = attributes['stock_status']
 			@has_variants = attributes['has_variants']
 			@variantsDefinition = attributes['variantsDefinition']
@@ -34,7 +34,7 @@ module Marketcloud
 						@variants << Variant.new(variant, @variantsDefinition)
 					end
 				elsif attributes['variant'] # in this case there is only a variant, and this is the outcome of an order
-					@variants << Variant.new(attributes['variant'], @variantsDefinition)					
+					@variants << Variant.new(attributes['variant'], @variantsDefinition)
 				end
 			end
 		end

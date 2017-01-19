@@ -32,13 +32,13 @@ module Marketcloud
 			@base_cost = attributes['base_cost']
 			@max_weight = attributes['max_weight'] || 10000000000
 			@min_weight = attributes['min_weight'] || 0
-			@max_depth = attributes['max_depth'] || 0
+			@max_depth = attributes['max_depth'] || 10000000000
 			@min_depth = attributes['min_depth'] || 0
-			@max_height = attributes['max_height'] || 0
+			@max_height = attributes['max_height'] || 10000000000
 			@min_height = attributes['min_height'] || 0
-			@max_width = attributes['max_width'] || 0
+			@max_width = attributes['max_width'] || 10000000000
 			@min_width = attributes['min_width'] || 0
-			@max_value = attributes['max_value'] || 0
+			@max_value = attributes['max_value'] || 10000000000
 			@min_value = attributes['min_value'] || 0
 		end
 

@@ -1,4 +1,4 @@
-module Marketcloud
+ module Marketcloud
   class Variant
     attr_accessor :id,
                   :variant_id,
@@ -21,10 +21,10 @@ module Marketcloud
       @description = attributes['description']
       @price = attributes['price']
       @images = attributes['images']
-      @weight = attributes['weight']
-      @depth = attributes['depth']
-      @width = attributes['width']
-      @height = attributes['height']
+      @weight = attributes['weight'] || 1
+      @depth = attributes['depth'] || 1
+      @width = attributes['width'] || 1
+      @height = attributes['height'] || 1
       @stock_status = attributes['stock_status']
 
       # add the custom attributes for the variant
