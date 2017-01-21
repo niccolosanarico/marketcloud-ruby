@@ -1,4 +1,4 @@
- module Marketcloud
+module Marketcloud
   class Variant
     attr_accessor :id,
                   :variant_id,
@@ -6,6 +6,7 @@
                   :name,
                   :sku,
                   :description,
+                  :slug,
                   :images,
                   :price,
                   :weight, :depth, :width, :height,
@@ -19,6 +20,7 @@
       @name = attributes['name']
       @sku = attributes['sku']
       @description = attributes['description']
+      @slug = attributes['slug']
       @price = attributes['price']
       @images = attributes['images']
       @weight = attributes['weight'] || 1
