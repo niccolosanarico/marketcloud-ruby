@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/collections/114237
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '1158'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"766-4GQzBcHkJc+XjBPcTPrPOA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Tue, 24 Jan 2017 18:25:20 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdGF0dXMiOnRydWUsImRhdGEiOnsiX2lkIjoiNTg4Nzk5NTk1OTY1Mzcy
+        ODI0MGFjOGZiIiwiaXRlbXMiOlt7Il9pZCI6IjU4NjdiYTg2MjQyODQyMWY2
+        OGJhMDc3ZiIsIm5hbWUiOiJMYXZhYmljY2hpZXJpIGEgY2VzdGVsbG8gcHJv
+        ZmVzc2lvbmFsZSIsImRlc2NyaXB0aW9uIjoiPGRpdj7CoExhdmFiaWNjaGll
+        cmkgYSBjZXN0ZWxsbyBwcm9mZXNzaW9uYWxlLjxwPjxlbT5DYXJhdHRlcmlz
+        dGljaGUgdGVjbmljaGU8L2VtPjwvcD48dWw+PGxpPmNpY2xvIGRpIGxhdmFn
+        Z2lvIDEyMCBzZWMgPC9saT48bGk+YWx0ZXp6YSBtYXggeCBiaWNjaGllcmUg
+        Y20gMjMsNSA8L2xpPjxsaT5hbHRlenphIG1heCBwaWF0dG8gY20gMjUsNSA8
+        L2xpPjxsaT5jZXN0byBjbSA0MHg0MCA8L2xpPjxsaT5hbGltZW50YXppb25l
+        IGFjcXVhIGNvbnNpZ2xpYXRhICs1NSDCsEMgPC9saT48bGk+Y29uc3VtbyBh
+        Y3F1YSBwZXIgY2ljbG8gYSAyIGJhciBsdCAyLDAgPC9saT48bGk+ZG9zYXRv
+        cmUgYnJpbGxhbnRhbnRlIGUgZGV0ZXJnZW50ZSA8L2xpPjxsaT5zY2FyaWNv
+        IGEgY2FkdXRhPC9saT48bGk+Y2FwYWNpdMOgIHZhc2NhIGx0IDE3IDwvbGk+
+        PC91bD48cD48ZW0+SWwgY29ycmVkbyBzdGFuZGFyZCBpbmNsdWRlOjwvZW0+
+        PC9wPjx1bD48bGk+Q2VzdG8gcGVyIGJpY2NoaWVyaSA0MHg0MHgxNTwvbGk+
+        PGxpPlBvcnRhY3VjY2hpYWluaTwvbGk+PGxpPlBvcnRhcGlhdHRpbmkgMTIg
+        cG9zdGk8L2xpPjwvdWw+PHA+PGVtPk5PVEE8L2VtPjogbGEgcG9tcGEgZGkg
+        c2NhcmljbyBub24gw6ggaW5jbHVzYTwvcD48cD48ZW0+RGF0aSBlbGV0dHJp
+        Y2k8L2VtPjwvcD48dWw+PGxpPktXIDMsMjYgLyAxNkE8L2xpPjxsaT5WIDIz
+        MCA8L2xpPjxsaT41MC82MCBIeiA8L2xpPjxsaT5yZXNpc3RlbnphIHZhc2Nh
+        IEtXIDMsMCA8L2xpPjxsaT5yZXNpc3RlbnphIGJvaWxlciBXVyAzLDAgPC9s
+        aT48bGk+Y2FwYWNpdMOgIGJvaWxlciBsdCAzLDIgPC9saT48bGk+cG90ZW56
+        YSBwb21wYSBLVyAwLDI2LzAsMzUgSHA8L2xpPjwvdWw+PHA+RGltZW5zaW9u
+        ZSBpbWJhbGxvOiA2Nng1Ni41eDg1aCAoY20pLCBwZXNvIDQyS2c8L3A+PHA+
+        SW5nb21icm86IDQ3eDU1LjV4NjVoIChjbSk8L3A+PC9kaXY+IiwiaW1hZ2Vz
+        IjpbImh0dHBzOi8vc2hvcC5jb2FsY2EuaXQvc3ByZWUvcHJvZHVjdHMvMjIy
+        L3Byb2R1Y3QvZzQwMjYuanBlZz8xNDUxMjE4NTMyIiwiaHR0cDovL2Nkbi5t
+        YXJrZXRjbG91ZC5pdC9maWxlcy8xMDcyMjRfMDAwMDE2NTQwNzc2N2pwZWci
+        LCJodHRwOi8vY2RuLm1hcmtldGNsb3VkLml0L2ZpbGVzLzEwNzIyNF8wMDAw
+        MTY1NDA3NzIzanBlZyJdLCJtZWRpYSI6W10sInB1Ymxpc2hlZCI6dHJ1ZSwi
+        dHlwZSI6InNpbXBsZV9wcm9kdWN0Iiwic2x1ZyI6ImxhdmFiaWNjaGllcmkt
+        YS1jZXN0ZWxsby1wcm9mZXNzaW9uYWxlIiwiY2F0ZWdvcnlfaWQiOjEwNzU5
+        MCwicmVxdWlyZXNfc2hpcHBpbmciOnRydWUsIndlaWdodCI6NDIsImRlcHRo
+        Ijo0Nywid2lkdGgiOjU1LjUsImhlaWdodCI6NjUsInByaWNlIjo4OTAsImlk
+        IjoxMDc1OTgsImFwcGxpY2F0aW9uX2lkIjoxMDcyMjQsInByb2R1Y3RfaWQi
+        OjEwNzU5OCwidmFyaWFudF9pZCI6MCwiZGlzcGxheV9wcmljZSI6Ijg5MCBF
+        VVIiLCJzZW8iOnsibWV0YSI6eyJ0aXRsZSI6IkxhdmFiaWNjaGllcmkgYSBj
+        ZXN0ZWxsbyBwcm9mZXNzaW9uYWxlIiwia2V5d29yZHMiOiJsYXZhYmljY2hp
+        ZXJpLCBwcm9mZXNzaW9uYWxlIiwiZGVzY3JpcHRpb24iOiJMYXZhYmljY2hp
+        ZXJpIGEgY2VzdGVsbG8gcHJvZmVzc2lvbmFsZS4ifX19XSwibmFtZSI6Ikhv
+        bWUgcGFnZSIsImRlc2NyaXB0aW9uIjoiUHJvZHVjdHMgb24gZGlzcGxheSBv
+        biBob21lcGFnZSIsImlkIjoxMTQyMzcsImFwcGxpY2F0aW9uX2lkIjoxMDcy
+        MjR9fQ==
+    http_version: 
+  recorded_at: Tue, 24 Jan 2017 18:25:20 GMT
+recorded_with: VCR 3.0.3
