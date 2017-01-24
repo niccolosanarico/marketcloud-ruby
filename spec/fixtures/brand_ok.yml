@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/brands/114239
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '236'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b-cyMMlYyYQoCVueIr3gfK4g"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Tue, 24 Jan 2017 18:40:07 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"data":{"id":114239,"name":"Saturnia","description":"Descrizione
+        della marca Saturnia","image_url":null,"url":null,"application_id":107224}}'
+    http_version: 
+  recorded_at: Tue, 24 Jan 2017 18:40:08 GMT
+recorded_with: VCR 3.0.3
