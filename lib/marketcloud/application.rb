@@ -4,12 +4,13 @@ require 'json'
 
 module Marketcloud
 	class Application < Request
-		attr_accessor :name, :id, :tax_rate, :currency_code, :logo, :timezone
+		attr_accessor :name, :id, :tax_rate, :currency_code, :logo, :timezone, :tax_type
 
 		def initialize(attributes)
 			@id = attributes['id']
 			@name = attributes['name']
 			@tax_rate = attributes['tax_rate']
+			@tax_type = attributes['tax_type']
 			@currency_code = attributes['currency_code']
 			@logo = attributes['logo']
 			@timezone = attributes['timezone']
