@@ -98,7 +98,7 @@ module Marketcloud
           raise_exception(error, response.status)
         end
 
-				Marketcloud.logger.error("Generic error: query to #{url} - #{response.body}")
+				Marketcloud.logger.error("Generic error: #{verb} query to #{url} with body #{body} - #{response.body}")
 				return nil
       end
 
