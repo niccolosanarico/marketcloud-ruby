@@ -1,7 +1,7 @@
 require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Coupon do
-	let(:coupon_id) { 107241 }
+	let(:coupon_id) { 125442 }
 
 	describe 'a GET for a valid coupon' do
 

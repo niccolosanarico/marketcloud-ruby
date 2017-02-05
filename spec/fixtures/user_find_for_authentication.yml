@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/users?email=prova2@prova.it
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:kjCctBiHIeB9XRSKT0iVFHqHG0iFv6kG3SkhG9Ps7WM=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Length:
+      - '192'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c0-wtjpoMoreq93fDJLIvrmVg"
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sun, 05 Feb 2017 17:03:50 GMT
+    body:
+      encoding: UTF-8
+      string: '{"status":false,"errors":[{"code":401,"type":"INVALID_TOKEN","message":"Auth
+        token (e8152fe2-237a-4360-8ad2-f3773082226c:kjCctBiHIeB9XRSKT0iVFHqHG0iFv6kG3SkhG9Ps7WM=)
+        is invalid or expired"}]}'
+    http_version: 
+  recorded_at: Sun, 05 Feb 2017 17:03:51 GMT
+recorded_with: VCR 3.0.3
