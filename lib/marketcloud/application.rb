@@ -10,7 +10,7 @@ module Marketcloud
 			@id = attributes['id']
 			@name = attributes['name']
 			@tax_rate = attributes['tax_rate']
-			@tax_type = attributes['tax_type']
+			@tax_type = attributes['tax_type']  # all, products_only, shipping_only, nothing
 			@currency_code = attributes['currency_code']
 			@logo = attributes['logo']
 			@timezone = attributes['timezone']

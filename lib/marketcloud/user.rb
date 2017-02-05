@@ -23,6 +23,11 @@ module Marketcloud
 
 		# CLASS METHODS
 
+		# Do not cache objects from this class
+		def self.cache_me?
+      false
+		end
+
 		# Find a user by ID
 		# @param id [Integer] the ID of the user
 		# @return a User or nil

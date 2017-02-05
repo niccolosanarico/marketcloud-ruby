@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '285'
+      - '287'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c6-2RCxDO3tTi1eJlXmh9FUFw"
+      - W/"ca-LVV4lOnnVjpTZXFKluNPpQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -37,11 +37,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Tue, 31 Jan 2017 23:10:14 GMT
+      - Fri, 03 Feb 2017 21:06:48 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"name":"Coalca Shop Test","tax_rate":22,"tax_type":"all","currency_code":"EUR","logo":"https://www.marketcloud.it/img/logo/normal.png","timezone":"W.
+      string: '{"status":true,"data":[{"name":"Coalca Shop Test","tax_rate":22,"tax_type":"nothing","currency_code":"EUR","logo":"https://www.marketcloud.it/img/logo/normal.png","timezone":"W.
         Europe Standard Time"}]}'
     http_version: 
-  recorded_at: Tue, 31 Jan 2017 23:10:13 GMT
+  recorded_at: Fri, 03 Feb 2017 21:06:47 GMT
 recorded_with: VCR 3.0.3
