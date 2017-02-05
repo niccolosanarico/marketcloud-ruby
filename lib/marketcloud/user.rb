@@ -4,7 +4,7 @@ require 'json'
 
 module Marketcloud
 	class User < Request
-		attr_accessor :name, :id, :email, :image_url, :token
+		attr_accessor :name, :id, :email, :image_url, :token, :password
 
 		# INSTANCE METHODS
 
@@ -18,6 +18,7 @@ module Marketcloud
 				@email = attributes['email']
 				@token = attributes['token']
 				@image_url = attributes['image_url']
+				@password = attributes['password']
 			end
 		end
 
