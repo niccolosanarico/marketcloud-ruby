@@ -21,7 +21,9 @@ module Marketcloud
 									:items,
 									:products,
 									:currency_id,
-									:created_at
+									:created_at,
+									:promotion_id,
+									:coupon_code
 
 		#
 		#
@@ -44,7 +46,8 @@ module Marketcloud
 			@items = attributes['items']
 			@products = attributes['products']
 			@currency_id = attributes['currency_id']
-			@created_at = attributes['created_at']
+			@promotion_id = attributes['promotion_id']
+			@coupon_code = attributes['coupon_code']
 		end
 
 
@@ -85,14 +88,16 @@ module Marketcloud
 		# @param billing_address_id [Integer] the billing address
 		# @param shipping_id [Integer] the shipping ID
 		# @return the newly created order
-		def self.create(user_id, cart_id, shipping_address_id, billing_address_id, shipping_id)
+		def self.create(user_id, cart_id, shipping_address_id, billing_address_id, shipping_id, promotion_id = nil, coupon_code = nil)
 			order = perform_request api_url("orders", {}), :post,
 						{
 							user_id: user_id,
 							cart_id: cart_id,
 							shipping_address_id: shipping_address_id,
 							billing_address_id: billing_address_id,
-							shipping_id: shipping_id
+							shipping_id: shipping_id,
+							promotion_id: promotion_id,
+							coupon_code: coupon_code
 						}, true
 
 			if order
