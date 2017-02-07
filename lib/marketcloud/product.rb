@@ -6,7 +6,7 @@ module Marketcloud
 	class Product < Request
 		attr_accessor :name, :id, :sku, :description,
 									:category_id, :brand_id,
-									:price, :images, :meta, :slug,
+									:price, :images, :meta, :facebook, :slug,
 									:has_variants, :variantsDefinition, :variants,
 									:weight, :depth, :width, :height, :stock_status
 
@@ -20,6 +20,7 @@ module Marketcloud
 			@price = attributes['price']
 			@images = attributes['images']
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
+			@facebook = attributes['seo']['facebook'] unless attributes['seo'].nil? #title #description #image
 			@slug = attributes['slug']
 			@weight = attributes['weight'] || 1
 			@depth = attributes['depth'] || 1
