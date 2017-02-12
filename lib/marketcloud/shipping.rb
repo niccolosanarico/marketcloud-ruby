@@ -42,20 +42,9 @@ module Marketcloud
 			@min_value = attributes['min_value'] || 0
 		end
 
-		# Find a shipping by ID
-		# @param id [Integer] the ID of the shipping
-		# @return a Shipping or nil
-		def self.find(id)
-			shipping = perform_request api_url("shippings/#{id}")
-
-			if shipping
-				new shipping['data']
-			else
-				nil
-			end
+		def self.plural
+			"shippings"
 		end
-
-
 
 		# Return all the shippings
 		# @return an array of Shippings

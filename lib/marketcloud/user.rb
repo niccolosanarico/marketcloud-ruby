@@ -29,18 +29,10 @@ module Marketcloud
       false
 		end
 
-		# Find a user by ID
-		# @param id [Integer] the ID of the user
-		# @return a User or nil
-		def self.find(id)
-			user = perform_request api_url("users/#{id}"), :get, nil, true
-
-			if user
-				new user['data']
-			else
-				nil
-			end
+		def self.plural
+			"users"
 		end
+
 
 		# Find a user by email
 		# @param email [String] the email of the user

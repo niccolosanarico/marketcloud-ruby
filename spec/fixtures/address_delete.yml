@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"ygldCmtVkHe8arJNiW+slpUSnfhm4i0QU8z31dXVsxM=","timestamp":1483360693}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"aMolmhVOy5ia36IHTJVStAiNcACMuMfqDXeevY8l/og=","timestamp":1486900585}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '195'
+      - '196'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-FxB49Zh/UFpehaZJf6LO7g"
+      - W/"46-MpUL32qZWXYs0eljlTDbuQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,17 +33,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Mon, 02 Jan 2017 12:38:11 GMT
+      - Sun, 12 Feb 2017 11:56:22 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"NB8m5DZ+To+RrMoSKgQJewy5znCo/3Vzlng/IGqzURA="}'
+      string: '{"status":true,"token":"pzkP1oMSXceWr4QxK1llHBWGLORNK9gtWpUQ6ketQ/Q="}'
     http_version: 
-  recorded_at: Mon, 02 Jan 2017 12:38:13 GMT
+  recorded_at: Sun, 12 Feb 2017 11:56:25 GMT
 - request:
     method: delete
-    uri: http://api.marketcloud.it/v0/addresses/107822
+    uri: http://api.marketcloud.it/v0/addresses/128843
     body:
       encoding: US-ASCII
       string: ''
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:NB8m5DZ+To+RrMoSKgQJewy5znCo/3Vzlng/IGqzURA=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:pzkP1oMSXceWr4QxK1llHBWGLORNK9gtWpUQ6ketQ/Q=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -76,12 +76,12 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Mon, 02 Jan 2017 12:38:12 GMT
+      - Sun, 12 Feb 2017 11:56:22 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true}'
     http_version: 
-  recorded_at: Mon, 02 Jan 2017 12:38:13 GMT
+  recorded_at: Sun, 12 Feb 2017 11:56:25 GMT
 recorded_with: VCR 3.0.3

@@ -22,17 +22,9 @@ module Marketcloud
 			@active = attributes['active']
 		end
 
-		# Find a coupon by ID
-		# @param id [Integer] the ID of the coupon
-		# @return a Coupon or nil
-		def self.find(id)
-			coupon = perform_request api_url("coupons/#{id}"), :get, nil, true
-
-			if coupon
-				new coupon['data']
-			else
-				nil
-			end
+		def self.plural
+			"coupons"
 		end
+
 	end
 end

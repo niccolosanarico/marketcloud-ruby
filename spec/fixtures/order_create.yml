@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"BuJ66wr7U8MmWo3ydtade/77TBF7bbyeMjWXkZobbtk=","timestamp":1483309019}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"88gJTh4qMyCt7XjKm1dzbDOsSbrw0CABkwA55gY4cPk=","timestamp":1486908746}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '191'
+      - '193'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-yjQATQGeTuR7BknWnTHwGw"
+      - W/"46-F1vUJgHP1yi40v4Gu/XLww"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,20 +33,20 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:58 GMT
+      - Sun, 12 Feb 2017 14:12:27 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"NGrDaBP/hMr3Ms7R7Uf5CohyBSddd5LxdkCI7f9SDx4="}'
+      string: '{"status":true,"token":"nqJu7snHflfsvcLr3+DxJ9d3twYfizDFeXNmWPikgKo="}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:00 GMT
+  recorded_at: Sun, 12 Feb 2017 14:12:27 GMT
 - request:
     method: post
-    uri: http://api.marketcloud.it//v0/orders
+    uri: http://api.marketcloud.it/v0/orders
     body:
       encoding: UTF-8
-      string: '{"user_id":107227,"cart_id":107731,"shipping_address_id":107234,"billing_address_id":107234,"shipping_id":107233}'
+      string: '{"user_id":107227,"cart_id":128905,"shipping_address_id":107234,"billing_address_id":107234,"shipping_id":107233,"promotion_id":null,"coupon_code":null}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:NGrDaBP/hMr3Ms7R7Uf5CohyBSddd5LxdkCI7f9SDx4=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:nqJu7snHflfsvcLr3+DxJ9d3twYfizDFeXNmWPikgKo=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '950'
+      - '1103'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"660-iShbb1hGgToQKQg5oQhWRQ"
+      - W/"7dd-McLBpicR4ib21vV6QYcC/Q"
       Vary:
       - Accept-Encoding
       Server:
@@ -76,17 +76,18 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:59 GMT
+      - Sun, 12 Feb 2017 14:12:26 GMT
     body:
       encoding: ASCII-8BIT
       string: '{"status":true,"data":{"items":[{"product_id":107226,"quantity":2,"variant_id":0}],"shipping_address":{"full_name":"Pinco
-        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"billing_address":{"full_name":"Pinco
-        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":null,"city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":null,"alternate_phone_number":null,"email":"pinco@pallo.com","vat":null},"shipping":{"_id":"58658e4cf0a1c8622c942803","name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"id":107233,"application_id":107224},"user":{"name":"Pinco
-        Pallo","created_at":"2016-12-29T22:10:50.905Z","registered_with":"marketcloud","email":"pinco@pallo.it","id":107227},"application_id":107224,"cart_id":107731,"shipping_id":107233,"user_id":107227,"products":[{"price":99.99,"name":"Pentola","description":"<p>Una
-        bellissima pentola<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107588,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"product_id":107226,"variant_id":0,"display_price":"99.99
-        EUR","quantity":2}],"items_total":199.98,"shipping_total":17,"taxes_total":47.74,"total":264.72,"created_at":1483309020109,"status":"pending","id":107732,"_id":"58697fdc2428421f68ba1364"}}'
+        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":"","city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":"","alternate_phone_number":null,"email":"pinco@pallo.com","vat":""},"billing_address":{"full_name":"Pinco
+        Pallo","id":107234,"user_id":107227,"address1":"Via Vittor Pisani 13","address2":"","city":"Oslo","country":"Norway","postal_code":"20127","company":null,"phone_number":"","alternate_phone_number":null,"email":"pinco@pallo.com","vat":""},"shipping":{"_id":"58658e4cf0a1c8622c942803","name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"},{"name":"Europe","code":"EUROPE"}],"id":107233,"application_id":107224,"max_weight":100,"min_depth":10},"taxes":[],"user":{"name":"Panco
+        Pillowo","created_at":"2016-12-29T22:10:50.905Z","registered_with":"marketcloud","email":"pinco@pallo.it","id":107227,"status":"confirmed"},"application_id":107224,"cart_id":128905,"shipping_id":107233,"user_id":107227,"products":[{"price":99.99,"name":"Pentola","description":"<p>Una
+        bellissima pentola, ma non una lavabicchieri<br/></p>","images":["https://shop.coalca.it/spree/products/327/product/0500070.jpg?1480023556"],"media":[],"published":true,"type":"simple_product","slug":"pentola","category_id":107588,"requires_shipping":true,"weight":3,"depth":50,"width":50,"height":10,"id":107226,"product_id":107226,"variant_id":0,"display_price":"99.99
+        EUR","seo":{"meta":{"title":"Pentola","description":"Una bellissima pentola,
+        ma non una lavabicchieri","keywords":"pentola, antiaderente"},"facebook":{"title":"Padellissima","description":"Padella","image":"https://shop.coalca.it/spree/products/327/product/0500070.jpg"}},"quantity":2}],"items_total":199.98,"shipping_total":17,"taxes_total":25.74,"total":242.72,"created_at":1486908745311,"status":"pending","id":128906,"_id":"58a06d49ddb5ca493802f9a4"}}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:00 GMT
+  recorded_at: Sun, 12 Feb 2017 14:12:27 GMT
 recorded_with: VCR 3.0.3

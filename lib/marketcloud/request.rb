@@ -14,10 +14,16 @@ module Marketcloud
       "v0"
     end
 
-    # Stub method. Each subclass should have manage whether it should be cached
+    # Stub method. Each subclass should manage whether it should be cached
     # @return [Boolean] whether calls to this object should be cached
     def self.cache_me?
       true
+    end
+
+    # Stub method. Each subclass should tell its plural name - needed for the API endpoint
+    # @return the plural of the class name
+    def self.plural
+      "requests"
     end
 
     # Returns a full url for an API call
@@ -120,5 +126,17 @@ module Marketcloud
       Marketcloud.configuration.cache_store[:ttl]
     end
 
+    # Find an object by ID
+		# @param id [Integer] the ID of the object
+		# @return an object or nil
+		def self.find(id = nil)
+			object = perform_request api_url("#{self.plural}/#{id}"), :get, nil, true
+
+			if object
+				new object['data']
+			else
+				nil
+			end
+		end
   end
 end

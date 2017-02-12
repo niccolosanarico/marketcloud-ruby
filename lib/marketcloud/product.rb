@@ -41,18 +41,10 @@ module Marketcloud
 			end
 		end
 
-		# Find a product by ID
-		# @param id [Integer] the ID of the product
-		# @return a Product or nil
-		def self.find(id)
-			product = perform_request api_url("products/#{id}")
-
-			if product
-				new product['data']
-			else
-				nil
-			end
+		def self.plural
+			"products"
 		end
+
 
 		# Find all the products belonging to a category
 		# @param cat_id [Integer] the category ID

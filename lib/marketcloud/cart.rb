@@ -85,17 +85,8 @@ module Marketcloud
       false
 		end
 
-		# Find a cart by ID
-		# @param id [Integer] the ID of the cart
-		# @return a Cart or nil
-		def self.find(id)
-			cart = perform_request api_url("carts/#{id}"), :get, nil, true
-
-			if cart
-				new cart['data']
-			else
-				nil
-			end
+		def self.plural
+			"carts"
 		end
 
 		# Find all the carts belonging to a user

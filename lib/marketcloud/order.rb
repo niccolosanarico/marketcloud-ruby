@@ -46,6 +46,7 @@ module Marketcloud
 			@items = attributes['items']
 			@products = attributes['products']
 			@currency_id = attributes['currency_id']
+			@created_at = attributes['created_at']
 			@promotion_id = attributes['promotion_id']
 			@coupon_code = attributes['coupon_code']
 		end
@@ -55,18 +56,10 @@ module Marketcloud
       false
     end
 
-		# Find a order by ID
-		# @param id [Integer] the ID of the order
-		# @return a Order or nil
-		def self.find(id)
-			order = perform_request api_url("orders/#{id}"), :get, nil, true
-
-			if order
-				new order['data']
-			else
-				nil
-			end
+		def self.plural
+			"orders"
 		end
+
 
 		# Find all the orders belonging to a user
 		# @param user_id [Integer] the user ID

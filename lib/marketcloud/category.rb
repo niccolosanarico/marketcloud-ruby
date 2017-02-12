@@ -24,18 +24,10 @@ module Marketcloud
 		end
 
 
-		# Find a category by ID
-		# @param id [Integer] the ID of the category
-		# @return a Category
-		def self.find(id)
-			category = perform_request api_url("categories/#{id}")
-
-			if category
-				new category['data']
-			else
-				nil
-			end
+		def self.plural
+			"categories"
 		end
+
 
 		# Return all the categories
 		# @return an array of Categories

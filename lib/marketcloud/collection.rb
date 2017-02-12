@@ -20,18 +20,10 @@ module Marketcloud
 		end
 
 
-		# Find a collection by ID
-		# @param id [Integer] the ID of the collection
-		# @return a Collection
-		def self.find(id)
-			collection = perform_request api_url("collections/#{id}")
-
-			if collection
-				new collection['data']
-			else
-				nil
-			end
+		def self.plural
+			"collections"
 		end
+
 
 		# Return all the collections
 		# @return an array of Collections

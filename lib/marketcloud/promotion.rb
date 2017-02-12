@@ -19,18 +19,10 @@ module Marketcloud
 			@active = attributes['active']
 		end
 
-		# Find a promotion by ID
-		# @param id [Integer] the ID of the promotion
-		# @return a promotion or nil
-		def self.find(id)
-			prom = perform_request api_url("promotions/#{id}"), :get, nil, true
-
-			if prom
-				new prom['data']
-			else
-				nil
-			end
+		def self.plural
+			"promotions"
 		end
+
 
 		class Condition
 			# The type of the condition, possible values are 'MIN_NUMBER_OF_PRODUCTS' triggered when

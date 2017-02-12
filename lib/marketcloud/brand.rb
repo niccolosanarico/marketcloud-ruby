@@ -21,18 +21,8 @@ module Marketcloud
 			end
 		end
 
-
-		# Find a brand by ID
-		# @param id [Integer] the ID of the brand
-		# @return a Brand
-		def self.find(id)
-			brand = perform_request api_url("brands/#{id}")
-
-			if brand
-				new brand['data']
-			else
-				nil
-			end
+		def self.plural
+			"brands"
 		end
 
 		# Return all the brands

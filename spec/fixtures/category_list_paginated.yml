@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"xdbZ/FDtpyXxYhyg/PTcoHgDppcY0Yxyycqxka59hTo=","timestamp":1483309017}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"HD7jq1RBSLdSNoXk3Kxn+ikQbVwo9xz4qQw9Wbye/Wo=","timestamp":1486900734}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '192'
+      - '197'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-zCqmLib4+vSD0i7MBcbZAQ"
+      - W/"46-kbSabWdeTf7rQ++47mTEAw"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,17 +33,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:56 GMT
+      - Sun, 12 Feb 2017 11:58:51 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"j6wDoC7wbARsI0CrsAVKqFIVhFsldf4+7sCeN6dJbd8="}'
+      string: '{"status":true,"token":"KXe//n9Mr8bfZC1YGIfscT2GYsNJXZNYOFVuvW87FZ8="}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
+  recorded_at: Sun, 12 Feb 2017 11:58:54 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it//v0/categories
+    uri: http://api.marketcloud.it/v0/categories
     body:
       encoding: US-ASCII
       string: ''
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:j6wDoC7wbARsI0CrsAVKqFIVhFsldf4+7sCeN6dJbd8=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:KXe//n9Mr8bfZC1YGIfscT2GYsNJXZNYOFVuvW87FZ8=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '447'
+      - '616'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"31f-5VH4ljPLUveOD2zCp4MKbQ"
+      - W/"545-pjCLeOdnMtSz8PMWMdMS8A"
       Vary:
       - Accept-Encoding
       Server:
@@ -76,15 +76,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:16:56 GMT
+      - Sun, 12 Feb 2017 11:58:53 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"id":107590,"name":"Lavastoviglie","description":"Lavastoviglie
-        e lavabicchieri professionali","image_url":null,"url":null,"parent_id":107589,"path":"/Macchinari/Lavastoviglie","application_id":107224},{"id":107589,"name":"Macchinari","description":"Macchinari
-        professionali","image_url":null,"url":null,"parent_id":null,"path":"/Macchinari","application_id":107224},{"id":107588,"name":"Pentole","description":"Pentole
-        e padelle molto belle","image_url":null,"url":null,"parent_id":107225,"path":"/Minuteria/Pentole","application_id":107224},{"id":107225,"name":"Minuteria","description":null,"image_url":null,"url":null,"parent_id":null,"path":"/Minuteria","application_id":107224}],"_links":{"curr":"http://api.marketcloud.it/v0/categories?"},"count":4,"page":1,"pages":1}'
+      string: '{"status":true,"data":[{"name":"Neutro","description":"Tanti accessori
+        utili per lavorare meglio.","id":128660},{"id":108307,"name":"Abbattitori","description":"Abbattitori
+        professionali","image_url":null,"url":null,"parent_id":107589,"created_at":"2017-01-04T17:30:06.000Z","updated_at":"2017-01-04T17:30:06.000Z","path":"/Macchinari/Abbattitori"},{"id":107590,"name":"Lavastoviglie","description":"Lavastoviglie
+        e lavabicchieri professionali","image_url":null,"url":null,"parent_id":107589,"created_at":"2016-12-31T10:30:27.000Z","updated_at":"2016-12-31T10:30:27.000Z","path":"/Macchinari/Lavastoviglie"},{"id":107589,"name":"Macchinari","description":"Macchinari
+        professionali","image_url":null,"url":null,"parent_id":null,"created_at":"2016-12-31T10:30:04.000Z","updated_at":"2016-12-31T10:30:04.000Z","path":"/Macchinari"},{"id":107588,"name":"Pentole","description":"Pentole
+        e padelle molto belle","image_url":null,"url":null,"parent_id":107225,"created_at":"2016-12-31T10:29:47.000Z","updated_at":"2016-12-31T10:29:47.000Z","path":"/Minuteria/Pentole"},{"id":107225,"name":"Minuteria","description":null,"image_url":null,"url":null,"parent_id":null,"created_at":"2016-12-29T21:09:20.000Z","updated_at":"2016-12-29T21:09:20.000Z","path":"/Minuteria"}],"_links":{"curr":"http://api.marketcloud.it/v0/categories?"},"count":6,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:16:57 GMT
+  recorded_at: Sun, 12 Feb 2017 11:58:54 GMT
 recorded_with: VCR 3.0.3

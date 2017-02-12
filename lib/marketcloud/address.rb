@@ -45,17 +45,8 @@ module Marketcloud
 			false
 		end
 
-		# Find an address by ID
-		# @param id [Integer] the ID of the address
-		# @return an Address or nil
-		def self.find(id)
-			address = perform_request api_url("addresses/#{id}"), :get, nil, true
-
-			if address
-				new address['data']
-			else
-				nil
-			end
+		def self.plural
+			"addresses"
 		end
 
 		# Find all the addresses belonging to a user

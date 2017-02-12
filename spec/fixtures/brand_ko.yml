@@ -1,6 +1,47 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"uL38l4pk+a0UAwoHvhcHZC53Ngw2Y2otsLPoFQ+97Tk=","timestamp":1486900653}'
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '193'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46-VqyIoKQgbGuu+xirPP/hhg"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Sun, 12 Feb 2017 11:57:30 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"token":"UCJJb7t8D+HY+/Aplwqn4t6n+Ju18rn8IBPiy+o9vdQ="}'
+    http_version: 
+  recorded_at: Sun, 12 Feb 2017 11:57:34 GMT
+- request:
     method: get
     uri: http://api.marketcloud.it/v0/brands/-1
     body:
@@ -14,32 +55,32 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c
+      - e8152fe2-237a-4360-8ad2-f3773082226c:UCJJb7t8D+HY+/Aplwqn4t6n+Ju18rn8IBPiy+o9vdQ=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 404
+      message: Not Found
     headers:
       Content-Length:
-      - '91'
+      - '94'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"5b-p/lJ9glVrjVnuNAy1iAcgw"
+      - W/"5e-DNTRBfF/A6ccLG6T0gEh6Q"
       Server:
       - Microsoft-IIS/8.0
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=f36772b9e4fa3e5719fa58a7ae4bc0088ca0a228e90536dc227aee7983c09584;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Tue, 24 Jan 2017 18:39:31 GMT
+      - Sun, 12 Feb 2017 11:57:30 GMT
     body:
       encoding: UTF-8
-      string: '{"status":false,"errors":[{"code":400,"type":"BadRequest","message":"id
-        must be integer"}]}'
+      string: '{"status":false,"errors":[{"code":404,"message":"Unable to find brand
+        -1","type":"NotFound"}]}'
     http_version: 
-  recorded_at: Tue, 24 Jan 2017 18:39:31 GMT
+  recorded_at: Sun, 12 Feb 2017 11:57:34 GMT
 recorded_with: VCR 3.0.3
