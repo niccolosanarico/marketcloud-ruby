@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"KzL2IoencXuwpqVRQiZiGBImzoA9SQ7THY0eHKPk/N4=","timestamp":1483309022}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"YG6Iq9i51ygdLP7gLhh/Syi7GUQG2OZSmol11E8BvAc=","timestamp":1486910078}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '196'
+      - '194'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-yYRWzChwLpeIjETHVk6zsw"
+      - W/"46-bHD6+X4mn1EDrNrLvvvibQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,17 +33,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:17:01 GMT
+      - Sun, 12 Feb 2017 14:34:37 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"kjCctBiHIeB9XRSKT0iVFHqHG0iFv6kG3SkhG9Ps7WM="}'
+      string: '{"status":true,"token":"p16GTebXltU0xgQkePC4ixu8JXMyIhVNfmzYMqGml3s="}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:02 GMT
+  recorded_at: Sun, 12 Feb 2017 14:34:38 GMT
 - request:
     method: post
-    uri: http://api.marketcloud.it//v0/users/authenticate
+    uri: http://api.marketcloud.it/v0/users/authenticate
     body:
       encoding: UTF-8
       string: '{"email":"prova2@prova.it","password":"provapw"}'
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:kjCctBiHIeB9XRSKT0iVFHqHG0iFv6kG3SkhG9Ps7WM=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:p16GTebXltU0xgQkePC4ixu8JXMyIhVNfmzYMqGml3s=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '241'
+      - '243'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7e-E2L9YBn2d4guO1Fi/95Y0A"
+      - W/"7e-r/bq59FS422Bm7OrPUu3QA"
       Vary:
       - Accept-Encoding
       Server:
@@ -76,12 +76,12 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:17:01 GMT
+      - Sun, 12 Feb 2017 14:34:39 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":{"token":"+TMEiTP8ydFaM5bF4D/BmFAwokZzeI0PEwQ/8lLsYxI=","user":{"id":107237,"email":"prova2@prova.it"}}}'
+      string: '{"status":true,"data":{"token":"JrR7DTJ0CCGcqPG6IOXlDnzVulVpB4qvB99sD/5NCEc=","user":{"id":107237,"email":"prova2@prova.it"}}}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:02 GMT
+  recorded_at: Sun, 12 Feb 2017 14:34:41 GMT
 recorded_with: VCR 3.0.3

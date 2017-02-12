@@ -15,5 +15,13 @@ RSpec.describe Marketcloud::Promotion do
 		  expect(promotion.name).to eq "Black Friday"
 		end
 
+		it 'should have conditions' do
+			expect(promotion.conditions).not_to be_nil
+		end
+
+		it 'should have effects' do
+			expect(promotion.effects).not_to be_nil
+		end
+
 	end
 end

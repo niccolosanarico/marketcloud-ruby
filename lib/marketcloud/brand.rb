@@ -4,22 +4,6 @@ require 'json'
 
 module Marketcloud
 	class Brand < Request
-		attr_accessor :name,
-									:id,
-									:description,
-									:url,
-									:img_url
-
-		def initialize(attributes)
-
-			if !attributes.nil?
-				@id = attributes['id']
-				@name = attributes['name']
-				@description = attributes['description']
-				@url = attributes['url']
-				@img_url = attributes['img_url']
-			end
-		end
 
 		def self.plural
 			"brands"

@@ -6,17 +6,12 @@ module Marketcloud
 	class Promotion < Request
 
 		# https://www.marketcloud.it/documentation/rest-api/promotions
-		attr_accessor :name, :id,
-									:conditions,
-									:effects,
-									:active
 
 		def initialize(attributes)
-			@id = attributes['id']
-			@name = attributes['name']
-			@conditions = attributes['conditions'].map { |cond| Condition.new(cond["type"], cond["value"]) }
-			@effects = attributes['effects'].map { |eff| Effect.new(eff["type"], eff["value"]) }
-			@active = attributes['active']
+			super
+			# A bit of more educated item creation than basic initialization
+			@conditions = @conditions.map { |cond| Condition.new(cond["type"], cond["value"]) } unless @conditions.nil?
+			@effects = @conditions.map { |eff| Effect.new(eff["type"], eff["value"]) }	unless @effects.nil?
 		end
 
 		def self.plural

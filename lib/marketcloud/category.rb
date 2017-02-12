@@ -4,25 +4,6 @@ require 'json'
 
 module Marketcloud
 	class Category < Request
-		attr_accessor :name,
-									:id,
-									:description,
-									:url,
-									:image_url,
-									:parent_id
-
-		def initialize(attributes)
-
-			if !attributes.nil?
-				@id = attributes['id']
-				@name = attributes['name']
-				@description = attributes['description']
-				@url = attributes['url']
-				@image_url = attributes['image_url']
-				@parent_id = attributes['parent_id']
-			end
-		end
-
 
 		def self.plural
 			"categories"

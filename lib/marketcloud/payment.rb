@@ -4,13 +4,6 @@ require 'json'
 
 module Marketcloud
 	class Payment < Request
-		attr_accessor :status, :error, :data
-
-		def initialize(attributes)
-			@status = attributes['status']
-			@error = attributes['errors']
-			@data = attributes['data']
-		end
 
 		# Create a new payment
 		# @param order_id [Integer] the ID of the order

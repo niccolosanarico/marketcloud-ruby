@@ -3,26 +3,18 @@ require 'faraday'
 require 'json'
 
 module Marketcloud
-	class Application < Request
-		attr_accessor :name, :id, :tax_rate, :currency_code, :logo, :timezone, :tax_type
-
+	class Application < Request		
 		def initialize(attributes)
-			# Quick fix for a bad design decision on the API
+			# Quick fix for a not ideal design decision on the API
 			if attributes.kind_of? Array
 				attributes = attributes.first
 			end
 
-			@id = attributes['id']
-			@name = attributes['name']
-			@tax_rate = attributes['tax_rate']
-			@tax_type = attributes['tax_type']  # all, products_only, shipping_only, nothing
-			@currency_code = attributes['currency_code']
-			@logo = attributes['logo']
-			@timezone = attributes['timezone']
+			super
 		end
 
 		def self.plural
-			# Yes, this end point does not need pluralization
+			# Yes, this end point does not need pluralization. Second not ideal design decision
 			"application"
 		end
 

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"Tz2PHwPYGy6x+hlxmi0+SFyKtvqhe2YK/Or5meVqOt8=","timestamp":1483309075}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"nAJ3/Oiy1/UcBbn88Bgo6eo8ONebBNp4dy4tJ1xr3Aw=","timestamp":1486909750}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '193'
+      - '191'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-UfapeVNwE4oEfmW5BQAPkg"
+      - W/"46-xgNP5EqC9cG/zfohh4LpKg"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,17 +33,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:17:55 GMT
+      - Sun, 12 Feb 2017 14:29:11 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"SUI+POipZBzjdaxx+3ndD/etWHEH8EN24Mc6EFLaHL8="}'
+      string: '{"status":true,"token":"WZdrx7vFTeMsiAOectf2yVhG3bfsCys2P3QdfEKo+1M="}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:56 GMT
+  recorded_at: Sun, 12 Feb 2017 14:29:10 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it//v0/shippings
+    uri: http://api.marketcloud.it/v0/shippings
     body:
       encoding: US-ASCII
       string: ''
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:SUI+POipZBzjdaxx+3ndD/etWHEH8EN24Mc6EFLaHL8=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:WZdrx7vFTeMsiAOectf2yVhG3bfsCys2P3QdfEKo+1M=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -64,11 +64,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '287'
+      - '332'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d4-XH/6tkZd/V8fHgZpMG3RSw"
+      - W/"116-tiCrTC0289RmM74mYeXBBA"
       Vary:
       - Accept-Encoding
       Server:
@@ -76,12 +76,12 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Set-Cookie:
-      - ARRAffinity=8a668df407d29250bae4eebb17b37024c7eb17badf1be7615a664b56c50607d8;Path=/;Domain=api.marketcloud.it
+      - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 01 Jan 2017 22:17:55 GMT
+      - Sun, 12 Feb 2017 14:29:09 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"data":[{"name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"}],"id":107233}],"_links":{"curr":"http://api.marketcloud.it/v0/shippings?"},"count":1,"page":1,"pages":1}'
+      string: '{"status":true,"data":[{"name":"DHL","base_cost":15,"per_item_cost":1,"zones":[{"name":"Italy","code":"IT"},{"name":"Europe","code":"EUROPE"}],"id":107233,"max_weight":100,"min_depth":10}],"_links":{"curr":"http://api.marketcloud.it/v0/shippings?"},"count":1,"page":1,"pages":1}'
     http_version: 
-  recorded_at: Sun, 01 Jan 2017 22:17:56 GMT
+  recorded_at: Sun, 12 Feb 2017 14:29:10 GMT
 recorded_with: VCR 3.0.3

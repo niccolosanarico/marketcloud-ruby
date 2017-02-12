@@ -138,5 +138,19 @@ module Marketcloud
 				nil
 			end
 		end
+
+    # generic initialization method. As we know that all objects are created out of a hash, just use a
+    # bit of metaprogramming to automate the process
+    def initialize(attributes)
+      attributes.each do |attr_k, attr_v|
+        self.class.send(:define_method, "#{attr_k}") do
+          attr_v
+        end
+
+        self.class.send(:define_method, "#{attr_k}=") do |new_value|
+          attr_v = new_value
+        end
+      end unless attributes.nil?
+    end
   end
 end

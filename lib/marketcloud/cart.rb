@@ -4,15 +4,6 @@ require 'json'
 
 module Marketcloud
 	class Cart < Request
-		attr_accessor :id,
-									:user_id,
-									:items
-
-		def initialize(attributes)
-			@id = attributes['id']
-			@user_id = attributes['user_id']
-			@items = attributes['items']
-		end
 
 		# INSTANCE METHODS
 

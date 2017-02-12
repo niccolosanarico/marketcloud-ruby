@@ -4,42 +4,32 @@ require 'json'
 
 module Marketcloud
 	class Address < Request
-		attr_accessor :id, :full_name, :user_id, :email, :country, :state, :city, :address1,
-									:address2, :postal_code, :phone_number, :alternate_phone_number,
-									:vat
 
-		def initialize(attributes)
-			@id = attributes['id']
-			@full_name = attributes['full_name']
-			@user_id = attributes['user_id']
-			@email = attributes['email']
-			@country = attributes['country']
-			@state = attributes['state']
-			@city = attributes['city']
-			@address1 = attributes['address1']
-			@address2 = attributes['address2']
-			@postal_code = attributes['postal_code']
-			@phone_number = attributes['phone_number']
-			@alternate_phone_number = attributes['alternate_phone_number']
-			@vat = attributes['vat']
-		end
-
+		# Update the fields of the address
+		# @param attributes a hash of attributes to update
+		# @return true
 		def update_fields(attributes)
-			self.id = attributes['id']
-			self.full_name = attributes['full_name']
-			self.user_id = attributes['user_id']
-			self.email = attributes['email']
-			self.country = attributes['country']
-			self.state = attributes['state']
-			self.city = attributes['city']
-			self.address1 = attributes['address1']
-			self.address2 = attributes['address2']
-			self.postal_code = attributes['postal_code']
-			self.phone_number = attributes['phone_number']
-			self.alternate_phone_number = attributes['alternate_phone_number']
-			self.vat = attributes['vat']
+			attributes.each do |attr_k, attr_v|
+				self.send("#{attr_k}=", attr_v)
+			end
+
 			true
 		end
+
+		# Updates the current address (! modifies object!)
+		# @param address [Address] the updated addresss
+		# @return true for success, false otherwise
+		def update!(address)
+			address = Address.perform_request Address.api_url("addresses/#{self.id}", {}), :put, address, true
+
+			if address
+				update_fields(address['data'])
+			else
+				false
+			end
+		end
+
+		# CLASS METHODS
 
 		def self.cache_me?
 			false
@@ -101,19 +91,6 @@ module Marketcloud
 
 			if success
 				true
-			else
-				false
-			end
-		end
-
-		# Updates the current address (! modifies object!)
-		# @param address [Address] the updated addresss
-		# @return true for success, false otherwise
-		def update!(address)
-			address = Address.perform_request Address.api_url("addresses/#{self.id}", {}), :put, address, true
-
-			if address
-				update_fields(address['data'])
 			else
 				false
 			end

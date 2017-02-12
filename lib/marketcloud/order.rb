@@ -4,57 +4,10 @@ require 'json'
 
 module Marketcloud
 	class Order < Request
-		attr_accessor :id,
-									:cart_id,
-									:status,
-									:shipping_address,
-									:billing_address,
-									:shipping_id,
-									:user_id,
-									:store_id,
-									:items_total,
-									:display_total,
-									:display_items_total,
-									:shipping_total,
-									:taxes_total,
-									:total,
-									:items,
-									:products,
-									:currency_id,
-									:created_at,
-									:promotion_id,
-									:coupon_code
-
-		#
-		#
-		#
-		def initialize(attributes)
-			@id = attributes['id']
-			@user_id = attributes['user_id']
-			@status = attributes['status']
-			@shipping_address = attributes['shipping_address']
-			@billing_address = attributes['billing_address']
-			@shipping_id = attributes['shipping_id']
-			@user_id = attributes['user_id']
-			@store_id = attributes['store_id']
-			@items_total = attributes['items_total']
-			@display_total = attributes['display_total']
-			@display_items_total = attributes['display_items_total']
-			@shipping_total = attributes['shipping_total']
-			@taxes_total = attributes['taxes_total']
-			@total = attributes['total']
-			@items = attributes['items']
-			@products = attributes['products']
-			@currency_id = attributes['currency_id']
-			@created_at = attributes['created_at']
-			@promotion_id = attributes['promotion_id']
-			@coupon_code = attributes['coupon_code']
-		end
-
 
 		def self.cache_me?
       false
-    end
+		end
 
 		def self.plural
 			"orders"

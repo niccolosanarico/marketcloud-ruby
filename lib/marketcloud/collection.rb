@@ -4,17 +4,12 @@ require 'json'
 
 module Marketcloud
 	class Collection < Request
-		attr_accessor :name,
-									:id,
-									:description,
-									:products
+		attr_accessor :products
 
 		def initialize(attributes)
+			super
 
 			if !attributes.nil?
-				@id = attributes['id']
-				@name = attributes['name']
-				@description = attributes['description']
 				@products = attributes['items'].map { |item| Marketcloud::Product.new(item) }
 			end
 		end

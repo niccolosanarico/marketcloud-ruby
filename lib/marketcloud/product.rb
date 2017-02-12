@@ -4,31 +4,17 @@ require 'json'
 
 module Marketcloud
 	class Product < Request
-		attr_accessor :name, :id, :sku, :description,
-									:category_id, :brand_id,
-									:price, :images, :meta, :facebook, :slug,
-									:has_variants, :variantsDefinition, :variants,
-									:weight, :depth, :width, :height, :stock_status
 
 		def initialize(attributes)
-			@id = attributes['id']
-			@name = attributes['name']
-			@sku = attributes['sku']
-			@description = attributes['description']
-			@category_id = attributes['category_id']
-			@brand_id = attributes['brand_id']
-			@price = attributes['price']
-			@images = attributes['images']
+			super
+
+			# A bit of ad-hoc initializations for the product
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
 			@facebook = attributes['seo']['facebook'] unless attributes['seo'].nil? #title #description #image
-			@slug = attributes['slug']
-			@weight = attributes['weight'] || 1
-			@depth = attributes['depth'] || 1
-			@width = attributes['width'] || 1
-			@height = attributes['height'] || 1
-			@stock_status = attributes['stock_status']
-			@has_variants = attributes['has_variants']
-			@variantsDefinition = attributes['variantsDefinition']
+			@weight ||= 1
+			@depth 	||= 1
+			@width 	||= 1
+			@height ||= 1
 			if @has_variants
 				@variants = Array.new
 				if attributes['variants']

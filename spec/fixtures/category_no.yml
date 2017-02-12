@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"J5ANzFppz/uYZIyfx3OklLGH5DFyhGaKI3JkilsnTWc=","timestamp":1486900731}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"a1tHaNyo2kPmuOe9+ix1n3BvtADzn5WMRrDf3krVAoc=","timestamp":1486909650}'
     headers:
       User-Agent:
       - Faraday v0.10.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '196'
+      - '194'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"46-RpHP4vvbMF25TewGBEwCGA"
+      - W/"46-/Z64m8X1VhuzbRK4oSJuYQ"
       Vary:
       - Accept-Encoding
       Server:
@@ -35,12 +35,12 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 12 Feb 2017 11:58:49 GMT
+      - Sun, 12 Feb 2017 14:27:31 GMT
     body:
       encoding: ASCII-8BIT
-      string: '{"status":true,"token":"/9YfjmKtwyIjN2IgdxhbVKOJSLfQC6xi8vWW+g6ghnY="}'
+      string: '{"status":true,"token":"SGxfCckd76wECBJLSUUGZAqMLUlDIcyEdNoZ6dfTz2w="}'
     http_version: 
-  recorded_at: Sun, 12 Feb 2017 11:58:54 GMT
+  recorded_at: Sun, 12 Feb 2017 14:27:30 GMT
 - request:
     method: get
     uri: http://api.marketcloud.it/v0/categories/1
@@ -55,7 +55,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:/9YfjmKtwyIjN2IgdxhbVKOJSLfQC6xi8vWW+g6ghnY=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:SGxfCckd76wECBJLSUUGZAqMLUlDIcyEdNoZ6dfTz2w=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -76,11 +76,11 @@ http_interactions:
       Set-Cookie:
       - ARRAffinity=48a99e4c9f9346718e16dcdf38eb56a07b3f9bdef56da0f1cce284338a4ce460;Path=/;Domain=api.marketcloud.it
       Date:
-      - Sun, 12 Feb 2017 11:58:50 GMT
+      - Sun, 12 Feb 2017 14:27:32 GMT
     body:
       encoding: UTF-8
       string: '{"status":false,"errors":[{"code":404,"message":"Unable to find category
         1","type":"NotFound"}]}'
     http_version: 
-  recorded_at: Sun, 12 Feb 2017 11:58:54 GMT
+  recorded_at: Sun, 12 Feb 2017 14:27:31 GMT
 recorded_with: VCR 3.0.3

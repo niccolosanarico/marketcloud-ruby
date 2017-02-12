@@ -4,23 +4,6 @@ require 'json'
 
 module Marketcloud
 	class User < Request
-		attr_accessor :name, :id, :email, :image_url, :token, :password
-
-		# INSTANCE METHODS
-
-		#
-		#
-		#
-		def initialize(attributes)
-			if !attributes.nil?
-				@id = attributes['id']
-				@name = attributes['name']
-				@email = attributes['email']
-				@token = attributes['token']
-				@image_url = attributes['image_url']
-				@password = attributes['password']
-			end
-		end
 
 		# CLASS METHODS
 
@@ -66,6 +49,8 @@ module Marketcloud
 			# end
 		end
 
+		# INSTANCE METHODS
+
 		# Authenticate the current user
 		# @param password [Integer] the password
 		# @return true in case of success
@@ -74,8 +59,15 @@ module Marketcloud
 				{ email: self.email,
 					password: password }, true
 
+			# A bit of additional code here to keep the initialization tidy
 			if auth
-				self.token = auth['data']['token']
+				if(self.respond_to? :token=)
+					self.token = auth['data']['token']
+				else
+					self.class.send(:define_method, "token=") { |value| @token=value }
+					self.class.send(:define_method, "token") { @token }
+					self.token = auth['data']['token']
+				end
 				true
 			else
 				false
