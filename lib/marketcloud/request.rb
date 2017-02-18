@@ -87,7 +87,7 @@ module Marketcloud
         req.headers["Accept"]         = "application/json"
 
         if need_token
-          auth = Marketcloud::Authentication.get_token()
+          auth = Marketcloud::Authentication.get_token(Marketcloud.configuration)
           req.headers['Authorization'] = "#{Marketcloud.configuration.public_key}:#{auth.token}"
         else
 		      req.headers['Authorization']  = Marketcloud.configuration.public_key

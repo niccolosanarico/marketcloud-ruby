@@ -158,7 +158,7 @@ RSpec.describe Marketcloud::Cart do
 			}
 		}
 
-		it 'should return 200' do
+		it 'should return a cart' do
 			expect(cart).not_to be_nil
 		end
 

@@ -20,7 +20,7 @@ module Marketcloud
 		def self.get_token(config = Configuration.new)
       timestamp = Time.now.to_i
 
-      hash = Digest::SHA256.base64digest "#{Marketcloud.configuration.private_key}#{timestamp}"
+      hash = Digest::SHA256.base64digest "#{config.private_key}#{timestamp}"
 
       query = Faraday.new(url: "#{API_URL}/tokens") do |faraday|
 				faraday.request  :url_encoded             # form-encode POST params
@@ -31,7 +31,7 @@ module Marketcloud
 			  req.headers['content-type'] = 'application/json'
         req.headers['accept'] = 'application/json'
         req.body = {
-          publicKey: Marketcloud.configuration.public_key,
+          publicKey: config.public_key,
           secretKey: hash,
           timestamp: timestamp
         }.to_json
@@ -40,13 +40,13 @@ module Marketcloud
       resp = JSON.parse(response.body)
 
 			if response.status != 200
-				Marketcloud.logger.error(response.body)
+				Marketcloud.logger.error("#{response.body} - #{config.public_key}")
 				return nil
 			end
 
 			token = resp["token"]
-			
+
 			new(token)
-    end
+		end
 	end
 end
