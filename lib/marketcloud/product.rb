@@ -91,5 +91,17 @@ module Marketcloud
 			end
 		end
 
+		# Create a new product and returns it
+		# @param product a hash with the product
+		# @return a new product
+		def self.create(product)
+			prod = perform_request(api_url("products"), :post, product, true)
+
+			if prod
+				new(prod['data'])
+			else
+				nil
+			end
+		end
 	end
 end

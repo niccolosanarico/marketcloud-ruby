@@ -42,4 +42,17 @@ RSpec.describe Marketcloud::Category do
 			expect(categories.length).to be >= 0
 		end
 	end
+
+	describe 'a POST to create a new category' do
+		let(:new_category) { {name: 'a category', description: 'With a name' } }
+		let(:created_category) { VCR.use_cassette('category_new') { Marketcloud::Category.create(new_category) }}
+
+		it 'is successfull' do
+			expect(created_category).not_to be_nil
+		end
+
+		it 'creates a new category' do
+			expect(created_category.name).to eq new_category[:name]
+		end
+	end
 end

@@ -40,4 +40,17 @@ RSpec.describe Marketcloud::Product do
 			expect(products).not_to be_nil
 		end
 	end
+
+	describe 'a POST to create a new product' do
+		let(:new_product) { {name: 'a product', description: 'With a name', price: 99.99, sku: 'XXXXYYQQQ', stock_type: 'status', stock_status: "in_stock"} }
+		let(:created_product) { VCR.use_cassette('product_new') { Marketcloud::Product.create(new_product) }}
+
+		it 'is successfull' do
+			expect(created_product).not_to be_nil
+		end
+
+		it 'creates a new product' do
+			expect(created_product.name).to eq new_product[:name]
+		end
+	end
 end

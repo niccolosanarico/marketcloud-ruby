@@ -22,5 +22,17 @@ module Marketcloud
 			end
 		end
 
+		# Create a new category and returns it
+		# @param category a hash with the category
+		# @return a new category
+		def self.create(category)
+			cat = perform_request(api_url("categories"), :post, category, true)
+
+			if cat
+				new(cat['data'])
+			else
+				nil
+			end
+		end
 	end
 end
