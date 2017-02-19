@@ -133,7 +133,7 @@ module Marketcloud
 			object = perform_request api_url("#{self.plural}/#{id}"), :get, nil, true
 
 			if object
-				new object['data']
+				new object['data'] #TODO BUG not calling initializer in subclass.
 			else
 				nil
 			end

@@ -31,6 +31,18 @@ module Marketcloud
 			"products"
 		end
 
+		# Find an object by ID - need to instantiate it here to call the righr initializer
+		# @param id [Integer] the ID of the object
+		# @return an object or nil
+		def self.find(id = nil)
+			object = perform_request api_url("#{self.plural}/#{id}"), :get, nil, true
+
+			if object
+				new object['data']
+			else
+				nil
+			end
+		end
 
 		# Find all the products belonging to a category
 		# @param cat_id [Integer] the category ID
