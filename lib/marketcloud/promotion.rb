@@ -4,11 +4,11 @@ require 'json'
 
 module Marketcloud
 	class Promotion < Request
-
+		attr_accessor :conditions, :effects
 		# https://www.marketcloud.it/documentation/rest-api/promotions
 
 		def initialize(attributes)
-			super
+			super(attributes)
 			# A bit of more educated item creation than basic initialization
 			@conditions = @conditions.map { |cond| Condition.new(cond["type"], cond["value"]) } unless @conditions.nil?
 			@effects = @conditions.map { |eff| Effect.new(eff["type"], eff["value"]) }	unless @effects.nil?

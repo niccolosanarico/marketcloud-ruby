@@ -5,8 +5,10 @@ require 'json'
 module Marketcloud
 	class Category < Request
 
+		attr_accessor :meta, :facebook
+
 		def initialize(attributes)
-			super
+			super(attributes)
 
 			# A bit of ad-hoc initializations for the category
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description

@@ -2,6 +2,7 @@ require_relative '../../../spec/spec_helper'
 
 RSpec.describe Marketcloud::Product do
 	let(:prod_id) { 107226 }
+	let(:prod_id_with_variant) { 109263 }
 	let(:cat_id) { 107225 }
 
 	describe 'a GET on a valid product' do
@@ -14,7 +15,26 @@ RSpec.describe Marketcloud::Product do
 		it 'answers to find with a valid product' do
 		  expect(product.name).to eq "Pentola"
 		end
+	end
 
+	describe 'a GET on a valid product with variants' do
+	  let(:variant_product) { VCR.use_cassette('product_with_variants') { Marketcloud::Product.find(prod_id_with_variant) }}
+
+		it 'should return 200' do
+			expect(variant_product).not_to be_nil
+		end
+
+		it 'answers to find with a valid product' do
+		  expect(variant_product.name).to eq "Ardesia (Quadrata)"
+		end
+
+		it 'should have variants' do
+		  expect(variant_product.has_variants).to be true
+		end
+
+		it 'should have variant objects' do
+		  expect(variant_product.variants.first).to be_kind_of Marketcloud::Variant
+		end
 	end
 
 	describe 'a GET on all products' do

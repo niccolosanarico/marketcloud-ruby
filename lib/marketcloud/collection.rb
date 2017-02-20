@@ -7,7 +7,7 @@ module Marketcloud
 		attr_accessor :products
 
 		def initialize(attributes)
-			super
+			super(attributes)
 
 			if !attributes.nil?
 				@products = attributes['items'].map { |item| Marketcloud::Product.new(item) }
@@ -31,7 +31,7 @@ module Marketcloud
 				nil
 			end
 		end
-		
+
 		# Return all the collections
 		# @return an array of Collections
 		def self.all()

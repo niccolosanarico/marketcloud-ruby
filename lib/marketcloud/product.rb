@@ -5,8 +5,10 @@ require 'json'
 module Marketcloud
 	class Product < Request
 
+		attr_accessor :meta, :facebook, :weight, :height, :width, :depth
+
 		def initialize(attributes)
-			super
+			super(attributes)
 
 			# A bit of ad-hoc initializations for the product
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
@@ -15,14 +17,15 @@ module Marketcloud
 			@depth 	||= 1
 			@width 	||= 1
 			@height ||= 1
-			if @has_variants
-				@variants = Array.new
+
+			if self.respond_to?(:has_variants) && self.has_variants
+				self.variants = Array.new
 				if attributes['variants']
 					attributes['variants'].each do |variant|
-						@variants << Variant.new(variant, @variantsDefinition)
+						self.variants << Variant.new(variant, self.variantsDefinition)
 					end
 				elsif attributes['variant'] # in this case there is only a variant, and this is the outcome of an order
-					@variants << Variant.new(attributes['variant'], @variantsDefinition)
+					self.variants << Variant.new(attributes['variant'], self.variantsDefinition)
 				end
 			end
 		end

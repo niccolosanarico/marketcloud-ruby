@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"qZhLnCnNcXJ78HDC9+KNMmP5X0g9EhGI5ljvHuUKXOQ=","timestamp":1487623881}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-PtYcXga2yWTN6Lu9dbSR8w"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Mon, 20 Feb 2017 20:51:21 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "d9IBNOLErPn9yFxi858KWsWsHbIO4EQoR3donA7DVGM=",
+          "data": {
+            "token": "d9IBNOLErPn9yFxi858KWsWsHbIO4EQoR3donA7DVGM=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 20:51:21 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/products/109263
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:d9IBNOLErPn9yFxi858KWsWsHbIO4EQoR3donA7DVGM=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '961'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"da9-QvRfnlZQwWpA76Ej5EYeXw"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Mon, 20 Feb 2017 20:51:22 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJzdGF0dXMiOiB0cnVlLAogICJkYXRhIjogewogICAgInR5cGUiOiAi
+        cHJvZHVjdF93aXRoX3ZhcmlhbnRzIiwKICAgICJuYW1lIjogIkFyZGVzaWEg
+        KFF1YWRyYXRhKSIsCiAgICAiZGVzY3JpcHRpb24iOiAiPHA+TWF0ZXJpYWxl
+        IGNoZSBwZXJtZXR0ZSBpbCBjb25zdW1vIGRpIGFsaW1lbnRpLCA8L3A+PHA+
+        PGJyLz48L3A+PHA+cHXDsiBwcmVzZW50YXJlIGlycmVnb2xhcml0w6AgZG92
+        dXRlIGFsbCdvcmlnaW5lIG5hdHVyYWxlIGRlbGwnYXJkZXNpYSBlZCA8YnIv
+        PmlsIHN1byBjb2xvcmUgcHXDsiB2YXJpYXJlIGxlZ2dlcm1lbnRlIGRhbCBn
+        cmlnaW8gYWwgbmVyby4gTCdhcmRlc2lhIG5vbiA8YnIvPnB1w7IgZXNzZXJl
+        IHV0aWxpenphdGEgaW4gZm9ybm8gZSBmb3JubyBhIG1pY3Jvb25kZSwgbWEg
+        bCd1c28gaW4gPGJyLz5mcmlnb3JpZmVybyBvIGNvbmdlbGF0b3JlIMOoIHBv
+        c3NpYmlsZS48L3A+PHA+SWwgcHJlenpvIGluZGljYXRvIMOoIHBlciB1biBz
+        aW5nb2xvIHBlenpvLjwvcD48cD5Gb3JtYSBxdWFkcmF0YSwgdmFyaWUgZGlt
+        ZW5zaW9uaS48L3A+PHA+PGJyLz48L3A+PHA+PGJyLz48L3A+wqDCoMKgwqDC
+        oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIiwKICAgICJpbWFn
+        ZXMiOiBbCiAgICAgICJodHRwczovL3Nob3AuY29hbGNhLml0L3NwcmVlL3By
+        b2R1Y3RzLzE0Mi9wcm9kdWN0LzAwMDAxNjkzMDAwMDEucG5nPzE0MjQxMDIx
+        NzQiCiAgICBdLAogICAgInZhcmlhbnRzIjogWwogICAgICB7CiAgICAgICAg
+        InR5cGUiOiAicHJvZHVjdF93aXRoX3ZhcmlhbnRzIiwKICAgICAgICAibmFt
+        ZSI6ICJBcmRlc2lhIChRdWFkcmF0YSkiLAogICAgICAgICJkZXNjcmlwdGlv
+        biI6ICI8cD5NYXRlcmlhbGUgY2hlIHBlcm1ldHRlIGlsIGNvbnN1bW8gZGkg
+        YWxpbWVudGksIDwvcD48cD48YnIvPjwvcD48cD5wdcOyIHByZXNlbnRhcmUg
+        aXJyZWdvbGFyaXTDoCBkb3Z1dGUgYWxsJ29yaWdpbmUgbmF0dXJhbGUgZGVs
+        bCdhcmRlc2lhIGVkIDxici8+aWwgc3VvIGNvbG9yZSBwdcOyIHZhcmlhcmUg
+        bGVnZ2VybWVudGUgZGFsIGdyaWdpbyBhbCBuZXJvLiBMJ2FyZGVzaWEgbm9u
+        IDxici8+cHXDsiBlc3NlcmUgdXRpbGl6emF0YSBpbiBmb3JubyBlIGZvcm5v
+        IGEgbWljcm9vbmRlLCBtYSBsJ3VzbyBpbiA8YnIvPmZyaWdvcmlmZXJvIG8g
+        Y29uZ2VsYXRvcmUgw6ggcG9zc2liaWxlLjwvcD48cD5JbCBwcmV6em8gaW5k
+        aWNhdG8gw6ggcGVyIHVuIHNpbmdvbG8gcGV6em8uPC9wPjxwPkZvcm1hIHF1
+        YWRyYXRhLCB2YXJpZSBkaW1lbnNpb25pLjwvcD48cD48YnIvPjwvcD48cD48
+        YnIvPjwvcD7CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+        oMKgwqAiLAogICAgICAgICJzdG9ja190eXBlIjogInN0YXR1cyIsCiAgICAg
+        ICAgInN0b2NrX3N0YXR1cyI6ICJpbl9zdG9jayIsCiAgICAgICAgImltYWdl
+        cyI6IFsKICAgICAgICAgICJodHRwczovL3Nob3AuY29hbGNhLml0L3NwcmVl
+        L3Byb2R1Y3RzLzE0Mi9wcm9kdWN0LzAwMDAxNjkzMDAwMDEucG5nPzE0MjQx
+        MDIxNzQiCiAgICAgICAgXSwKICAgICAgICAic2x1ZyI6ICJhcmRlc2lhLXF1
+        YWRyYXRhIiwKICAgICAgICAiY2F0ZWdvcnlfaWQiOiAxMDcyMjUsCiAgICAg
+        ICAgInJlcXVpcmVzX3NoaXBwaW5nIjogdHJ1ZSwKICAgICAgICAid2VpZ2h0
+        IjogMSwKICAgICAgICAicHJpY2UiOiA4LjY2LAogICAgICAgICJEaW1lbnNp
+        b25lIjogIk1pc3VyYTotMzB4MzAtY20iLAogICAgICAgICJzYXZlIjogdHJ1
+        ZSwKICAgICAgICAiaWQiOiAxLAogICAgICAgICJ2YXJpYW50X2lkIjogMSwK
+        ICAgICAgICAicHJvZHVjdF9pZCI6IDEwOTI2MywKICAgICAgICAiYXBwbGlj
+        YXRpb25faWQiOiAxMDcyMjQsCiAgICAgICAgInN0b2NrX2xldmVsIjogbnVs
+        bCwKICAgICAgICAic2t1IjogIkJMQUJMQTEiCiAgICAgIH0sCiAgICAgIHsK
+        ICAgICAgICAidHlwZSI6ICJwcm9kdWN0X3dpdGhfdmFyaWFudHMiLAogICAg
+        ICAgICJuYW1lIjogIkFyZGVzaWEgKFF1YWRyYXRhKSIsCiAgICAgICAgImRl
+        c2NyaXB0aW9uIjogIjxwPk1hdGVyaWFsZSBjaGUgcGVybWV0dGUgaWwgY29u
+        c3VtbyBkaSBhbGltZW50aSwgPC9wPjxwPlB1w7IgcHJlc2VudGFyZSBpcnJl
+        Z29sYXJpdMOgIGRvdnV0ZSBhbGwnb3JpZ2luZSBuYXR1cmFsZSBkZWxsJ2Fy
+        ZGVzaWEgZWQgPGJyLz5pbCBzdW8gY29sb3JlIHB1w7IgdmFyaWFyZSBsZWdn
+        ZXJtZW50ZSBkYWwgZ3JpZ2lvIGFsIG5lcm8uIEwnYXJkZXNpYSBub24gPGJy
+        Lz5wdcOyIGVzc2VyZSB1dGlsaXp6YXRhIGluIGZvcm5vIGUgZm9ybm8gYSBt
+        aWNyb29uZGUsIG1hIGwndXNvIGluIDxici8+ZnJpZ29yaWZlcm8gbyBjb25n
+        ZWxhdG9yZSDDqCBwb3NzaWJpbGUuPC9wPjxwPklsIHByZXp6byBpbmRpY2F0
+        byDDqCBwZXIgdW4gc2luZ29sbyBwZXp6by48L3A+PHA+Rm9ybWEgcXVhZHJh
+        dGEsIHZhcmllIGRpbWVuc2lvbmkuPC9wPjxwPjxici8+PC9wPjxwPjxici8+
+        PC9wPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+        oCIsCiAgICAgICAgInN0b2NrX3R5cGUiOiAic3RhdHVzIiwKICAgICAgICAi
+        c3RvY2tfc3RhdHVzIjogImluX3N0b2NrIiwKICAgICAgICAiaW1hZ2VzIjog
+        WwogICAgICAgICAgImh0dHBzOi8vc2hvcC5jb2FsY2EuaXQvc3ByZWUvcHJv
+        ZHVjdHMvMTQyL3Byb2R1Y3QvMDAwMDE2OTMwMDAwMS5wbmc/MTQyNDEwMjE3
+        NCIKICAgICAgICBdLAogICAgICAgICJzbHVnIjogImFyZGVzaWEtcXVhZHJh
+        dGEiLAogICAgICAgICJjYXRlZ29yeV9pZCI6IDEwNzIyNSwKICAgICAgICAi
+        cmVxdWlyZXNfc2hpcHBpbmciOiB0cnVlLAogICAgICAgICJ3ZWlnaHQiOiAx
+        LAogICAgICAgICJwcmljZSI6IDMuOTQsCiAgICAgICAgIkRpbWVuc2lvbmUi
+        OiAiTWlzdXJhOi0yMHgyMC1jbSIsCiAgICAgICAgInNhdmUiOiB0cnVlLAog
+        ICAgICAgICJpZCI6IDIsCiAgICAgICAgInZhcmlhbnRfaWQiOiAyLAogICAg
+        ICAgICJwcm9kdWN0X2lkIjogMTA5MjYzLAogICAgICAgICJhcHBsaWNhdGlv
+        bl9pZCI6IDEwNzIyNCwKICAgICAgICAic3RvY2tfbGV2ZWwiOiBudWxsLAog
+        ICAgICAgICJza3UiOiAiQkxBQkxBMiIKICAgICAgfQogICAgXSwKICAgICJw
+        dWJsaXNoZWQiOiB0cnVlLAogICAgImhhc192YXJpYW50cyI6IHRydWUsCiAg
+        ICAic2x1ZyI6ICJhcmRlc2lhLXF1YWRyYXRhIiwKICAgICJjYXRlZ29yeV9p
+        ZCI6IDEwNzIyNSwKICAgICJyZXF1aXJlc19zaGlwcGluZyI6IHRydWUsCiAg
+        ICAid2VpZ2h0IjogMSwKICAgICJ2YXJpYW50c0RlZmluaXRpb24iOiB7CiAg
+        ICAgICJEaW1lbnNpb25lIjogWwogICAgICAgICJNaXN1cmE6LTMweDMwLWNt
+        IiwKICAgICAgICAiTWlzdXJhOi0yMHgyMC1jbSIKICAgICAgXQogICAgfSwK
+        ICAgICJwcmljZSI6IDguNjYsCiAgICAiaWQiOiAxMDkyNjMsCiAgICAiYXBw
+        bGljYXRpb25faWQiOiAxMDcyMjQsCiAgICAiZGVwdGgiOiAzMCwKICAgICJ3
+        aWR0aCI6IDMwLAogICAgImhlaWdodCI6IDQKICB9Cn0=
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 20:51:21 GMT
+recorded_with: VCR 3.0.3
