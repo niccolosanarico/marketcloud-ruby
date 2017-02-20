@@ -5,7 +5,7 @@ require 'json'
 module Marketcloud
 	class Category < Request
 
-		attr_accessor :meta, :facebook
+		attr_accessor :meta, :facebook, :parent_id
 
 		def initialize(attributes)
 			super
