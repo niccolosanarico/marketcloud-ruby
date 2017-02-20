@@ -5,7 +5,7 @@ require 'json'
 module Marketcloud
 	class Product < Request
 
-		attr_accessor :meta, :facebook, :weight, :height, :width, :depth
+		attr_accessor :meta, :facebook, :weight, :height, :width, :depth, :has_variants
 
 		def initialize(attributes)
 			super
@@ -18,7 +18,8 @@ module Marketcloud
 			@width 	||= 1
 			@height ||= 1
 
-			if self.respond_to?(:has_variants) && self.has_variants
+			# if self.respond_to?(:has_variants) && self.has_variants
+			if self.has_variants
 				self.variants = Array.new
 				if attributes['variants']
 					attributes['variants'].each do |variant|
