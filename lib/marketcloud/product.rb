@@ -8,7 +8,7 @@ module Marketcloud
 		attr_accessor :meta, :facebook, :weight, :height, :width, :depth
 
 		def initialize(attributes)
-			super(attributes)
+			super
 
 			# A bit of ad-hoc initializations for the product
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description

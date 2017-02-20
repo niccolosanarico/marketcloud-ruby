@@ -140,16 +140,11 @@ module Marketcloud
 		end
 
     # generic initialization method. As we know that all objects are created out of a hash, just use a
-    # bit of metaprogramming to automate the process
+    # bit of metaprogramming to automate the process by defining the accessors in the singleton class
     def initialize(attributes)
       attributes.each do |attr_k, attr_v|
-        self.class.send(:define_method, "#{attr_k}") do
-          attr_v
-        end
-
-        self.class.send(:define_method, "#{attr_k}=") do |new_value|
-          attr_v = new_value
-        end
+        define_singleton_method "#{attr_k}",  lambda { attr_v }
+        define_singleton_method "#{attr_k}=", lambda { |new_value| attr_v = new_value }
       end unless attributes.nil?
     end
   end

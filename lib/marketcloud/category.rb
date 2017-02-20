@@ -8,7 +8,7 @@ module Marketcloud
 		attr_accessor :meta, :facebook
 
 		def initialize(attributes)
-			super(attributes)
+			super
 
 			# A bit of ad-hoc initializations for the category
 			@meta = attributes['seo']['meta'] unless attributes['seo'].nil? #title #keywords #description
@@ -38,7 +38,7 @@ module Marketcloud
 			categories = perform_request(api_url("categories"), :get, nil, true)
 
 			if categories
-				categories['data'].collect { |cs| new(cs) }
+				categories['data'].map { |cs| new(cs) }
 			else
 				nil
 			end
