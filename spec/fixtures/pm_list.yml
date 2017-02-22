@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"UGUe6h/ZZo0OypxwTx8bGGCryCNl0FkWiTHRudw8hyg=","timestamp":1487803592}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '225'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-oQ1CXcDyIetCsYz8rwl05A"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 22 Feb 2017 22:46:33 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "j3CNFtonTlpMUz9ELMc9xl0k2loZXURp20N3vEspslU=",
+          "data": {
+            "token": "j3CNFtonTlpMUz9ELMc9xl0k2loZXURp20N3vEspslU=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 22 Feb 2017 22:46:32 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/paymentmethods
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:j3CNFtonTlpMUz9ELMc9xl0k2loZXURp20N3vEspslU=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1a2-iaQ9UtDB+muNyJFBjjVzRg"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 22 Feb 2017 22:46:31 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": [
+            {
+              "_id": "58911b710393102f14c96892",
+              "name": "Bonifico bancario",
+              "description": "Pagamento anticipato tramite bonifico bancario",
+              "cost_type": "no_cost",
+              "id": 121182,
+              "application_id": 107224,
+              "active": true
+            }
+          ],
+          "_links": {
+            "curr": "http://api.marketcloud.it/v0/paymentMethods?"
+          },
+          "count": 1,
+          "page": 1,
+          "pages": 1
+        }
+    http_version: 
+  recorded_at: Wed, 22 Feb 2017 22:46:32 GMT
+recorded_with: VCR 3.0.3

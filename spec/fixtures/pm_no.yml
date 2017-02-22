@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"Ptb50ScqN6IQ94E9B6btFIjFMR/BrJukYRXCQVj2VbM=","timestamp":1487803591}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-GrfF+aZOnHrgp0ffMZbuWQ"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 22 Feb 2017 22:46:32 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "tNseSFvYiCoh8Aw8WMnUH+u8Yfa6wQUsd9qud8a66eY=",
+          "data": {
+            "token": "tNseSFvYiCoh8Aw8WMnUH+u8Yfa6wQUsd9qud8a66eY=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 22 Feb 2017 22:46:32 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/paymentmethods/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:tNseSFvYiCoh8Aw8WMnUH+u8Yfa6wQUsd9qud8a66eY=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '155'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9b-9SZT3s4+g/kSlif6us/DQA"
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Set-Cookie:
+      - ARRAffinity=059b5b659486b0f630c46ae684e5023b7aa52b46ab3bb89c65a5309bbd45cb54;Path=/;Domain=api.marketcloud.it
+      Date:
+      - Wed, 22 Feb 2017 22:46:33 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "status": false,
+          "errors": [
+            {
+              "code": 404,
+              "message": "Unable to find paymentMethod with id 1",
+              "type": "NotFound"
+            }
+          ]
+        }
+    http_version: 
+  recorded_at: Wed, 22 Feb 2017 22:46:32 GMT
+recorded_with: VCR 3.0.3
