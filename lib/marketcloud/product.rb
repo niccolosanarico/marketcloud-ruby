@@ -35,7 +35,7 @@ module Marketcloud
 			"products"
 		end
 
-		# Find an object by ID - need to instantiate it here to call the righr initializer
+		# Find an object by ID - need to instantiate it here to call the right initializer
 		# @param id [Integer] the ID of the object
 		# @return an object or nil
 		def self.find(id = nil)
