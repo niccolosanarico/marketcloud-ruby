@@ -42,4 +42,17 @@ RSpec.describe Marketcloud::Brand do
 			expect(brands.length).to be >= 0
 		end
 	end
+
+	describe 'a POST to create a new brand' do
+		let(:new_brand) { {name: 'a brand', description: 'With a name' } }
+		let(:created_brand) { VCR.use_cassette('brand_new') { Marketcloud::Brand.create(new_brand) }}
+
+		it 'is successfull' do
+			expect(created_brand).not_to be_nil
+		end
+
+		it 'creates a new brand' do
+			expect(created_brand.name).to eq new_brand[:name]
+		end
+	end
 end

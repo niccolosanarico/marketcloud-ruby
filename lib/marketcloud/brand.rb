@@ -12,7 +12,7 @@ module Marketcloud
 		# Return all the brands
 		# @return an array of Brands
 		def self.all()
-			brands = perform_request(api_url("brands"), :get, nil, true, {})
+			brands = perform_request(api_url(self.plural), :get, nil, true, {})
 
 			if brands
 				brands['data'].map { |p| new(p) }
@@ -21,5 +21,17 @@ module Marketcloud
 			end
 		end
 
+		# Create a new brand and returns it
+		# @param brand a hash with the brand
+		# @return a new brand
+		def self.create(brand)
+			b = perform_request(api_url(self.plural), :post, brand, true)
+
+			if b
+				new(b['data'])
+			else
+				nil
+			end
+		end
 	end
 end
