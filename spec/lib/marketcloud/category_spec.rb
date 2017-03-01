@@ -55,4 +55,19 @@ RSpec.describe Marketcloud::Category do
 			expect(created_category.name).to eq new_category[:name]
 		end
 	end
+
+	describe 'a PUT to update a category' do
+		let(:category_to_update) { 132170 }
+		let(:update_category) { {name: 'a category', description: 'With an updated name' } }
+		let(:updated_category) { VCR.use_cassette('category_update') { Marketcloud::Category.update(category_to_update, update_category) }}
+
+		it 'is successfull' do
+			expect(updated_category).not_to be_nil
+		end
+
+		it 'returns an updated category' do
+			expect(updated_category.description).to eq update_category[:description]
+		end
+	end
+
 end

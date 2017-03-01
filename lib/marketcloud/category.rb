@@ -56,5 +56,19 @@ module Marketcloud
 				nil
 			end
 		end
+
+		# Update a category and returns it
+		# @param id the id of an existing category
+		# @param category a hash with the category
+		# @return the updated	category
+		def self.update(id, category)
+			c = perform_request(api_url("#{self.plural}/#{id}"), :put, category, true)
+
+			if c
+				new(c['data'])
+			else
+				nil
+			end
+		end
 	end
 end

@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"D86SYcgwkOJBznzTUbQ6WQ5Kl2hat3NYB7bUW0lQleI=","timestamp":1488407851}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '227'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-GxW6SKBQO4OuDoNTrbGLfA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 01 Mar 2017 22:37:33 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "ZW5fuHLH6zgTy/flaGnTyMmf31bkb1DYyuSn/nGC+70=",
+          "data": {
+            "token": "ZW5fuHLH6zgTy/flaGnTyMmf31bkb1DYyuSn/nGC+70=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 22:37:32 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/categories/132170
+    body:
+      encoding: UTF-8
+      string: '{"name":"a category","description":"With an updated name"}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:ZW5fuHLH6zgTy/flaGnTyMmf31bkb1DYyuSn/nGC+70=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '292'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"111-XNc47uX33JiK/7ma3Ucw4g"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 01 Mar 2017 22:37:34 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": {
+            "_id": "58aa126fabd09e22a8ddc471",
+            "name": "a category",
+            "description": "With an updated name",
+            "id": 132170,
+            "application_id": 107224,
+            "images": [],
+            "parent_id": 107589,
+            "path": "/Macchinari/a category"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 22:37:32 GMT
+recorded_with: VCR 3.0.3

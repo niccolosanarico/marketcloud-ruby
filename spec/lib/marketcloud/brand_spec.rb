@@ -55,4 +55,18 @@ RSpec.describe Marketcloud::Brand do
 			expect(created_brand.name).to eq new_brand[:name]
 		end
 	end
+
+	describe 'a PUT to update a brand' do
+		let(:brand_to_update) { 136195 }
+		let(:update_brand) { {name: 'a brand', description: 'With an updated name' } }
+		let(:updated_brand) { VCR.use_cassette('brand_update') { Marketcloud::Brand.update(brand_to_update, update_brand) }}
+
+		it 'is successfull' do
+			expect(updated_brand).not_to be_nil
+		end
+
+		it 'returns an updated brand' do
+			expect(updated_brand.description).to eq update_brand[:description]
+		end
+	end
 end

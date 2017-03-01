@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"R6irsGNCPocSs5i8L03tHDeV04A2jGkrOO600VFz44U=","timestamp":1488407560}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '227'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-QIXq8ILBzrCnKgez9D/gLA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 01 Mar 2017 22:32:42 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "FyoWVlgTvreM61VDPz6civsLjVig7nZ0y2YqNwEhmf8=",
+          "data": {
+            "token": "FyoWVlgTvreM61VDPz6civsLjVig7nZ0y2YqNwEhmf8=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 22:32:41 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/brands/136195
+    body:
+      encoding: UTF-8
+      string: '{"name":"a brand","description":"With an updated name"}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:FyoWVlgTvreM61VDPz6civsLjVig7nZ0y2YqNwEhmf8=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '222'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"96-GmgJQI4cuE2tbymOWL9whA"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 01 Mar 2017 22:32:42 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": {
+            "name": "a brand",
+            "description": "With an updated name",
+            "application_id": 107224,
+            "id": 136195
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 01 Mar 2017 22:32:41 GMT
+recorded_with: VCR 3.0.3
