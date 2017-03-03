@@ -73,4 +73,18 @@ RSpec.describe Marketcloud::Product do
 			expect(created_product.name).to eq new_product[:name]
 		end
 	end
+
+	describe 'a PUT to update a product' do
+		let(:product_to_update) { 132169 }
+		let(:update_product) { {name: 'a product', description: 'With an updated name' } }
+		let(:updated_product) { VCR.use_cassette('product_update') { Marketcloud::Product.update(product_to_update, update_product) }}
+
+		it 'is successfull' do
+			expect(updated_product).not_to be_nil
+		end
+
+		it 'returns an updated product' do
+			expect(updated_product.description).to eq update_product[:description]
+		end
+	end
 end

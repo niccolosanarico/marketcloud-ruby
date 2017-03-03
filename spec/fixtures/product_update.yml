@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OVTHaz3Hv4DqXvY/gHirj4Soeei5gys4SUCwQORMavU=","timestamp":1488572894}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-deXosN+BixXvVnEss1qK/ufEOds"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 03 Mar 2017 20:28:16 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "J72F7kL/cSF4PrZUh5tziFFXsTxiE/1HskZe8AnA6Nc=",
+          "data": {
+            "token": "J72F7kL/cSF4PrZUh5tziFFXsTxiE/1HskZe8AnA6Nc=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 03 Mar 2017 20:28:15 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/products/132169
+    body:
+      encoding: UTF-8
+      string: '{"name":"a product","description":"With an updated name"}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:J72F7kL/cSF4PrZUh5tziFFXsTxiE/1HskZe8AnA6Nc=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '294'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"109-Lc6D4wusEElJvlC1D+gyiWSBN3A"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 03 Mar 2017 20:28:16 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": {
+            "_id": "58aa1094abd09e22a8ddc461",
+            "name": "a product",
+            "description": "With an updated name",
+            "price": 99.99,
+            "sku": "XXXXYYQQQ",
+            "type": "simple_product",
+            "id": 132169,
+            "application_id": 107224
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 03 Mar 2017 20:28:15 GMT
+recorded_with: VCR 3.0.3

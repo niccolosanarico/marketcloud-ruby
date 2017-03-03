@@ -119,5 +119,18 @@ module Marketcloud
 				nil
 			end
 		end
+
+		# Update a product and returns it
+		# @param product a hash with the product
+		# @return the updated	 product
+		def self.update(id, product)
+			pr = perform_request(api_url("#{self.plural}/#{id}"), :put, product, true)
+
+			if pr
+				new(pr['data'])
+			else
+				nil
+			end
+		end
 	end
 end

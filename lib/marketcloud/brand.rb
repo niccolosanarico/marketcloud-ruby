@@ -35,6 +35,7 @@ module Marketcloud
 		end
 
 		# Update a brand and returns it
+		# @param id the id of the brand to be updated
 		# @param brand a hash with the brand
 		# @return the updated	 brand
 		def self.update(id, brand)
