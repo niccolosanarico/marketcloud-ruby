@@ -13,11 +13,12 @@ module Marketcloud
 		# Create a new file in the Marketcloud CDN
 		# @param name a human friendly name
 		# @param filename a filename
-		# @param file file handle from File.open
+		# @param file_url a URL to a file
 		# @param description the description of the file
 		# @param slug a URL-friendly slug
 		# @return a file
-		def self.create(name, filename, file, description, slug)
+		def self.create(name, filename, file_url, description, slug)
+			file = File.open(file_url)
 			new_file = perform_request(api_url("files", {}), :post,
 						{
 							name: name,
