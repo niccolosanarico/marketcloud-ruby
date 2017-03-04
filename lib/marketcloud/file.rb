@@ -19,7 +19,7 @@ module Marketcloud
 		# @return a file
 		def self.create(name, filename, file_url, description, slug)
 			file = ::File.open(file_url)
-			new_file = perform_request(api_url("files", {}), :post,
+			new_file = perform_request(api_url(self.plural, {}), :post,
 						{
 							name: name,
 							filename: filename,

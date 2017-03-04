@@ -17,25 +17,20 @@ RSpec.describe Marketcloud::File do
 
 	end
 
-	# This test case does not work TODO
-	# describe 'a POST to upload a file' do
-	#
-	# 	f = StringIO.new("Let us test some data", 'r')
-	#
-	# 	new_file = VCR.use_cassette('file_create') {
-	# 			Marketcloud::File.create("file", "name", f, "A file description", "file-name")
-	# 		}
-	#
-	# 	after(:all) { f.close }
-	#
-	# 	it 'should return 200' do
-	# 		expect(new_file).not_to be_nil
-	# 	end
-	#
-	# 	it 'returns a valid file' do
-	# 		expect(new_file.name).to eq "file"
-	# 	end
-	#
-	# end
+	describe 'a POST to upload a file' do
+
+		let(:new_file) { VCR.use_cassette('file_create') {
+				Marketcloud::File.create("file", "name", "spec/fixtures/files/0500070.jpg", "A file description", "file-name")
+			} }
+
+		it 'should return 200' do
+			expect(new_file).not_to be_nil
+		end
+
+		it 'returns a valid file' do
+			expect(new_file.name).to eq "file"
+		end
+
+	end
 
 end
