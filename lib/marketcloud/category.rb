@@ -34,8 +34,12 @@ module Marketcloud
 
 		# Return all the categories
 		# @return an array of Categories
-		def self.all()
-			categories = perform_request(api_url("categories"), :get, nil, true)
+		def self.all(skip: 0, limit: 200)
+			query = {
+				limit: limit,
+				skip: skip,
+			}
+			categories = perform_request(api_url(self.plural, query), :get, nil, true)
 
 			if categories
 				categories['data'].map { |cs| new(cs) }
