@@ -34,10 +34,10 @@ module Marketcloud
 
 		# Return all the categories
 		# @return an array of Categories
-		def self.all(skip: 0, limit: 200)
+		def self.all(page: 1, per_page: 200)
 			query = {
-				limit: limit,
-				skip: skip,
+				per_page: per_page,
+				page: page,
 			}
 			categories = perform_request(api_url(self.plural, query), :get, nil, true)
 
