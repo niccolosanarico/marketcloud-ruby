@@ -10,9 +10,15 @@ module Marketcloud
 		end
 
 		# Return all the brands
+		# @param page the page you want to query for
+		# @param per_page how many items per page
 		# @return an array of Brands
-		def self.all()
-			brands = perform_request(api_url(self.plural), :get, nil, true, {})
+		def self.all(page: 1, per_page: 200)
+			query = {
+				per_page: per_page,
+				page: page,
+			}
+			brands = perform_request(api_url(self.plural, query), :get, nil, true, {})
 
 			if brands
 				brands['data'].map { |p| new(p) }

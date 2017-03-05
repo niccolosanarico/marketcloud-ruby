@@ -33,6 +33,8 @@ module Marketcloud
 		end
 
 		# Return all the categories
+		# @param page the page you want to query for
+		# @param per_page how many items per page
 		# @return an array of Categories
 		def self.all(page: 1, per_page: 200)
 			query = {
