@@ -73,6 +73,31 @@ module Marketcloud
 			end
 		end
 
+		# Find a product by sku
+		# @param sku [String] the SKU
+		# @param published [Boolean] whether query only for published products, defaults to true
+		# @return an array of Products or nil
+		def self.find_by_sku(sku, q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true)
+			query = {
+				per_page: per_page,
+				page: page,
+				price_gt: price_gt,
+				price_lt: price_lt,
+				sku: sku,
+				published: published
+			}
+			query[:q] = q unless q.nil?
+
+			products = perform_request(api_url("products",
+																				query), :get, nil, false)
+
+			if products
+					products['data'].map { |p| new(p) }
+			else
+				nil
+			end
+		end
+
 		# Return all the products
 		# @param published [Boolean] whether query only for published products, defaults to true
 		# @return an array of Products
