@@ -116,7 +116,7 @@ module Marketcloud
 			query[:sort_by] = sort_by unless sort_by.nil?
 			query[:sort_order] = sort_order unless sort_order.nil?
 			query[:q] = q unless q.nil?
-			
+
 			products = perform_request(api_url("products",query), :get, nil, false)
 
 			if products
@@ -126,11 +126,19 @@ module Marketcloud
 			end
 		end
 
-		# returns how many products and how many pages there are
+		# returns how many published products and how many pages there are
 		# @param per_page [Integer] how many products per page
 		# @return [count, pages]
-		def self.count_and_pages(per_page: 20)
-			products = perform_request(api_url("products", { per_page: per_page }), :get, nil, false)
+		def self.count_and_pages(q: nil, per_page: 20, sort_by: nil, sort_order: nil)
+			query = {
+				per_page: per_page
+			}
+
+			query[:sort_by] = sort_by unless sort_by.nil?
+			query[:sort_order] = sort_order unless sort_order.nil?
+			query[:q] = q unless q.nil?
+
+			products = perform_request(api_url("products", query), :get, nil, false)
 
 			if products
 				[products["count"], products["pages"]]
