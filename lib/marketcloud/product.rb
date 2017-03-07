@@ -52,14 +52,16 @@ module Marketcloud
 		# @param cat_id [Integer] the category ID
 		# @param published [Boolean] whether query only for published products, defaults to true
 		# @return an array of Products or nil
-		def self.find_by_category(cat_id, q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true)
+		def self.find_by_category(cat_id, q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true, sort_by: "", sort_order: "")
 			query = {
 				per_page: per_page,
 				page: page,
 				price_gt: price_gt,
 				price_lt: price_lt,
 				category_id: cat_id,
-				published: published
+				published: published,
+				sort_by: sort_by,
+				sort_order: sort_order
 			}
 			query[:q] = q unless q.nil?
 
@@ -101,13 +103,15 @@ module Marketcloud
 		# Return all the products
 		# @param published [Boolean] whether query only for published products, defaults to true
 		# @return an array of Products
-		def self.all(q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true)
+		def self.all(q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true, sort_by: "", sort_order: "")
 			query = {
 				per_page: per_page,
 				page: page,
 				price_gt: price_gt,
 				price_lt: price_lt,
-				published: published
+				published: published,
+				sort_by: sort_by,
+				sort_order: sort_order
 			}
 			query[:q] = q unless q.nil?
 			products = perform_request(api_url("products",query), :get, nil, false)
