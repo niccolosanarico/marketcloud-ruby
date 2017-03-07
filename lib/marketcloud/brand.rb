@@ -13,13 +13,15 @@ module Marketcloud
 		# @param page the page you want to query for
 		# @param per_page how many items per page
 		# @return an array of Brands
-		def self.all(page: 1, per_page: 200, sort_by: "", sort_order: "")
+		def self.all(page: 1, per_page: 200, sort_by: nil, sort_order: nil)
 			query = {
 				per_page: per_page,
-				page: page,				
-				sort_by: sort_by,
-				sort_order: sort_order
+				page: page
 			}
+
+			query[:sort_by] = sort_by unless sort_by.nil?
+			query[:sort_order] = sort_order unless sort_order.nil?
+
 			brands = perform_request(api_url(self.plural, query), :get, nil, true, {})
 
 			if brands
