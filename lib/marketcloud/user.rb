@@ -23,7 +23,7 @@ module Marketcloud
 		def self.find_by_email(email)
 			user = perform_request api_url("users", { email: email }), :get, nil, true
 
-			if user
+			if !user['data'].empty?
 				new user['data'].first
 			else
 				nil

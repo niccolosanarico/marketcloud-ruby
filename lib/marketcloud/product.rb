@@ -80,16 +80,11 @@ module Marketcloud
 		# @param sku [String] the SKU
 		# @param published [Boolean] whether query only for published products, defaults to true
 		# @return an array of Products or nil
-		def self.find_by_sku(sku, q: nil, page: 1, per_page: 20, price_gt: 0, price_lt: 10000000000000, published: true)
+		def self.find_by_sku(sku, published: true)
 			query = {
-				per_page: per_page,
-				page: page,
-				price_gt: price_gt,
-				price_lt: price_lt,
 				sku: sku,
 				published: published
 			}
-			query[:q] = q unless q.nil?
 
 			products = perform_request(api_url("products",
 																				query), :get, nil, false)
@@ -128,14 +123,13 @@ module Marketcloud
 
 		# returns how many published products and how many pages there are
 		# @param per_page [Integer] how many products per page
+		# @param q [String] a query string to filter results
 		# @return [count, pages]
-		def self.count_and_pages(q: nil, per_page: 20, sort_by: nil, sort_order: nil)
+		def self.count_and_pages(q: nil, per_page: 20)
 			query = {
 				per_page: per_page
 			}
 
-			query[:sort_by] = sort_by unless sort_by.nil?
-			query[:sort_order] = sort_order unless sort_order.nil?
 			query[:q] = q unless q.nil?
 
 			products = perform_request(api_url("products", query), :get, nil, false)

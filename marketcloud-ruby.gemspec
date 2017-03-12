@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["nico@niccolosanarico.com"]
 
   spec.summary       = %q{Wrapper for Marketcloud API}
-  spec.description   = %q{Wrapper for Marketcloud API, it supports V0 and Redis for caching}
+  spec.description   = %q{Wrapper for Marketcloud API, it supports version 0 of the API, and Redis for caching}
   spec.homepage      = "https://www.marketcloud.it"
   spec.license       = "MIT"
 

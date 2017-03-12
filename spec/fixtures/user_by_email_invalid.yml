@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"ubhnjpFXBwPJAcMtLCqt6BmBYubID/S6gElr1cWltfY=","timestamp":1489359070}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '228'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b3-6/7PvhbEP7DJqu97gnd/r+9RsVk"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 12 Mar 2017 22:51:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "FZdwfrFjQDnuBdgJ7sIX0k/b+1FI5m3X2l4Uq4jggdA=",
+          "data": {
+            "token": "FZdwfrFjQDnuBdgJ7sIX0k/b+1FI5m3X2l4Uq4jggdA=",
+            "access": "admin"
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 12 Mar 2017 22:51:10 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/users?email=not_a_valid@email.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:FZdwfrFjQDnuBdgJ7sIX0k/b+1FI5m3X2l4Uq4jggdA=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '247'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ac-kl14JPU53nPV39phhXcGxeqy1r8"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 12 Mar 2017 22:51:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": [],
+          "_links": {
+            "curr": "http://api.marketcloud.it/v0/users?email=not_a_valid@email.com&"
+          },
+          "count": 0,
+          "page": 1,
+          "pages": 1
+        }
+    http_version: 
+  recorded_at: Sun, 12 Mar 2017 22:51:10 GMT
+recorded_with: VCR 3.0.3

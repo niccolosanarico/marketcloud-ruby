@@ -16,15 +16,25 @@ RSpec.describe Marketcloud::User do
 		end
 	end
 
-	describe 'a GET on a valid user by email' do
-	  let(:user) { VCR.use_cassette('user_by_email') { Marketcloud::User.find_by_email(user_email) }}
+	context "A GET on a search by email" do
+		describe 'on a valid user' do
+		  let(:user) { VCR.use_cassette('user_by_email') { Marketcloud::User.find_by_email(user_email) }}
 
-		it 'should return 200' do
-			expect(user).not_to be_nil
+			it 'should return 200' do
+				expect(user).not_to be_nil
+			end
+
+			it 'answers to find with a valid user' do
+			  expect(user.name).to eq "prova"
+			end
 		end
 
-		it 'answers to find with a valid user' do
-		  expect(user.name).to eq "prova"
+		describe 'on an invalid user' do
+		  let(:user) { VCR.use_cassette('user_by_email_invalid') { Marketcloud::User.find_by_email("not_a_valid@email.com") }}
+
+			it 'should return nil' do
+				expect(user).to be_nil
+			end
 		end
 	end
 
