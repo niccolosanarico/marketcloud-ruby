@@ -4,6 +4,7 @@ RSpec.describe Marketcloud::Cart do
 	let(:product_quantity) { 2 }
 	let(:product_id) { 107226 }
 	let(:cart_id)  { 107232 }
+	let(:user_id)  { 107227 }
 
 	describe 'a GET for a cart starting from a given user' do
 		let(:carts) {
@@ -36,6 +37,25 @@ RSpec.describe Marketcloud::Cart do
 
 		it 'answers to find with a valid cart containing items' do
 		  expect(cart.items.length).to be >= 0
+		end
+
+	end
+
+	describe 'a PUT for a cart given an ID' do
+		let(:cart) {
+			VCR.use_cassette('cart_with_ID_and_no_user') {
+				cart = Marketcloud::Cart.find(cart_id)
+				cart.update_user!(user_id)
+				cart
+			}
+		}
+
+		it 'should return a valid cart' do
+			expect(cart).not_to be_nil
+		end
+
+		it 'should be associated to a user' do
+			expect(cart.user_id).to eq user_id
 		end
 
 	end

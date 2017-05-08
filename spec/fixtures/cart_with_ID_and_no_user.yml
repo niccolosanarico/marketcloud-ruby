@@ -1,0 +1,208 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"ObNpgobqOmENEjSGpVbSPt8h+6Ob6I4xW8Tqys2ZgFs=","timestamp":1494183728}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '249'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d0-2oOjyyerbAm8+hs2fDoFJOTpQ8c"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 07 May 2017 19:02:06 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "GqdS4Ku+w27dYvgrePLxguZ91MnFNTb+Z9X0x0RlV84=",
+          "data": {
+            "token": "GqdS4Ku+w27dYvgrePLxguZ91MnFNTb+Z9X0x0RlV84=",
+            "access": "admin",
+            "expire": 1494198127490
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 07 May 2017 19:02:08 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/carts/107232
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:GqdS4Ku+w27dYvgrePLxguZ91MnFNTb+Z9X0x0RlV84=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '255'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f0-4MYa7Ld+K0yuakZtzNhGSJ7/Pz4"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 07 May 2017 19:02:07 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": {
+            "created_at": 1483050364666,
+            "application_id": 107224,
+            "items": [],
+            "status": "open",
+            "user_id": 107227,
+            "id": 107232,
+            "items_total": 0,
+            "total": 0,
+            "total_weight": 0
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 07 May 2017 19:02:08 GMT
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"ObNpgobqOmENEjSGpVbSPt8h+6Ob6I4xW8Tqys2ZgFs=","timestamp":1494183728}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '248'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d0-3RmFAGPNpFA6kZvhdsA2OCbDCL8"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 07 May 2017 19:02:07 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "w9WbIEciHkHGFLgQlxureZ2EpxJcO6c2/LdMOV7agFQ=",
+          "data": {
+            "token": "w9WbIEciHkHGFLgQlxureZ2EpxJcO6c2/LdMOV7agFQ=",
+            "access": "admin",
+            "expire": 1494198128232
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 07 May 2017 19:02:09 GMT
+- request:
+    method: put
+    uri: http://api.marketcloud.it/v0/carts/107232
+    body:
+      encoding: UTF-8
+      string: '{"user_id":107227,"items":[]}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:w9WbIEciHkHGFLgQlxureZ2EpxJcO6c2/LdMOV7agFQ=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '243'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d2-NYoe/IIfnlGZr7kjFs14XLALt0Y"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 07 May 2017 19:02:07 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": {
+            "created_at": 1483050364666,
+            "items": [],
+            "status": "open",
+            "user_id": 107227,
+            "id": 107232,
+            "items_total": 0,
+            "total": 0,
+            "total_weight": 0
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 07 May 2017 19:02:09 GMT
+recorded_with: VCR 3.0.3

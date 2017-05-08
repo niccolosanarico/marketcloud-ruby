@@ -55,6 +55,23 @@ module Marketcloud
 			end
 		end
 
+		# Adds a user to the cart (modifies the caller!)
+		# @param user_id the user who created the cart
+		# @return a new cart
+		def update_user!(user_id)
+			cart = Cart.perform_request Cart.api_url("carts/#{self.id}", {}), :put,
+				{
+					user_id: user_id,
+					items: self.items
+				}, true
+
+			if cart
+				self.user_id = user_id
+			else
+				false
+			end
+		end
+
 		# Removes items from a cart (modifies the caller!)
 		# @param product_ids [Array] the products to be removed
 		# @return a new cart
@@ -92,7 +109,6 @@ module Marketcloud
 				nil
 			end
 		end
-
 
 		# Create a new cart with no items and optional user
 		# @param user_id [Integer] the user to which the cart belogns (optional)
