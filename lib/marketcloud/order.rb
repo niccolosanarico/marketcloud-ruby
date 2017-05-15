@@ -35,16 +35,20 @@ module Marketcloud
 		# @param shipping_id [Integer] the shipping ID
 		# @return the newly created order
 		def self.create(user_id, cart_id, shipping_address_id, billing_address_id, shipping_id, promotion_id = nil, coupon_code = nil)
+
+			fields = {
+				user_id: user_id,
+				cart_id: cart_id,
+				shipping_address_id: shipping_address_id,
+				billing_address_id: billing_address_id,
+				shipping_id: shipping_id
+			}
+
+			if promotion_id; fields[:promotion_id] = promotion_id end
+			if coupon_code; fields[:coupon_code] = coupon_code end
+
 			order = perform_request api_url("orders", {}), :post,
-						{
-							user_id: user_id,
-							cart_id: cart_id,
-							shipping_address_id: shipping_address_id,
-							billing_address_id: billing_address_id,
-							shipping_id: shipping_id,
-							promotion_id: promotion_id,
-							coupon_code: coupon_code
-						}, true
+						fields, true
 
 			if order
 				new order['data']
