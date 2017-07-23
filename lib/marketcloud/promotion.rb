@@ -9,7 +9,7 @@ module Marketcloud
 
 		def initialize(attributes)
 			super(attributes)
-			# A bit of more educated item creation than basic initialization
+			# A bit of a more educated item creation than basic initialization
 			@conditions = @conditions.map { |cond| Condition.new(cond["type"], cond["value"]) } unless @conditions.nil?
 			@effects = @conditions.map { |eff| Effect.new(eff["type"], eff["value"]) }	unless @effects.nil?
 		end

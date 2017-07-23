@@ -5,7 +5,7 @@ http_interactions:
     uri: http://api.marketcloud.it/v0/tokens
     body:
       encoding: UTF-8
-      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"xxsqlMvoPUqqfVVoRzw+LpU7c7Kt0JoKiY8Z9tH77VQ=","timestamp":1500848278}'
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"OGteVrd8oGHk/aBAXPwsNFBumpaUO5ThLC2BDCHN1H8=","timestamp":1500848206}'
     headers:
       User-Agent:
       - Faraday v0.12.1
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '249'
+      - '251'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d0-sjp5UagocpHk+dV/cu7dlmnaJHc"
+      - W/"d0-9OA8xgrgzEEMJA3N+ZoJcJaZvFM"
       Vary:
       - Accept-Encoding
       Server:
@@ -33,24 +33,24 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Sun, 23 Jul 2017 22:17:56 GMT
+      - Sun, 23 Jul 2017 22:16:44 GMT
     body:
       encoding: ASCII-8BIT
       string: |-
         {
           "status": true,
-          "token": "UAdH450/Ymn5tETJfuOueu/YCXrxBwWUfR3fHo+2QTM=",
+          "token": "M3HjRnPoKS7vP0Pek7RmYA2czYj8U2ZUB+NOVf3f81o=",
           "data": {
-            "token": "UAdH450/Ymn5tETJfuOueu/YCXrxBwWUfR3fHo+2QTM=",
+            "token": "M3HjRnPoKS7vP0Pek7RmYA2czYj8U2ZUB+NOVf3f81o=",
             "access": "admin",
-            "expire": 1500862676843
+            "expire": 1500862604699
           }
         }
     http_version: 
-  recorded_at: Sun, 23 Jul 2017 22:17:58 GMT
+  recorded_at: Sun, 23 Jul 2017 22:16:46 GMT
 - request:
     method: get
-    uri: http://api.marketcloud.it/v0/coupons/155682
+    uri: http://api.marketcloud.it/v0/coupons?code=FORNI5
     body:
       encoding: US-ASCII
       string: ''
@@ -62,7 +62,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - e8152fe2-237a-4360-8ad2-f3773082226c:UAdH450/Ymn5tETJfuOueu/YCXrxBwWUfR3fHo+2QTM=
+      - e8152fe2-237a-4360-8ad2-f3773082226c:M3HjRnPoKS7vP0Pek7RmYA2czYj8U2ZUB+NOVf3f81o=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -71,11 +71,11 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '345'
+      - '435'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"164-sjk5258LckpNW9+8OGMh+IkNuEc"
+      - W/"202-jPZvKreiL7eGxNu7zF51yvkQflk"
       Vary:
       - Accept-Encoding
       Server:
@@ -83,26 +83,34 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Sun, 23 Jul 2017 22:17:57 GMT
+      - Sun, 23 Jul 2017 22:16:44 GMT
     body:
       encoding: ASCII-8BIT
       string: |-
         {
           "status": true,
-          "data": {
-            "code": "FORNI5",
-            "name": "Forni a sconto",
-            "type": "total",
-            "target_type": "CATEGORY_COUPON",
-            "target_id": 137785,
-            "discount_type": "PERCENTAGE_REDUCTION",
-            "discount_value": 5,
-            "application_id": 107224,
-            "active": true,
-            "id": 155682,
-            "updated_at": "2017-07-23T22:10:07.651Z"
-          }
+          "data": [
+            {
+              "code": "FORNI5",
+              "name": "Forni a sconto",
+              "type": "total",
+              "target_type": "CATEGORY_COUPON",
+              "target_id": 137785,
+              "discount_type": "PERCENTAGE_REDUCTION",
+              "discount_value": 5,
+              "application_id": 107224,
+              "active": true,
+              "id": 155682,
+              "updated_at": "2017-07-23T22:10:07.651Z"
+            }
+          ],
+          "_links": {
+            "curr": "http://api.marketcloud.it/v0/coupons?code=FORNI5&"
+          },
+          "count": 1,
+          "page": 1,
+          "pages": 1
         }
     http_version: 
-  recorded_at: Sun, 23 Jul 2017 22:17:58 GMT
+  recorded_at: Sun, 23 Jul 2017 22:16:46 GMT
 recorded_with: VCR 3.0.3
