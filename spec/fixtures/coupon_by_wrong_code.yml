@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.marketcloud.it/v0/tokens
+    body:
+      encoding: UTF-8
+      string: '{"publicKey":"e8152fe2-237a-4360-8ad2-f3773082226c","secretKey":"I2cPFCAT13Mbl8yumgvp28NPC3tWccqQB24RKLkcywo=","timestamp":1502028446}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '247'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d0-4yUWrO4DAtBNjbwoJnZkuknLeuM"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Marketcloud Storefront API
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 06 Aug 2017 14:07:26 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "token": "QzAiD3xcIgCksfcOIh+ybjJGtWsee6/KIN3r9Z7hGm8=",
+          "data": {
+            "token": "QzAiD3xcIgCksfcOIh+ybjJGtWsee6/KIN3r9Z7hGm8=",
+            "access": "admin",
+            "expire": 1502042846832
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 06 Aug 2017 14:07:26 GMT
+- request:
+    method: get
+    uri: http://api.marketcloud.it/v0/coupons?code=NONEXISTING
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - e8152fe2-237a-4360-8ad2-f3773082226c:QzAiD3xcIgCksfcOIh+ybjJGtWsee6/KIN3r9Z7hGm8=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '242'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a3-bjB2kWH8Jl+fVcZKjudcf1oQ5wo"
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Marketcloud Storefront API
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 06 Aug 2017 14:07:26 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "status": true,
+          "data": [],
+          "_links": {
+            "curr": "http://api.marketcloud.it/v0/coupons?code=NONEXISTING&"
+          },
+          "count": 0,
+          "page": 1,
+          "pages": 1
+        }
+    http_version: 
+  recorded_at: Sun, 06 Aug 2017 14:07:27 GMT
+recorded_with: VCR 3.0.3

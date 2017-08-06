@@ -25,7 +25,7 @@ module Marketcloud
       coupon = perform_request(api_url("coupons",
                                         query), :get, nil, true)
 
-      if coupon
+      if coupon['data'].length > 0
           new(coupon['data'].first)
       else
         nil

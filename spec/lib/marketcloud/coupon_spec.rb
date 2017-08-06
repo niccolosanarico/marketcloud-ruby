@@ -28,4 +28,12 @@ RSpec.describe Marketcloud::Coupon do
       expect(coup).not_to be_nil
     end
   end
+
+  describe 'a GET on a non existing coupon' do
+    let(:coup) { VCR.use_cassette('coupon_by_wrong_code') { Marketcloud::Coupon.find_by_code("NONEXISTING") }}
+
+    it 'returns nil' do
+		  expect(coup).to be_nil
+		end
+  end
 end
