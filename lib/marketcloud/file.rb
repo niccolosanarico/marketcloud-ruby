@@ -17,13 +17,14 @@ module Marketcloud
 		# @param description the description of the file
 		# @param slug a URL-friendly slug
 		# @return a file
-		def self.create(name, filename, file_url, description, slug)
+		def self.create(name, filename, file_url, description, slug, mime = "image/jpeg")
 			file = ::File.open(file_url)
 			new_file = perform_request(api_url(self.plural, {}), :post,
 						{
 							name: name,
 							filename: filename,
 							file: Base64.encode64(file.read),
+              mime_type: mime,
 							description: description,
 							slug: slug
 						}, true)
